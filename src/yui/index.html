@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YUI Library</title>
+	<link rel="stylesheet" href="../styles/bjorn.css" type="text/css">
+	<!-- Include YUI Lib for for production (shared files) -->
+	<!-- <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script> -->
+	<!-- Include YUI Lib for development (local files) -->
+	<script src="../js/yui-min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>YUI Library</h1>
+		<p class="text-warning">Please note that the YUI library isn't maintained any 
+			more! Do not use in production!
+		</p>
+	</header>
+	
+	<p>Pages to test <a href="https://yuilibrary.com/" class="externallink"
+		rel="noopener">YUI Library</a> found at Yahoo! Developer Network.</p>
+	
+	<div class="linklist">
+		<h3>Functions</h3>
+		<ul>
+			<li><a href="externallinks.html">External links</a></li>
+			<li><a href="showhide.html">Show/hide by click</a></li>
+		</ul>
+	</div>
+	
+	<div class="backlink">
+		<p><a href="../">Back</a> to Personal website</p>
+	</div>
+	
+	<footer>
+		<p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2012-01-07.</p>
+	</footer>
+	
+	<script>
+	// Create a YUI sandbox on your page.
+	YUI().use('node', function (Y) {
+	    //Get nodes for external links
+    	var extLinks = Y.all(".externallink");
+    	
+    	//For each link - add target attribute and add carets
+    	extLinks.each(function(lnk) {
+    		lnk.set("target", "_blank");
+    		lnk.append("&nbsp;&gt;&gt;");
+    	});
+	});
+	</script>
+</div>
+</body>
+</html>

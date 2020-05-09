@@ -1,0 +1,44 @@
+{
+  "name": "web-tests-grunt",
+  "version": "0.1.0",
+  "description": "Miscellaneous tests of web technologies, like HTML, CSS, JavaScript and services offered on Internet, using npm for package management and Grunt as task runner",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiltedViking/web-tests-grunt.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "git",
+    "grunt",
+    "npm"
+  ],
+  "author": "Björn G. D. Persson <bjorn@kiltedviking.net> (https://www.kiltedviking.net/)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/KiltedViking/web-tests-grunt/issues"
+  },
+  "homepage": "https://github.com/KiltedViking/web-tests-grunt#readme",
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "bulma": "^0.8.2",
+    "foundation-sites": "^5.5.3",
+    "jquery-match-height": "^0.7.2",
+    "materialize-css": "^1.0.0",
+    "muicss": "^0.10.2",
+    "purecss": "^2.0.1",
+    "semantic-ui-css": "^2.4.1",
+    "skeleton-css": "^2.0.4",
+    "uikit": "^2.27.4",
+    "yui": "^3.18.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0"
+  }
+}
