@@ -7,29 +7,36 @@ https://www.shellhacks.com/git-remove-all-commits-clear-git-history-local-remote
 
 ## Create a temporary branch and checkout:
 
-$ git checkout --orphan temp_branch
+```bash
+git checkout --orphan temp_branch
+```
 
-Option	  Description
-------    -----------
---orphan	Create a branch in a git init-like state
+Option	    Description
+------      -----------
+`--orphan`	Create a branch in a git init-like state
 
 
 ## Add all files to the temporary branch and commit the changes:
 
-$ git add -A
-$ git commit -am "The first commit"
-
+```bash
+git add -A
+git commit -am "The first commit"
+```
 
 ## Delete the master branch:
 
-$ git branch -D master
-
+```bash
+git branch -D master
+```
 
 ## Rename the temporary branch to master:
 
-$ git branch -m master
-
+```bash
+git branch -m master
+```
 
 ## Forcefully update the remote repository:
 
-$ git push -f origin master
+```bash
+git push -f origin master
+```
