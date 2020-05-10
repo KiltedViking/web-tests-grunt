@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid with align and justify</title>
+  <style>
+    body { 
+      background-color: royalblue;
+      color: white;
+      font-family: Roboto, Arial, Helvetica, sans-serif; 
+    }
+    header, footer {
+      background-color: white;
+      color: black;
+      margin-bottom: 1em;
+      margin-top: 1em;
+      padding: 1em;
+    }
+    /*** Define grid and items ************************************************/
+    .container {
+      background-color: papayawhip;
+      display: grid;
+      gap: 1em;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      height: 40vw; 
+    }
+    .item {
+      background-color: darkgreen;
+      height: 50px;
+      width: 50px;
+    }
+    .start {
+      align-self: start;
+      justify-self: start;
+    }
+    .middle {
+      place-self: center;
+    }
+    .end {
+      align-self: end;
+      justify-self: end;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Grid using <code>align-self</code> and <code>justify-self</code></h1>
+    <p>Grid using properties <code>align-self</code> and <code>justify-self</code> 
+      in grid items to have them &quot;align themselves&quot; in container. First
+      row is neither aligned or justified and middle column uses <code>place-self</code>
+      to set both <code>align-self</code> and <code>justify-self</code>.
+    </p>
+  </header>
+
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div> 
+    <div class="item start"></div>
+    <div class="item middle"></div>
+    <div class="item end"></div> 
+    <div class="item start"></div>
+    <div class="item middle"></div>
+    <div class="item end"></div> 
+  </div>
+
+  <footer>
+    <p><a href="./">Back</a> to CSS Grid</p>
+    <p><strong>Created by:</strong> Bj&ouml;rn G. D. Persson. <strong>Updated:</strong> 2020-04-18.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shape-outside - CSS3</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+  <style>
+    .width800 {
+      width: 800px;
+      color: black;
+      background-color: lightseagreen;
+      border: 1px dotted navy;
+    }
+    .shape-circle {
+      float: left;
+      shape-outside: circle(50%);
+      width: 200px;
+      height: 200px;
+
+      background-color: lawngreen;
+    }
+    .shape-polygon {
+      float: left;
+      shape-outside: polygon(0 0, 200px 150px, 0 200px);
+      width: 200px;
+      height: 200px;
+
+      background-color: lawngreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row page">
+      <div class="col-sm-12">
+        <header class="row">
+          <div class="col-sm-12">
+          <h1>shape-outside - CSS3</h1>
+
+          <p>At time of creation, 2017-06-23, CSS Shapes level 1 only works in Google Chrome,
+            Opera, and Safari. Firefox should be in development, but no information about
+            what Microsoft is doing about it.
+          </p>
+          </div>
+        </header>
+      </div>
+    </div>
+    
+    <section class="row">
+      <div class="col-sm-12">
+        <h2>Circle (<code>shape-outside: circle()</code>)</h2>
+        <p>Example showing how text can flow around an element using circle shape.</p>
+
+        <div class="width800">
+          <!-- Element with property applied -->
+          <div class="shape-circle"></div>
+          <!-- Elemnt flowing around element with property applied -->
+          <section>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eum minima, nostrum! Dolores eligendi distinctio adipisci, ullam enim sequi nemo sint itaque atque ipsum explicabo quas, ipsa magni doloremque, earum sunt, ab voluptate quo. Perspiciatis magni illum totam alias. Blanditiis, accusantium quas. Distinctio magnam reiciendis officia commodi fugiat adipisci aspernatur laborum doloribus. Officiis aspernatur illo accusamus magnam laboriosam doloremque minima.</div>
+            <div>Minima deserunt optio rerum alias quae magni quod iure voluptate, cum dolor repudiandae modi, molestiae earum veniam? Consectetur vitae iste praesentium, odio quasi, ex quisquam nihil, odit maiores error excepturi veniam itaque inventore distinctio perferendis, asperiores cum neque nobis voluptates! Dolore eius nemo reiciendis dicta autem natus sint adipisci, ab fuga quisquam incidunt error rerum temporibus, eaque sequi cumque assumenda.</div>
+            <div>Sed, eum ab aliquam dolore magnam odio eius praesentium quasi, debitis deleniti aliquid accusantium excepturi? Nihil illum, impedit esse ab, veniam rem, sequi officia culpa deserunt eveniet beatae. Ducimus repudiandae sed possimus quo eum distinctio, error laudantium. Illum debitis, consectetur perspiciatis vel, quam impedit in quas sequi soluta laborum eligendi sit facere a sapiente quaerat commodi corrupti consequatur, possimus ipsa.</div>
+            <div>Beatae fugiat eos totam facere iure vel consectetur voluptatibus itaque, ipsa, dolores veritatis sit quos laudantium neque saepe quasi numquam adipisci dignissimos repudiandae, atque excepturi. Officiis necessitatibus, blanditiis laboriosam nihil et, impedit dicta laborum, ratione accusamus laudantium harum cupiditate quos vel, ipsam nulla. Architecto aut voluptatum natus voluptatem odio vitae, a. Molestiae, harum eveniet ut officia neque earum dolorum repellat.</div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="col-sm-12">
+        <h2>Irregular shape (<code>shape-outside: polygon()</code>)</h2>
+        <p>Example showing how text can flow around an element using a irregular (polygon) shape.</p>
+
+        <div class="width800">
+          <!-- Element with property applied -->
+          <div class="shape-polygon"></div>
+          <!-- Elemnt flowing around element with property applied -->
+          <section>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eum minima, nostrum! Dolores eligendi distinctio adipisci, ullam enim sequi nemo sint itaque atque ipsum explicabo quas, ipsa magni doloremque, earum sunt, ab voluptate quo. Perspiciatis magni illum totam alias. Blanditiis, accusantium quas. Distinctio magnam reiciendis officia commodi fugiat adipisci aspernatur laborum doloribus. Officiis aspernatur illo accusamus magnam laboriosam doloremque minima.</div>
+            <div>Minima deserunt optio rerum alias quae magni quod iure voluptate, cum dolor repudiandae modi, molestiae earum veniam? Consectetur vitae iste praesentium, odio quasi, ex quisquam nihil, odit maiores error excepturi veniam itaque inventore distinctio perferendis, asperiores cum neque nobis voluptates! Dolore eius nemo reiciendis dicta autem natus sint adipisci, ab fuga quisquam incidunt error rerum temporibus, eaque sequi cumque assumenda.</div>
+            <div>Sed, eum ab aliquam dolore magnam odio eius praesentium quasi, debitis deleniti aliquid accusantium excepturi? Nihil illum, impedit esse ab, veniam rem, sequi officia culpa deserunt eveniet beatae. Ducimus repudiandae sed possimus quo eum distinctio, error laudantium. Illum debitis, consectetur perspiciatis vel, quam impedit in quas sequi soluta laborum eligendi sit facere a sapiente quaerat commodi corrupti consequatur, possimus ipsa.</div>
+            <div>Beatae fugiat eos totam facere iure vel consectetur voluptatibus itaque, ipsa, dolores veritatis sit quos laudantium neque saepe quasi numquam adipisci dignissimos repudiandae, atque excepturi. Officiis necessitatibus, blanditiis laboriosam nihil et, impedit dicta laborum, ratione accusamus laudantium harum cupiditate quos vel, ipsam nulla. Architecto aut voluptatum natus voluptatem odio vitae, a. Molestiae, harum eveniet ut officia neque earum dolorum repellat.</div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="col-sm-12">
+        <h2><code>shape-outside: circle(50%)</code></h2>
+        <p>Example showing how text can flow around an element using circle shape.</p>
+
+        <div class="width800">
+          <!-- Element with property applied -->
+          <div class="shape-circle"></div>
+          <!-- Elemnt flowing around element with property applied -->
+          <section>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eum minima, nostrum! Dolores eligendi distinctio adipisci, ullam enim sequi nemo sint itaque atque ipsum explicabo quas, ipsa magni doloremque, earum sunt, ab voluptate quo. Perspiciatis magni illum totam alias. Blanditiis, accusantium quas. Distinctio magnam reiciendis officia commodi fugiat adipisci aspernatur laborum doloribus. Officiis aspernatur illo accusamus magnam laboriosam doloremque minima.</div>
+            <div>Minima deserunt optio rerum alias quae magni quod iure voluptate, cum dolor repudiandae modi, molestiae earum veniam? Consectetur vitae iste praesentium, odio quasi, ex quisquam nihil, odit maiores error excepturi veniam itaque inventore distinctio perferendis, asperiores cum neque nobis voluptates! Dolore eius nemo reiciendis dicta autem natus sint adipisci, ab fuga quisquam incidunt error rerum temporibus, eaque sequi cumque assumenda.</div>
+            <div>Sed, eum ab aliquam dolore magnam odio eius praesentium quasi, debitis deleniti aliquid accusantium excepturi? Nihil illum, impedit esse ab, veniam rem, sequi officia culpa deserunt eveniet beatae. Ducimus repudiandae sed possimus quo eum distinctio, error laudantium. Illum debitis, consectetur perspiciatis vel, quam impedit in quas sequi soluta laborum eligendi sit facere a sapiente quaerat commodi corrupti consequatur, possimus ipsa.</div>
+            <div>Beatae fugiat eos totam facere iure vel consectetur voluptatibus itaque, ipsa, dolores veritatis sit quos laudantium neque saepe quasi numquam adipisci dignissimos repudiandae, atque excepturi. Officiis necessitatibus, blanditiis laboriosam nihil et, impedit dicta laborum, ratione accusamus laudantium harum cupiditate quos vel, ipsam nulla. Architecto aut voluptatum natus voluptatem odio vitae, a. Molestiae, harum eveniet ut officia neque earum dolorum repellat.</div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-23.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

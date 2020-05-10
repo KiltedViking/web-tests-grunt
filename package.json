@@ -4,7 +4,9 @@
   "description": "Miscellaneous tests of web technologies, like HTML, CSS, JavaScript and services offered on Internet, using npm for package management and Grunt as task runner",
   "main": "scripts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "grunt build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "grunt watch"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,9 @@
   "dependencies": {
     "bootstrap": "^3.4.1",
     "bulma": "^0.8.2",
-    "foundation-sites": "^5.5.3",
+    "font-awesome": "^4.7.0",
+    "foundation-icons": "^1.0.1",
+    "foundation-sites": "^6.6.3",
     "jquery-match-height": "^0.7.2",
     "materialize-css": "^1.0.0",
     "muicss": "^0.10.2",
@@ -39,6 +43,8 @@
   },
   "devDependencies": {
     "grunt": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0"
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0"
   }
 }

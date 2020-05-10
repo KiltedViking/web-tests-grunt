@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Semantic UI - CSS3</title>
+  <link rel="stylesheet" href="../../css/semantic.min.css">
+  <link rel="stylesheet" href="../../css/bjorn-semantic-ui.css">
+</head>
+<body>
+  <div class="ui container page">
+    <!-- <header class="ui text container"> -->
+    <header>
+      <h1>Semantic UI - CSS3</h1>
+    </header>
+
+    <p>This page shows some basic components in Semantic UI, version 2.2, and it is based
+      on corresponding page for Bootstrap.</p>
+
+    <nav>
+      <ul>
+        <li><a href="#paragraphs">Paragraphs and segments</a></li>
+        <li><a href="#glyphicons">Glyphicons</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#navs">Navs/Menus</a></li>
+        <li><a href="#navs">Navbars/Top bars</a></li>
+        <li><a href="#pagination">Pagination</a></li>
+        <li><a href="#labels">Labels</a></li>
+        <li><a href="#badges">Badges</a></li>
+        <li><a href="#pageheaders">Page headers</a></li>
+        <li><a href="#alerts">Alerts/Messages</a></li>
+        <li><a href="#panels">Panels/Cards</a></li>
+        <li><a href="#grids">Grids</a></li>
+        <li><a href="#javascript">JavaScript features</a></li>
+      </ul>
+
+    </nav>
+
+    <hr>
+    <section id="paragraphs">
+      <h2>Paragraphs and segments</h2>
+      <p>A plain paragraph.</p>
+      <p class="ui segment">A segment paragraph.</p>
+      <p class="ui red segment">A red segment paragraph.</p>
+      <div class="ui circular segment">
+        <h2 class="ui header">Segment header <div class="sub header">Sub header</div></h2>
+
+      </div>
+    </section>
+
+    <hr>
+    <section id="glyphicons">
+      <h2>Glyphicons</h2>
+      <p>Examples of icons. <!-- Lessons learned: Don't put text in span tag for icon. --></p>
+
+      <p><i class="file icon"></i> File icon (class: <code>file icon</code>)</p>
+      <p><i class="home icon"></i> Home icon (class: <code>home icon</code>)</p>
+
+      <h3>Buttons with glyphicons</h3>
+      <p>Examples of buttons with icons and/or text.</p>
+      <p><button class="ui button"><i class="file icon"></i> Button with file icon</button></p>
+    </section>
+
+    <hr>
+    <section id="buttons">
+      <h2>Buttons</h2>
+      <p>Semantic UI has a wide variety of buttons, made more with the following:</p>
+
+      <ul>
+        <li>Colour: red, orange, yellow, olive, green, teal, blue, violet, purple, pink,
+          brown, grey, and black.</li>
+        <li>Size: mini, tiny, small, medium, large, big, huge, and massive.</li>
+        <li>Variations: positive/negative - green/red, fluid - container width, circle - round.</li>
+      </ul>
+
+      <div>
+        <button class="ui button">Default button</button>
+        <button class="ui basic button">Basic button</button>
+        <button class="ui primary button">Primary button</button>
+        <button class="ui secondary button">Secondary button</button>
+        <button class="ui positive button">Positive button</button>
+        <button class="ui negative button">Negative button</button>
+        <button class="ui blue basic button">Blue basic button</button>
+        <button class="ui facebook button"><i class="facebook icon"></i> Facebook 
+          button with icon</button>
+        <a class="ui olive button" href="#">Anchor as Olive button</a>
+      </div>
+    </section>
+
+    <hr>
+    <section id="navs">
+      <h2>Navs/Menus</h2>
+      <p>Navs in Semantic UI are called Menus (and look like navbars).</p>
+
+      <div class="ui menu">
+        <div class="header item">Default menu</div>
+        <a class="item" href="#">Item 1</a>
+        <a class="item" href="#">Item 2</a>
+        <a class="item" href="#">Item 3</a>
+      </div>
+
+      <div class="ui secondary menu">
+        <div class="header item">Secondary menu</div>
+        <a class="item" href="#">Item 1</a>
+        <a class="item" href="#">Item 2</a>
+        <a class="item" href="#">Item 3</a>
+      </div>
+
+      <div class="ui secondary vertical menu">
+        <div class="header item">Secondary vertical menu</div>
+        <a class="item" href="#">Item 1</a>
+        <a class="item" href="#">Item 2</a>
+        <a class="item" href="#">Item 3</a>
+      </div>
+    </section>
+
+    <hr>
+    <section id="navbars">
+      <h2>Navbars</h2>
+      <p>(See Navs/Menus above.)</p>
+    </section>
+
+    <hr>
+    <section id="pagination">
+      <h2>Pagination</h2>
+      <p>(Haven't yet found it, if it exists...)</p>
+    </section>
+
+    <hr>
+    <section id="labels">
+      <h2>Labels</h2>
+      <p>
+        <span class="ui label">Default label</span>
+        <span class="ui teal label">Teal label</span>
+        <span class="ui tag label">Tag label</span>
+        <span class="ui red circular label">Red circular label</span>
+        <span class="ui pink circular label">42</span>
+      </p>
+    </section>
+
+    <hr>
+    <section id="badges">
+      <h2>Badges</h2>
+      <p>(Use circular, or other type, of label - see above.)</p>
+      <p>Some components can have floating labels/badges, like a compact menu.</p>
+
+      <div class="ui compact menu">
+        <a href="#" class="item">
+          Read E-mails
+          <div class="floating ui red label">2</div>
+        </a>
+      </div>
+    </section>
+
+    <hr>
+    <section id="pageheaders">
+      <h2>Page headers</h2>
+      <p>Headers can be dividing, i.e. adds a horisontal rule below header.</p>
+
+      <h3 class="ui dividing header">A dividing header</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nostrum odit natus excepturi fuga explicabo expedita.</p>
+    </section>
+
+    <hr>
+    <section id="alerts">
+      <h2>Alerts/Messages</h2>
+      <p>Alerts in Semantic UI are called messages.</p>
+
+      <div class="ui message">Default message</div>
+      <div class="ui floating message">Floating message</div>
+      <div class="ui compact message">Compact message</div>
+      <div class="ui positive message">Positive message</div>
+      <div class="ui negative message">Negative message</div>
+      <div class="ui info message">Info message</div>
+      <div class="ui warning message">Warning message</div>
+      <div class="ui pink message">Pink message</div>
+      
+      <div class="ui message">
+        <div class="header">Message with header</div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto praesentium sunt odio, ducimus ipsa.
+      </div>
+
+      <div class="ui message">
+        <div class="header">Message with header and list.</div>
+        <ul class="list">
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+          <li>Assumenda animi error ipsam fugiat excepturi minima?</li>
+          <li>A enim veritatis debitis magni facilis distinctio.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr>
+    <section id="panels">
+      <h2>Panels/Cards</h2>
+      <p>(Haven't come this far yet...)</p>
+    </section>
+
+    <hr>
+    <section id="grids">
+      <h2>Grid</h2>
+      <p>Grids in Semnatic UI seems to consist of 16 columns. Columns below are four
+        columns wide each. Width of columns can either be specified for the grid
+        or for each cell in grid. Example below sets width of columns in grid.
+      </p>
+
+      <div class="ui four column grid">
+        <div class="column">
+          <h3>Column 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, est.</p>
+        </div>
+        <div class="column">
+          <h3>Column 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, est.</p>
+        </div>
+        <div class="column">
+          <h3>Column 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, est.</p>
+        </div>
+        <div class="column">
+          <h3>Column 4</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, est.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <section id="javascript">
+      <h2>JavaScript features</h2>
+      <p>(Not got this far in my evaluation...)</p>
+    </section>
+
+    <footer>
+      <p><a href="./">Back</a> to Semantic UI</p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-06.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page design using grid</title>
+  <style>
+    body {
+      background-color: #800000;
+      color: white;
+    }
+    h1, h2, h3 {
+      font-family: Verdana, Lucida, sans-serif;
+    }
+    .container {
+      background-color: white;
+      border-radius: 1em;
+      color: black;
+      margin: 0 auto;
+      max-width: 1170px;
+      padding: 2em;
+    }
+    .container>header {
+      background-color: #800000;
+      border-radius: .5em;
+      color: white;
+      font-weight: bold;
+      margin-top: -1em;
+      padding: .1em;
+      text-align: center;
+    }
+    .container>footer {
+      border-top: solid 1px grey;
+      font-size: .8em;
+      margin-bottom: -2em;
+      margin-top: 1em;
+      padding: .1em;
+      text-align: center;
+    }
+    .container>footer>p {
+      margin: .4em;
+    }
+    /*** Create grid **********************************************************/
+    .columns {
+      display: grid;
+      gap: 1em;
+      /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+      grid-template-columns: 1fr;
+    }
+
+    @media(min-width: 425px) {
+      .columns {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr;
+      } 
+    }
+    @media(min-width: 665px) {
+      .columns {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr 1fr;
+      } 
+    }
+    @media(min-width: 900px) {
+      .columns {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      } 
+    }
+    
+    .panel {
+      border: solid 1px #800000;
+      border-radius: .2em;
+      display: block;
+      width: 100%;
+    }
+    /*** Style panels *********************************************************/
+    .panel>.panel-heading {
+      background-color: #800000;
+      color: white;
+      padding: .1em .5em;
+    }
+    .panel>.panel-body {
+      padding: .1em .5em;
+
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Page design using grid</h1>
+    </header>
+    <section class="introduction">
+      <p>Test using CSS grid to layout this sites pages (instead of front-end framework
+        Bootstrap).
+      </p>
+      <p>Layout is based on columns - 1 to 4, depending on width of viewport.</p>
+      <h2>Columns</h2>
+    </section>
+    <section class="columns">
+      <div class="panel">
+        <div class="panel-heading"><h3>Panel 1</h3></div>
+        <div class="panel-body">
+          <p>Some content of panel</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-heading"><h3>Panel 2</h3></div>
+        <div class="panel-body">
+          <p>Some content of panel</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-heading"><h3>Panel 3</h3></div>
+        <div class="panel-body">
+          <p>Some content of panel</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-heading"><h3>Panel 4</h3></div>
+        <div class="panel-body">
+          <p>Some content of panel</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+				<p><a href="./" class="btn btn-primary btn-xs">Back</a> to CSS Grid</p>
+				<p><strong>Created by:</strong> Bj&ouml;rn G.D. Persson. <strong>Updated:</strong> 2020-04-12.</p>
+		</footer>
+  </div>
+</body>
+</html>

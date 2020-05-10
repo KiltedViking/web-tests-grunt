@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Collapsing banner</title>
+  <style>
+    /* Reset all stules... Should maybe use reset.css instead? */
+    body, div, h1, h2, h3, h4, h5, h6, p, ul, li {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    body {
+      text-align: center;
+      /* My own properties */
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      height: 100px;
+      /* background-color: #dbdbdb; */
+      width: 100%;
+      z-index: 10;
+      position: fixed;
+      /* My own properties */
+      /* padding-top: 1em; */
+      padding-top: 20px;
+      background-color: #800000;
+      color: white;
+    }
+    #banner {
+      width: 100%;
+      height: 500px;
+      position: fixed;
+      top: 120px; /* Added 20px to adjust for padding in style above */
+      background-color: #707070;
+      background-image: url("../images/thistle.jpg");
+      background-size: cover;
+      background-position: center;
+      /* My own properties */
+      color: wheat;
+      padding-top: 20px;
+    }
+    #content {
+      width: 100%;
+      position: relative;
+      top: 440px; /* Added 40px to adjust for padding in 2 styles above */
+      background-color: #ebebeb;
+      height: 1500px;
+    }
+    /* My own styles */
+    footer {
+      margin-top: 20px;
+      border-top: 1px solid gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <header>
+      <h1>Collapsing banner</h1>
+    </header>
+
+    <div id="banner">
+      <h2>Welcome to my webpage</h2>
+    </div>
+
+    <div id="content">
+      <p>I would have put lipsum text here if it had worked with Emmet v2.</p>
+      <h2>References</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=-6UuPT9x6Fc">Collapsing Header 
+          Tutorial | HTML &amp; CSS</a> - YouTube video</li>
+      </ul>
+      <footer>
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-06.</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

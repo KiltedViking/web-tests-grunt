@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flexbox Basics - CSS</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Flexbox Basics</h1>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Terms</h2>
+            <dl>
+              <dt>Axis</dt>
+              <dd>Main - in direction of flex - or cross - across direction of flex</dd>
+
+              <dt>Size</dt>
+              <dd>Main - total size of flex in main axis - or cross - total size of cross axis</dd>
+
+              <dt>Start and end</dt>
+              <dd>Main and cross...</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Tips</h2>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Parent and child properties</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h3>Container properties</h3>
+            
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>display</code></td>
+                  <td><code>flex</code>, <code>flex-inline</code></td>
+                </tr>
+                <tr>
+                  <td><code>flex-direction</code></td>
+                  <td><code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code></td>
+                </tr>
+                <tr>
+                  <td><code>flex-wrap</code></td>
+                  <td><code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code></td>
+                </tr>
+                <tr>
+                  <td><code>flex-flow</code></td>
+                  <td>&lt;flex-direction&gt; &lt;flex-wrap&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>justify-content</code></td>
+                  <td>
+                    <code>flex-start</code>, <code>flex-end</code>, <code>start</code>,
+                    <code>end</code>, <code>left</code>, <code>right</code>,
+                    <code>center</code>, <code>space-between</code>, <code>space-around</code>,
+                    <code>space-evenly</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>align-items</code>/td>
+                  <td>
+                    <code>stretch</code>, 
+                    <code>flex-start</code> / <code>start</code> / <code>self-start</code>,
+                    <code>flex-end</code> / <code>end</code> / <code>self-end</code>,
+                    <code>center</code>, <code>baseline</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>align-content</code></td>
+                  <td>
+                    <code>flex-start</code> / <code>start</code>, <code>flex-end</code> / <code>end</code>,
+                    <code>center</code>, <code>space-between</code>, <code>space-around</code>,
+                    <code>space-evenly</code>, <code>stretch</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h3>Item properties</h3>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>order</code></td>
+                  <td>&lt;number&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>flex-grow</code></td>
+                  <td>&lt;number&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>flex-shrink</code></td>
+                  <td>&lt;number&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>flex-basis</code></td>
+                  <td>&lt;number&gt;, <code>auto</code></td>
+                </tr>
+                <tr>
+                  <td><code>flex</code></td>
+                  <td><code>none</code>, &lt;flex-grow&gt; &lt;flex-shrink&gt; &lt;flex-basis&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>align-self</code></td>
+                  <td>
+                    <code>stretch</code>, 
+                    <code>flex-start</code> / <code>start</code> / <code>self-start</code>,
+                    <code>flex-end</code> / <code>end</code> / <code>self-end</code>,
+                    <code>center</code>, <code>baseline</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to CSS Flexbox</p>
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2020-04-19.</p>
+      </div>
+    </footer>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Make all panels in a row the same height -->
+    <script src="../../js/jquery.matchHeight-min.js"></script>
+    <script src="../../js/main.js"></script>
+  </div>
+</body>
+</html>

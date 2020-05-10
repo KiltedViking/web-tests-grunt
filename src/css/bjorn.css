@@ -1,0 +1,101 @@
+@import url('yui/reset.css');
+/* HTML entities *************************************************************/
+html {
+	color: black;
+	background-color: #800000;
+}
+body {
+	font-family: Georgia, 'Times New Roman', serif;
+	color: black;
+	background-color: #800000;
+}
+h1, h2, h3 {
+	font-family: Verdana, Lucida, sans-serif;
+	font-weight: bold;
+}
+h1 {
+	color: white;
+	background-color: #800000;
+	font-size: 2em;
+	margin-top: -5px;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+}
+h2 {
+	font-size: 1.8em;
+}
+h3 {
+	font-size: 1.2em;
+}
+p {
+	margin: .5em 0;
+}
+ul, ol {
+	margin: .5em 0;
+}
+li {
+	list-style: circle;
+	margin-left: 15px;
+}
+footer {
+	clear: both;
+	border-top: solid 1px gray;
+	font-size: .8em;
+	text-align: center;
+}
+/* IDs *************************************************************/
+#page {
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 20px;
+	width: 800px;
+	color: black;
+	background-color: white;
+}
+
+body>div.container {
+	/* margin: 0 auto; */
+	border-radius: 20px;
+	padding: 20px;
+	/* width: 80%; */
+	color: black;
+	background-color: white;
+}
+/* Classes *************************************************************/
+.backlink {
+	clear: both;
+	border-top: solid 1px gray;
+	text-align: center;
+}
+.code {
+	color: black;
+	background-color: #ffaaaa;
+	font-family: monospace;
+	padding: 5px 10px;
+}
+.linklist {
+	width: 178px;
+	height: 200px;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	padding: 5px;
+}
+.linklist>h3 {
+	margin-top: 0px;
+}
+
+/*** Bootstrap modifications *************************************************/
+/* Colour of panel heading and borders */
+.panel-primary {
+	border-color: #800000;
+}
+.panel-primary>.panel-heading {
+	color: white;
+	background-color: #800000;
+	border-color: #800000;
+}

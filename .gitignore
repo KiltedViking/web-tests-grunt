@@ -105,3 +105,40 @@ dist
 
 # Project specific files
 package-lock.json
+
+# ZIP files (containing my backups?)
+/*.zip
+
+#Ignore files with sensetive  content (see files with _EXAMPLE in for examples of these files)
+/src/db_kiltedviking.php
+/src/apis/maps/first-load.js
+/src/apis/maps/geojson-load.js
+/src/apis/maps/multiple-places-load.js
+/src/xml/php/db.php
+
+#Ignore folders with other's work ;-)
+/src/bilder
+/src/css/*/*
+/src/css/fonts
+/src/css/foundation-icons
+/src/hottowel
+/src/javascript/backbone
+/src/javascript/ember
+/src/javascript/react
+/src/kiltedviking
+/src/webapps
+
+#Ignore files with other's work ;-)
+/fonts/*.eot
+/fonts/*.otf
+/fonts/*.svg
+/fonts/*.ttf
+/fonts/*.woff
+/fonts/*.woff2
+/src/images/gradient.jpg
+/src/javascript/*.zip
+/src/js/*.zip
+#/js/*
+
+#Ignore operating system files
+.DS_Store

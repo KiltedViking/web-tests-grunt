@@ -1,0 +1,54 @@
+/* TODO 2017-06-06: Styles have only been copied from Foundation version of pages */
+body {
+  color: black;
+  background-color: #800000;
+  font-size: 1.2em;
+}
+
+body h1 {
+  /*font-weight: bold;*/
+  color: white;
+  background-color: #800000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Increase font size of text to make it easier to read text. ;-) */
+/*body p {
+  font-family: Georgia;
+  font-size: 1.2em;
+}*/
+
+/*body>div.container {
+  color: black;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 0 20px;
+}*/
+footer {
+  border-top: solid 1px grey;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/*** Classes ******************************************************************/
+.page {
+  color: black;
+  background-color: white;
+  /* Setting margin left justifies page... ;-( */
+  /*margin: 20px;*/
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/*** Customisation of Semantic UI *********************************************/
+/*.panel.panel-primary {
+  border-color: #800000;
+}
+
+.panel.panel-primary>.panel-heading {
+  background-color: #800000;
+  border-color: #800000;
+}*/

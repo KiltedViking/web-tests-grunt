@@ -1,0 +1,29 @@
+/* Styles for pages using Semantic UI framework */
+body {
+    color: black;
+    background-color: #800000;
+}
+
+header.ui.container {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+div.ui.container, div.ui.grid {
+    background-color: white;
+    color: black;
+    padding: 0 20px;
+}
+
+footer.ui.container {
+    font-size: .8em;
+    background-color: white;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    border-top: solid gray 1px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

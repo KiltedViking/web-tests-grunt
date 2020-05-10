@@ -1,0 +1,32 @@
+body {
+  color: black;
+  background-color: #800000;
+  /*height: 100%;*/
+}
+
+body>div.uk-container {
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+header {
+  color: white;
+  background-color: #800000;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  background-color: #800000;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+}

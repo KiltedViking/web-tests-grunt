@@ -1,0 +1,23 @@
+body {
+	/*font-family: Georgia, 'Times New Roman', serif;*/
+	color: black;
+	background-color: #800000;
+}
+
+/* TODO: Remove bottom margin or padding */
+footer {
+	clear: both;
+	border-top: solid 1px gray;
+  margin-bottom: -20px;
+	font-size: .9em;
+	text-align: center;
+}
+
+.container.page {
+	/*margin: 0 auto;*/
+	border-radius: 20px;
+	padding: 20px;
+	/*width: 800px;*/
+	color: black;
+	background-color: white;
+}

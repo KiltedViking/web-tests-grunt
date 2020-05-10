@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing page 3</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <style>
+  body {
+    margin: 0
+  }
+  header {
+    background-image: url("../../images/bastad-pier.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    background-position: center;
+    text-align: center;
+  }
+  footer {
+    text-align: center;
+    font-size: .9em;
+    margin-bottom: 3em;
+  }
+  .nav .fa { font-size: 1.5em; }
+  .news { background-color: #c0c0c0; border-radius: 5px; }
+  .social-media>.fa, .development>.fa { font-size: 2em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kilted Viking</h1>
+    <h2>Peace loving nerd wishing for a sustainable society</h2>
+  </header>
+
+  <div class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-home"></i> Start</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Start <span class="sr-only">(current)</span></a></li> -->
+            <!-- <li><a href="#"><i class="glyphicon glyphicon-plane"></i> Travels</a></li> -->
+            <li><a href="#"><i class="fa fa-ship"></i> Travels</a></li>
+            <!-- <li><a href="#"><i class="fa fa-camera"></i> Photos</a></li> -->
+            <li><a href="#"><i class="fa fa-info"></i> About</a></li>
+            <li><a href="#"><i class="fa fa-male"></i> Me</a></li>
+            <li><a href="#"><i class="fa fa-mortar-board"></i> CV</a></li>
+            <li><a href="#"><i class="fa fa-flag"></i> In Swedish</a></li>
+            <li><a href="#"><i class="fa fa-desktop"></i> Computers [se]</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-2">
+        <h2>A header</h2>
+        <p>Some text</p>
+      </div>
+
+      <aside class="col-sm-2 col-sm-offset-0 news">
+        <h2>News</h2>
+        <h4>2017-09-02</h4>
+        <p>Redesigned website</p>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-02.</p>
+    <p class="social-media">
+      Social media:
+      <i class="fa fa-facebook-official" title="Facebook"></i>
+      <i class="fa fa-flickr" title="Flickr"></i>
+      <i class="fa fa-google-plus-official" title="Google+"></i>
+      <i class="fa fa-instagram" title="Instagram"></i>
+      <i class="fa fa-linkedin-square" title="Linked In"></i>
+      <i class="fa fa-pinterest-square" title="Pinterest"></i>
+      <i class="fa fa-tumblr-square" title="Tumblr"></i>
+      <i class="fa fa-twitter-square" title="Twitter"></i>
+    </p>
+    <p class="development">
+      Development:
+      <i class="fa fa-codepen" title="CodePen"></i>
+      <i class="fa fa-bitbucket" title="BitBucket"></i>
+      <i class="fa fa-github" title="Github"></i>
+      <i class="fa fa-gitlab" title="Gitlab"></i>
+      <i class="fa fa-jsfiddle" title="JSFiddle"></i>
+      <i class="fa fa-gitlab" title="Gitlab"></i>
+    </p>
+  </footer>
+</body>
+</html>

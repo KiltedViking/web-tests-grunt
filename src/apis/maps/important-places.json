@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Home",
+    "lat": 59.285269,
+    "lng": 18.274322,
+    "desc": "Where I live."
+  },
+  {
+    "name": "Henriksdal",
+    "lat": 59.285269,
+    "lng": 18.274322,
+    "desc": "Where I change from train to bus."
+  },
+  {
+    "name": "Slussen",
+    "lat": 59.285269,
+    "lng": 18.274322,
+    "desc": "Where I change from bus to underground."
+  },
+  {
+    "name": "Medborgarplatsen",
+    "lat": 59.285269,
+    "lng": 18.274322,
+    "desc": "Where I get of underground"
+  },
+  {
+    "name": "Work",
+    "lat": 59.285269,
+    "lng": 18.274322,
+    "desc": "Where I work."
+  },
+  {
+    "name": "Nacka station",
+    "lat": 59.285269,
+    "lng": 18.274322,
+    "desc": "Where I walk to to take the train home."
+  }
+]

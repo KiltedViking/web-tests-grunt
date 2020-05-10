@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Basic Foundation components - CSS</title>
+  <link rel="stylesheet" href="../../css/foundation.min.css">
+  <link rel="stylesheet" href="../../css/foundation-icons.css">
+  <link rel="stylesheet" href="../../css/bjorn-foundation.css">
+</head>
+<body>
+  <div class="row page">
+    <div class="small-12 column">
+      <header class="row">
+        <div class="small-12 column">
+          <h1>Basic Foundation components <small>A kitchen sink example</small></h1>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class="small-12 column">
+          <p>This page shows some basic components in Foundation, version 6, and it is based
+            on corresponding page for Bootstrap. Version 6 seems to differ a quite
+            some from previous version.</p>
+
+          <ul>
+            <li><a href="#glyphicons">Glyphicons</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#navs">Navs/Menus</a></li>
+            <li><a href="#navbars">Navbars/Top bars</a></li>
+            <li><a href="#pagination">Pagination</a></li>
+            <li><a href="#labels">Labels</a></li>
+            <li><a href="#badges">Badges</a></li>
+            <li><a href="#pageheaders">Page headers</a></li>
+            <li><a href="#alerts">Alerts/Callouts</a></li>
+            <li><a href="#panels">Panels/Cards</a></li>
+            <li><a href="#javascript">JavaScript features</a></li>
+          </ul>
+
+          <hr>
+          <h2 id="glyphicons">Glyphicons</h2>
+          <p>Glyphicons in Foundation (6) is an add-on, i.e. needs linking in of
+            <code>foundation-icons.css</code>. Button examples show that foreground
+            colour adapts to background colour for best contrast.
+          </p>
+
+          <p><i class="fi-page-filled"></i> File/Page icon (class: <code>fi-page-filled</code>)</p>
+          <p><i class="fi-home"></i> File/Page icon (class: <code>fi-home</code>)</p>
+
+          <hr>
+          <h2 id="buttons">Buttons</h2>
+          <p>Buttons are buttons (<code>button</code> and <code>submit</code>), but
+            can also be created from anchors (<code>a</code>). Appearence can be 
+            varied using:</p>
+          <ul>
+            <li><b>Size:</b> tiny, small, and large, as well as expanded.</li>
+            <li><b>Colouring:</b> primary, secondary, success, warning, and alert.</li>
+            <li><b>Other properties:</b> hollow and disabled.</li>
+          </ul>
+
+
+          <div>
+            <a href="#" class="button">Default button</a>
+            <a href="#" class="primary button">Primary button</a>
+            <a href="#" class="secondary button">Secondary button</a>
+            <a href="#" class="success button">Success button</a>
+            <a href="#" class="warning button">Warning button</a>
+            <a href="#" class="alert button">Alert button</a>
+            <a href="#" class="hollow info button">Hollow info button</a>
+            <a href="#" class="alert button" disabled>Disabled alert button</a>
+          </div>
+
+          <h3>Buttons with Glyphicons</h3>
+          <p>Buttons can have a mix of icons and/or text.</p>
+
+          <div>
+            <a href="#" class="button"><i class="fi-save" style="font-size: 2em"></i> Save</a>
+            <a href="#" class="hollow button"><i class="fi-save" style="font-size: 2em"></i> Save</a>
+            (icon class: <code>fi-save</code>)
+          </div>
+
+          <hr>
+          <h2 id="navs">Navs/Menus</h2>
+          <p>Navs in Foundation are called Menus.</p>
+
+          <h3>Menu (horisontal)</h3>
+          <ul class="menu">
+            <li class="active"><a href="#">Item1</a></li>
+            <li><a href="#">Item2</a></li>
+            <li><a href="#">Item3</a></li>
+            <li><a href="#">Item4</a></li>
+          </ul>
+
+          <h3>Vertical menu</h3>
+          <ul class="menu vertical">
+            <li class="active"><a href="#">Item1</a></li>
+            <li><a href="#">Item2</a></li>
+            <li><a href="#">Item3</a></li>
+            <li><a href="#">Item4</a></li>
+          </ul>
+
+          <hr>
+          <h2 id="navbars">Navbars/Top bars</h2>
+          <p>Navbars in Foundation are called Top bars.</p>
+
+          <div class="top-bar">
+            <ul class="menu">
+              <li class="active"><a href="">Item1</a></li>
+              <li><a href="">Item2</a></li>
+              <li><a href="">Item3</a></li>
+              <li><a href="">Item4</a></li>
+            </ul>
+          </div>
+
+          <hr>
+          <h2 id="pagination">Pagination</h2>
+          <ul class="pagination text-center" role="navigation">
+            <li class="pagination-previous disabled">Previous</li>
+            <li class="current">1</li>
+            <li><a href="#">2</a></li>
+            <li class="ellipsis" aria-hidden="true"></li>
+            <li><a href="#">11</a></li>
+            <li class="pagination-next"><a href="#">Next</a></li>
+          </ul>
+
+          <hr>
+          <h2 id="labels">Labels</h2>
+          <p>Labels are colourful splotches with text in them: 
+            <span class="label">A default label</span>
+            <span class="label primary">A primary label</span>
+            <span class="label secondary">A secondary label</span>
+            <span class="label success">A success label</span>
+            <span class="label alert">A alert label</span>
+            <span class="label warning">A warning label</span>
+          </p>
+
+          <hr>
+          <h2 id="badges">Badges</h2>
+          <p>A badge is usually a number indicating number of something. <span class="badge">42</span> 
+            But they might work with dates as well. <span class="badge">2015-05-18</span></p>
+
+          <p>Badges don't seem to be aware of being placed within other components:
+            <a href="#" class="button warning">Default button <span class="badge">42</span></a></p>
+
+          <hr>
+          <h2 id="pageheaders">Page headers</h2>
+          <p>This page uses a page header with a "subtext".</p>
+
+          <hr>
+          <h2 id="alerts">Alerts/Callouts</h2>
+          <p>Alerts in Foundation are called Callouts. Callouts can also be closable,
+            which requires loading jQuery and Foundation libraries.
+          </p>
+
+          <div class="callout">This is a default callout</div>
+          <div class="callout primary">This is a primary callout</div>
+          <div class="callout secondary">This is a secondary callout</div>
+          <div class="callout success">This is a success callout</div>
+          <div class="callout warning">This is a warning callout</div>
+          <div class="callout alert">This is a alert callout</div>
+
+          <hr>
+          <h2 id="panels">Panels/Cards</h2>
+          <p>Panels are called cards in Foundation. (Panels have been renamed to cards in version 6.)</p>
+
+          <div class="card">
+            <div class="card-divider">
+              <h3>A card</h3>
+            </div>
+            <div class="card-section">
+              <p>Some content within a section...</p>
+            </div>
+            <p>Content outside sections...</p>
+          </div>
+
+          <p>To arrange cards in columns requirer them being placed in rows and columns.</p>
+          <div class="row small-up-3">
+            <div class="column">
+              <div class="card">
+                <div class="card-divider">
+                  <h3>Card1</h3>
+                </div>
+                <div class="card-section">
+                  <p>Content1</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="card-divider">
+                  <h3>Card2</h3>
+                </div>
+                <div class="card-section">
+                  <p>Content2</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="card-divider">
+                  <h3>Card3</h3>
+                </div>
+                <div class="card-section">
+                  <p>Content3</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="card-divider">
+                  <h3>Card4</h3>
+                </div>
+                <div class="card-section">
+                  <p>Content4</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card bjorn">
+                <div class="card-divider">
+                  <h3>Card5</h3>
+                </div>
+                <div class="card-section">
+                  <p>Card customised by adding a custom class (<code>bjorn</code>) 
+                    to card, which &quot;activates&quot; custom styles for
+                    <code>card</code> and <code>card-divider</code>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h2 id="javascript">JavaScript features</h2>
+          <p>(Not got this far yet...)</p>
+        </div>
+      </div>
+
+      <footer class="row">
+        <div class="small-12 column">
+          <p><a href="./">Back</a> to Foundation</p>
+          <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-11.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

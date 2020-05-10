@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Semantic UI</title>
+    <link rel="stylesheet" href="../../css/semantic.min.css">
+    <link rel="stylesheet" href="../../css/bjorn-semantic.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header class="ui container center aligned">
+        <h1>Semantic UI</h1>
+    </header>
+    
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="eight wide column">
+                <h2>About this page</h2>
+                <p>This page is my first attempt at using Semantic UI framework.</p>
+                <p>The page consists of:</p>
+                <ul>
+                    <li>A header</li>
+                    <li>A couple of div's with content</li>
+                    <li>A footer</li>
+                </ul>
+            </div>
+            <div class="eight wide column">
+                <h2>Some more content (?)</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="four wide column">
+                <h2 class="ui header">A first column</h2>
+            </div>
+            <div class="four wide column">
+                <h2 class="ui header">A second column</h2>
+                <p>A paragraph</p>
+                <div class="ui segment">
+                    <p>A paragraph in a segment...</p>
+                </div>
+                <div class="ui red segment">
+                    <p>A paragraph in a red segment...</p>
+                </div>
+            </div>
+            <div class="four wide column">
+                <h2  class="ui header">A third column <div class="sub header">with subheader</div></h2>
+                <p><i class="info icon"></i> Info icon</p>
+            </div>
+            <div class="four wide column">
+                <h2  class="ui header">A fourth column</h2>
+                <button class="ui basic" onclick="alert('Basic button')">Basic button</button>
+                <a href="#" class="ui primary button" onclick="alert('Primary button')">Primary button (link)</a>
+                <span class="ui secondary button" onclick="alert('Secondary button')">Secondary button (span)</span>
+                <button class="ui basic red button" onclick="alert('Basic red button')">Basic red button</button>
+                <button class="ui inverted blue button" onclick="alert('Inverted blue button')">Inverted blue button</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="ui last container center aligned">
+        <p><a href="./" class="ui inverted blue button">Back to Semantic UI</a></p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-11.</p>
+    </footer>
+    <!-- Load JavaScript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/semantic.min.js"></script>
+    <script>
+        // function alert(msg) {
+            
+        // }
+    </script>
+</body>
+</html>

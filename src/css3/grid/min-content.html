@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid using max-content and min-content</title>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+    }
+    .container {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: 1fr max-content 2fr min-content 1fr;
+      margin: 2em 0;
+    }
+    .item {
+      height: 100%;
+      /* padding: .5em; */
+    }
+    .palegoldenrod>.item {
+      background-color: palegoldenrod;
+    }
+    .greenyellow>.item {
+      background-color: greenyellow;
+      color: pu
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Grid using <code>max-content</code> and <code>min-content</code></h1>
+    <p>Grid using widths <code>max-content</code> (column 2) and <code>min-content</code> (column 4).</p>
+  </header>
+
+  <div class="container palegoldenrod">
+    <div class="item">1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam leo ipsum, facilisis vitae vehicula ac, iaculis sed nulla. Nullam feugiat massa sed rutrum pellentesque. Morbi vel mauris urna. Pellentesque vel pretium ex. Suspendisse velit odio, aliquet eu posuere id, rutrum ac ligula. Proin vel molestie elit. Praesent vel venenatis lectus. Suspendisse sagittis lectus est, vel sagittis magna sollicitudin vitae. Donec dictum dui sit amet ante pharetra cursus. Fusce venenatis felis a orci consequat aliquam pretium sit amet urna.</div>
+    <div class="item">2 - Some content</div>
+    <div class="item">
+      <p>3</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam leo ipsum, facilisis vitae vehicula ac, iaculis sed nulla. Nullam feugiat massa sed rutrum pellentesque. Morbi vel mauris urna. Pellentesque vel pretium ex. Suspendisse velit odio, aliquet eu posuere id, rutrum ac ligula. Proin vel molestie elit. Praesent vel venenatis lectus. Suspendisse sagittis lectus est, vel sagittis magna sollicitudin vitae. Donec dictum dui sit amet ante pharetra cursus. Fusce venenatis felis a orci consequat aliquam pretium sit amet urna.</p>
+      <p>Vivamus porta justo vehicula ipsum euismod lacinia. In ut venenatis est. Donec velit sem, dictum ac leo quis, molestie tincidunt metus. Curabitur dolor odio, ornare et porttitor in, lobortis non justo. Vivamus tincidunt tristique mi in vulputate. Ut commodo quam vitae mattis hendrerit. Vivamus cursus, quam in mattis feugiat, tellus ex lacinia dolor, quis hendrerit orci massa venenatis enim. Fusce fermentum justo eu maximus imperdiet. Nunc et laoreet ante. Suspendisse eleifend nisi sapien, quis rutrum mi ultricies vel.</p>
+      <!-- <p>Maecenas eget sapien lectus. Cras elementum facilisis efficitur. Ut eleifend magna ac tempus euismod. Donec interdum est sed efficitur porttitor. Mauris malesuada vehicula turpis. Morbi rutrum nibh vel iaculis fermentum. Suspendisse eget eleifend quam, et ullamcorper ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur maximus vehicula finibus.</p>
+      <p>Fusce tortor nibh, commodo sit amet velit in, laoreet lacinia quam. Ut ut arcu tellus. Donec eu maximus sem. Duis elit augue, porta a leo vitae, aliquam venenatis lacus. Integer convallis ullamcorper dapibus. Quisque in metus sed lorem sodales malesuada in quis mi. Aenean viverra leo non dui vehicula convallis. Integer vitae dictum eros. Aliquam eu leo et tortor lobortis consequat pellentesque id nunc. Donec ligula dolor, vestibulum a ex et, tempus condimentum lorem. Integer gravida, odio iaculis feugiat ultrices, diam mauris varius leo, et laoreet felis libero at nulla. Integer sed velit magna.</p>
+      <p>Suspendisse ex nisi, mollis eget elit at, elementum efficitur lacus. Praesent in dapibus ligula. Vivamus turpis lorem, ullamcorper consequat porttitor ac, scelerisque et sapien. Sed nunc justo, tempor nec ex ac, molestie luctus ligula. Fusce eu sem sed quam aliquet luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel pulvinar dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut in bibendum eros, ut pretium libero.</p> -->
+    </div>
+    <div class="item">4 - Some content: consectetur</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+
+  <div class="container greenyellow">
+    <div class="item">1</div>
+    <div class="item">2 - Some longer content</div>
+    <div class="item">3</div>
+    <div class="item">4 - Some less cont-ent</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+
+  <footer>
+    <p><a href="./">Back</a> to CSS Grid</p>
+    <p><strong>Created by:</strong> Bj&ouml;rn G. D. Persson. <strong>Updated:</strong> 2020-04-17.</p>
+  </footer>
+</body>
+</html>

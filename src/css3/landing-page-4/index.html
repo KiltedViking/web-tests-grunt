@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing page 4</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <style>
+    body { margin: 0 }
+    header {
+      background-image: url("../../images/thistle.jpg");
+      background-position: center;
+      background-size: cover;
+      color: yellow;
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+      justify-content: center;
+      text-align: center;
+      /* filter: blur; */
+    }
+    footer {
+      font-size: .9em;
+      text-align: center;
+      margin: 5em 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kilted Viking</h1>
+    <h2>Peace loving nerd wishing for a sustainable society</h2>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Start</a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+              <li><a href="#">Travels</a></li>
+              <li><a href="#">Photos</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Me</a></li>
+              <li><a href="#">CV</a></li>
+              <!-- <li><a href="#">In Swedish</a></li>
+              <li><a href="#">Computers [se]</a></li> -->
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In Swedish <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Start</a></li>
+                  <li><a href="#">Computers [se]</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-2">
+        <h3>Another header</h3>
+        <p>Some text</p>
+      </div>
+
+      <div class="col-sm-2 col-sm-offset-0">
+          <h3>News</h3>
+          <h4>2017-09-03</h4>
+          <p>Redesigned website</p>
+        </div>
+    </div>
+  </div>
+  <footer>
+    <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-03.</p>
+  </footer>
+  <!-- Include Bootstrap's JavaScript + its depenency jQuery for dropdown and "hamburger" menus -->
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

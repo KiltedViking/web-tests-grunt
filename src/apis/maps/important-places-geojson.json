@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [18.274322, 59.285269]
+      },
+      "properties": {
+        "name": "Saltsjobaden centrum",
+        "description": "Properties are custom data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [18.129980, 59.306695]
+      },
+      "properties": {
+        "name": "Nacka station",
+        "description": "Properties are custom data"
+      }
+    }
+  ]
+}

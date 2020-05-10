@@ -1,0 +1,84 @@
+body {
+  color: black;
+  background-color: #800000;
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+#page {
+  color: black;
+  background-color: white;
+  max-width: 1040px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/*******************************************************************************
+* Header
+*******************************************************************************/
+#header {
+  max-width: 1000px;
+  width: 100%;
+}
+#header-left {
+  max-width: 660px;
+  width: 66%;
+  float:left;
+  color: white;
+  background-color: #800000;
+  border-radius: 10px;
+  text-align: center;
+}
+#header-right {
+  max-width: 340px;
+  width: 34%;
+  float:left;
+}
+
+/*******************************************************************************
+* Content
+*******************************************************************************/
+#content {
+  clear: both;
+  max-width: 1000px;
+  width: 100%;
+}
+#content-left {
+  max-width: 340px;
+  width: 34%;
+  float:left;
+  /* padding: 5%; */
+}
+#content-right {
+  max-width: 660px;
+  width: 66%;
+  float:left;
+  /* padding: 5%; */
+}
+
+/*******************************************************************************
+* Footer
+*******************************************************************************/
+#footer {
+  clear: both;
+  max-width: 1000px;
+  width: 100%;
+  border-top: solid lightgrey 1px;
+  text-align: center;
+}
+#footer-left {
+  max-width: 330px;
+  width: 33%;
+  float:left;
+}
+#footer-middle {
+  max-width: 340px;
+  width: 34%;
+  float:left;
+}
+#footer-right {
+  max-width: 330px;
+  width: 33%;
+  float:left;
+}

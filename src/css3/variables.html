@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS variables</title>
+  <style>
+    :root {
+      --my-bg-color: #800000;
+      --my-fg-color: white;
+    }
+
+    #my-block {
+      background-color: var(--my-bg-color);
+      color: var(--my-fg-color);
+      padding: 3em;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>CSS variables</h1>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="my-block">
+          <p>Some content...</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p><a href="./">Back</a> to CSS3</p>
+      <p><strong>Created by:</strong> Bj&ouml;rn G. D. Persson. <strong>Updated:</strong> 2019-09-12.</p>
+    </footer>
+  </div>
+</body>
+</html>

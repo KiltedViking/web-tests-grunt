@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Variable fonts</title>
+  <style>
+    @font-face {
+      font-family: Amstelvar, monospace;
+      src: url(../fonts/AmstelvarAlpha-VF.ttf) format(ttf);
+    }
+
+    html { font-family: Amstelvar; }
+
+    h1 { font-variation-settings: "wght" 700, "wdth" 400; }
+    p { font-variation-settings: "wght" 0, "wdth" 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Variable fonts</h1>
+        <p>Testing variable fonts from v-fonts.com, or rather https://github.com/TypeNetwork/Amstelvar/releases.</p>
+      </div>
+    </header>
+  </div>
+</body>
+</html>

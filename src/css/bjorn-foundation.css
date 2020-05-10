@@ -1,0 +1,59 @@
+    body {
+  color: white;
+  background-color: #800000;
+}
+
+body p, body li {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+}
+
+h1 {
+  color: white;
+  background-color: #800000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  /*margin-bottom: -20px;*/
+  border-top: solid 1px gray;
+}
+
+footer p {
+  font-size: 1em;
+  line-height: 1em;
+}
+
+/*** Classes ******************************************************************/
+.page {
+  color: black;
+  background-color: white;
+  /* Setting margin left justifies page... ;-( */
+  /*margin: 20px;*/
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/*** Customisation of Foundation **********************************************/
+/* Change styles for .card and .card-divider when .bjorn used with .card.*/
+.card.bjorn {
+  border-color: #800000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bjorn>.card-divider {
+  color: white;
+  background-color: #800000;
+}
+
+/*footer.row {
+  margin-bottom: -10px;
+}*/
+
+footer.row p {
+  line-height: 1.5;
+  margin-bottom: 0;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS filters</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/bjorn.css" type="text/css">
+  <style>
+    .blur {
+      transition-duration: 3s;
+    }
+    .blur:hover {
+      filter: blur(5px);
+      transition-duration: 3s;
+    }
+    .invert {
+      transition-duration: 3s;
+    }
+    .invert:hover {
+      filter: invert(100%);
+      transition-duration: 3s;
+    }
+    .sepia {
+      background-color: limegreen;
+      transition-duration: 3s;
+    }
+    .sepia:hover {
+      filter: sepia(100%);
+      transition-duration: 3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>CSS filters</h1>
+        <p>Example showing how element's appearance can be changed with filters.'</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h2>Blur</h2>
+        <img src="../images/bjorns-studiewebb.jpg" alt="Bj&ouml;rns studiewebb" class="blur">
+        <p class="blur">This is some text that should blur when mouse hovers.</p>
+      </div>
+
+      <div class="col-sm-3">
+        <h2>Invert</h2>
+        <img src="../images/bjorns-studiewebb.jpg" alt="Bj&ouml;rns studiewebb" class="invert">
+        <p class="invert">This is some text that should invert when mouse hovers.</p>
+      </div>
+
+      <div class="col-sm-3">
+        <h2>Sepia</h2>
+        <img src="../images/bjorns-studiewebb.jpg" alt="Bj&ouml;rns studiewebb" class="sepia">
+        <p class="sepia">This is some text that should go sepia when mouse hovers.</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-13.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

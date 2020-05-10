@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grid Basics - CSS</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Grid Basics</h1>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Terms</h2>
+            <dl>
+              <dt>Container</dt>
+              <dd>Parent element and container for items</dd>
+
+              <dt>Items</dt>
+              <dd>Child elements positioned in the grid</dd>
+
+              <dt>Cell</dt>
+              <dd></dd>
+
+              <dt>Area</dt>
+              <dd>One or more cells</dd>
+
+              <dt>Row (track)</dt>
+              <dd></dd>
+
+              <dt>Column (track)</dt>
+              <dd></dd>
+
+              <dt>Gap</dt>
+              <dd></dd>
+
+              <dt>Line</dt>
+              <dd>A border between cells. Can be negative</dd>
+
+              <dt>Explicit</dt>
+              <dd>Something defined by developer</dd>
+
+              <dt>Implicit</dt>
+              <dd>Something left to browser to handle</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Tips</h2>
+            <ul>
+              <li>Styling must be done on items/elements.</li>
+              <lI>Grid doesn't exist in HTML/DOM - only in CSS.</lI>
+              <li>Don't use percent!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel">
+          <div class="panel-body">
+            <h2>Parent and child properties</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h3>Container properties</h3>
+            
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>display</code></td>
+                  <td><code>grid</code>, <code>grid-inline</code></td>
+                </tr>
+                <tr>
+                  <td><code>grid-template-columns</code>, <code>grid-template-rows</code></td>
+                  <td>&lt;track-size&gt;/&lt;line-name&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>grid-template-areas</code></td>
+                  <td>&lt;grid-area-name&gt;|<code>.</code>|<code>none</code></td>
+                </tr>
+                <tr>
+                  <td><code>grid-template</code></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><code>column-gap</code>, <code>row-gap</code>, <code>gap</code></td>
+                  <td>&lt;line-size&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>justify-items</code></td>
+                  <td><code>start</code>, <code>center</code>, <code>end</code>, <code>stretch</code></td>
+                </tr>
+                <tr>
+                  <td><code>align-items</code></td>
+                  <td><code>start</code>, <code>center</code>, <code>end</code>, <code>stretch</code></td>
+                </tr>
+                <tr>
+                  <td><code>place-items</code></td>
+                  <td>&lt;justify-items&gt;/&lt;align-items&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>justify-content</code></td>
+                  <td>
+                    <code>start</code>, <code>center</code>, <code>end</code>, <code>stretch</code>,
+                    <code>space-around</code>, <code>space-between</code>, <code>space-evenly</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>align-content</code></td>
+                  <td>
+                    <code>start</code>, <code>center</code>, <code>end</code>, <code>stretch</code>,
+                    <code>space-around</code>, <code>space-between</code>, <code>space-evenly</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>place-content</code></td>
+                  <td>&lt;justify-content&gt;/&lt;align-content&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>grid-auto-columns</code>, <code>grid-auto-columns</code></td>
+                  <td>&lt;track-size&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>grid-auto-flow</code></td>
+                  <td><code>row</code>, <code>column</code>, <code>dense</code></td>
+                </tr>
+                <tr>
+                  <td><code>grid</code></td>
+                  <td>
+                    <code>none</code>,<br> 
+                    &lt;grid-template&gt;,<br>
+                    &lt;grid-template-rows&gt; / [ <code>auto-flow && dense</code>? ] &lt;grid-auto-columns&gt;?,<br>
+                    [ <code>auto-flow && dense</code>? ] &lt;grid-auto-rows&gt;? / &lt;grid-template-columns&gt;
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-body">
+            <h3>Item properties</h3>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Values</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>grid-column-start</code>,
+                    <code>grid-column-end</code>,
+                    <code>grid-row-start</code>,
+                    <code>grid-row-end</code></td>
+                  <td>
+                    &lt;line&gt;, <code>span &lt;number&gt;</code>, <code>span &lt;name&gt;</code>,
+                    <code>auto</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>grid-column</code>, <code>grid-row</code></td>
+                  <td>&lt;start-line&gt;/&lt;end-line&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>grid-area</code></td>
+                  <td>&lt;name&gt;, &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;</td>
+                </tr>
+                <tr>
+                  <td><code>justify-self</code></td>
+                  <td><code>start</code>, <code>center</code>, <code>end</code>, <code>stretch</code></td>
+                </tr>
+                <tr>
+                  <td><code>align-self</code></td>
+                  <td><code>start</code>, <code>center</code>, <code>end</code>, <code>stretch</code></td>
+                </tr>
+                <tr>
+                  <td><code>place-self</code></td>
+                  <td><code>auto</code>, &lt;align-self&gt; / &lt;justify-self&gt;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to CSS Grid</p>
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2020-04-12.</p>
+      </div>
+    </footer>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Make all panels in a row the same height -->
+    <script src="../../js/jquery.matchHeight-min.js"></script>
+    <script src="../../js/main.js"></script>
+  </div>
+</body>
+</html>

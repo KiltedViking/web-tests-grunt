@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox - CSS3</title>
+  <style>
+    /* Change font from terrible serif one... */
+    body {
+      font-family: Verdana, Helvetica, sans-serif;
+    }
+
+    /*** Flexbox related styles ***********************************************/
+    /* Using header to create flexbox */
+    header {
+      /* Make header a flexbox and 50% of viewport's horisontal height */
+      display: flex;
+      height: 50vh;
+      
+      border: dotted 2px navy;
+      background-color: lightseagreen;
+    }
+    header>h1 {
+      margin: auto; /* Move element to center of containing element */
+    }
+    
+    /* Using class to create flexbox */
+    .bottomright {
+      display: flex;
+      height: 25vh; /* Make element's height 25% of viewport's height */
+      justify-content: flex-end; /* Right justify element's content */
+
+      border: dotted 2px navy;
+      background-color: lightseagreen;
+    }
+    .bottomright>h2 {
+      align-self: flex-end; /* Move element to bottom of containing element */
+    }
+
+    /*** None-flexbox related styles ******************************************/
+    /* Change footer's style to match my "general" style */
+    footer {
+      border-top: solid 1px gray;
+      text-align: center;
+      font-size: .9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Flexbox - CSS3</h1>
+    </header>
+    <div class="content">
+      <p>Example above shows how to use flexbox and viewport units.</p>
+      <p>Header above is made into a flexbox (<code>display: flex</code>) and its 
+      height set to 50% of viewport's height (<code>height: 50vh</code>).</p>
+    </div>
+    <div class="bottomright">
+      <h2>Bottom-right justified header</h2>
+    </div>
+    <div class="content">
+      <p>Example above shows how to use justification and alignment to position content in flexbox.</p>
+      
+    </div>
+
+    <section class="content">
+      <h2>Reference</h2>
+      <ul>
+        <li><a target="_blank" href="http://caniuse.com/#search=flexbox">Can I use</a></li>
+        <li><a target="_blank" href="https://www.w3.org/TR/css-flexbox-1/">W3C</a></li>
+      </ul>
+    </section>
+    
+    <footer>
+      <p><a href="./">Back</a> to Flexbox</p>
+      <p><b>Created by:</b> B j&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-22.</p>
+    </footer>
+  </div>
+</body>
+</html>

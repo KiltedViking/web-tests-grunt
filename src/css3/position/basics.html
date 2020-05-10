@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Basics - CSS positioning</title>
+  <style>
+    html {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .container {
+
+    }
+    .parent {
+      background: rgb(90, 180, 90);
+      height: 75vh;
+      width: 75vw;
+      padding: 1em;
+      /* Make this element the "parent" for positioning */
+      position: relative;
+    }
+    .child {
+      background: tomato;
+      /* width: 50px;
+      height: 50px; */
+      /* Position this element, relative to parent for positioning */
+      position: absolute;
+      top: 100px;
+      right: 200px;
+      bottom: 300px;
+      left: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header row">
+      <div class="col-sm-12">
+        <h1>Basics - CSS positioning</h1>
+        <p>Example...</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 parent">
+        <h2>Parent element</h2>
+        <p>A line of text before child element</p>
+        <div class="child"></div>
+        <p>Another line of text after child element</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

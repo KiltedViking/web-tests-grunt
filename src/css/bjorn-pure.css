@@ -1,0 +1,37 @@
+
+body {
+    color: black;
+    background-color: #800000;
+}
+
+.content {
+    max-width: 1170px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 20px;
+    color: black;
+    background-color: white;
+}
+
+.content>header>h1 {
+    color: white;
+    background-color: #800000;
+    text-align: center;
+    margin-top: -10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.button-success {
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    font-size: .8em;
+    border-top: solid 1px gray;
+    margin-bottom: -15px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing page 5</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <style>
+    body {
+      border: 0;
+      margin: 0;
+    }
+    header {
+      background-image: url("../../images/kilchurn-castle-bridge.jpg");
+      background-position: center;
+      background-size: cover;
+      color: #FFD600;
+      display: flex;
+      flex-direction: column;
+      height: 50vh;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      /* text-shadow: 0 0 .7; */
+      /* Tests */
+      /* border: 1px dotted blue; */
+    }
+    .nav .fa {
+      font-size: 1.5em;
+    }
+    .row .h3-padding {
+      margin-top: 20px !important;
+    }
+    a, a:hover, a:visited {
+      color: #B71C1C;
+    }
+    footer {
+      border-top: 1px solid gray;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with background image -->
+  <header>
+    <!-- <div class="col-sm-12"> -->
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-xs-12"> -->
+            <h1>Kilted Viking</h1>
+            <h2 class="hidden-xs">Peace loving nerd that wishes for a sustainable society</h2>
+          <!-- </div>
+        </div>
+      </div> -->
+    <!-- </div> -->
+  </header>
+
+  <div class="container">
+    <!-- Menubar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- Button for when menu collapses -->
+          <button type="button" class="navbar-toggle collapsed" 
+            data-target="#main-navbar" data-toggle="collapse">
+            <!-- Add accessibility things -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand current" href="#">Start</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="nav navbar-nav">
+            <li><a href="#1"><i class="fa fa-ship"></i> Travels</a></li>
+            <li><a href="#2"><i class="fa fa-camera"></i> Photos</a></li>
+            <li><a href="#3"><i class="fa fa-info"></i> About</a></li>
+            <li><a href="#4"><i class="fa fa-male"></i> Me</a></li>
+            <li><a href="#5"><i class="fa fa-mortar-board"></i> CV</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-globe"></i> In Swedish
+                <i class="caret"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#6"><i class="fa fa-flag"></i> Start</a></li>
+                <li><a href="#7"><i class="fa fa-desktop"></i> Computers</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contents of page -->
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-2">
+        <!-- <h2>Content of page</h2> -->
+        <p class="h3-padding">These web pages (Kilted Viking) are now more about 
+          me, myself, than my interests. I mainly use these pages to distributed 
+          things to others (my whereabouts, my photos, and some knowledge about 
+          web development).</p> 
+
+        <p>See <a href="#">Swedish version</a> of site for computer related topics.</p>
+            
+        <p>And please, read with humour in mind. :-)</p>
+      </div>
+
+      <!-- news column -->
+      <div class="col-sm-2 col-sm-offset-0">
+        <h3>News</h3>
+        <h4>2017-09-10</h4>
+        <p>Redesigned website</p>
+
+        <h4>2011-06-12</h4>
+        <p>Redesigned HTML5 pages</p>
+        
+        <h4>2011-03-27</h4>
+        <p>Added photos + updated to HTML 5</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <footer>
+          <p><a href="../">Back</a> to CSS3</p>
+          <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-10.</p>
+          <p><b>Photo:</b> <a href="../../images/kilchurn-castle-bridge.jpg" target="_blank">Railway 
+            bridge</a> Northeast of Kilchurn castle and Loch Awe.</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <!-- Include JavaScript for Bootstrap navbar and its requirement jQuery -->
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

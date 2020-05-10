@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MUI CSS</title>
+	<link rel="stylesheet" href="../../css/mui.min.css">
+	<link rel="stylesheet" href="../../css/bjorn-mui.css">
+</head>
+<body>
+<div class="mui-container page">
+	<header class="mui-row">
+		<div class="mui-col-sm-12">
+			<h1>Basic MUI CSS Components <small>A kitchen sink example</small></h1>
+			<p>This examples shows off basic components in front-end framework MUI CSS.
+        It seems as if MUI CSS mostly focuses on typography and styling, i.e. styling
+        like that of Bootstrap or Foundation requires a bit more classes.
+      </p>
+		</div>
+	</header>
+
+	<div class="mui-row">
+		<div class="mui-col-sm-12">
+			<ul>
+        <li><a href="#containers">Containers</a></li>
+        <li><a href="#glyphicons">Glypicons</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#navs">Navs</a></li>
+        <li><a href="#navbars">Navbars</a></li>
+        <li><a href="#pagination">Pagination</a></li>
+        <li><a href="#labels">Labels</a></li>
+        <li><a href="#badges">Badges</a></li>
+        <li><a href="#pageheaders">Page headers</a></li>
+        <li><a href="#alerts">Alerts</a></li>
+        <li><a href="#panels">Panels</a></li>
+        <li><a href="#tabs">Tabs</a></li>
+        <li><a href="#javascript">JavaScript features</a></li>
+      </ul>
+
+      <hr>
+      <h2 id="containers">Containers</h2>
+      <p>There are two kinds of containers in MUI CSS:</p>
+
+      <ul>
+        <li>&quot;fixed&quot; (<code>.mui-container</code>) - widths based on the
+          &quot;four widths&quot;: large (lg), medium (md), small (sm), and extra 
+          small (xs).</li>
+        <li>fluid (<code>.mui-container-fluid</code>)</li>
+      </ul>
+
+      <p><a href="basic-containers.html" target="_blank">Container example</a></p>
+      
+      <hr>
+      <h2 id="glyphicons">Glyphicons</h2>
+      <p>MUI CSS seems to recommend FontAwesome for glyphicons...</p>
+      
+      <hr>
+      <h2 id="buttons">Buttons</h2>
+      <p>Buttons can be created using both <code>button</code> and <code>a</code>
+        tags.</p>
+      <div>
+        <button class="mui-btn">Default button</button>
+        <button class="mui-btn mui-btn--primary">Primary button</button>
+        <button class="mui-btn mui-btn--accent">Accent button</button>
+        <button class="mui-btn mui-btn--danger">Danger button</button>
+        <button class="mui-btn mui-btn--raised">Raised button</button>
+        <button class="mui-btn mui-btn--raised mui-btn--primary">Raised primary button</button>
+        <button class="mui-btn mui-btn--small mui-btn--primary">Small primary button</button>
+        <button class="mui-btn mui-btn--large mui-btn--primary">Large primary button</button>
+        <a class="mui-btn mui-btn--primary" href="#">Link (anchor) button</a>
+      </div>
+      
+      <hr>
+      <h2 id="navs">Navs</h2>
+      <p>There are no classes for navs, but they can be created by combining classes
+        for lists with other classes.
+      </p>
+      
+      <hr>
+      <h2 id="navbars">Navbars/Appbars</h2>
+      <p>There are no classes for navbars, or appbars as they are called in MUI CSS,
+        but <code>.mui-appbar</code> adds som colour and padding. Example on their
+        site suggests using a table to create an appbar.
+      </p>
+
+      <div class="mui-appbar">
+        <span>Some content of appbar</span>
+        <a href="#" class="mui-btn">A button</a>
+        <a href="#" class="mui-btn mui--appbar-height">A button</a>
+      </div>
+      
+      <hr>
+      <h2 id="pagination">Pagination</h2>
+      <p>There are no classes for pagination.</p>
+      
+      <hr>
+      <h2 id="labels">Labels</h2>
+      <p>There are no classes for labels, if not form labels.</p>
+      
+      <hr>
+      <h2 id="badges">Badges</h2>
+      <p>There are no classes for badges.</p>
+      
+      <hr>
+      <h2 id="pageheaders">Page headers</h2>
+      <p>There are no classes for page headers, but there is a few classes for typography.</p>
+      
+      <hr>
+      <h2 id="alerts">Alerts</h2>
+      <p>There are no classes for alerts, but if one wants one can use an overlay
+        that prevents scrolling.
+      </p>
+      
+      <hr>
+      <h2 id="panels">Panels</h2>
+      <p>There is only one type of panel.</p>
+
+      <div class="mui-panel">
+        <h3>Panel</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ab numquam quis et ipsa consequuntur quidem, qui quaerat a delectus recusandae consequatur molestiae voluptatem magnam doloribus voluptas minus totam reiciendis odit asperiores, dolore. Cupiditate aliquam repellat omnis! Voluptatum amet id, ex magni suscipit quae corrupti dicta nesciunt excepturi, ipsa enim nulla, saepe temporibus, quod in rem. Molestias aliquid, ut veniam eius dolorem est, quod nostrum dolore fuga saepe, minima quia ipsam sit voluptas velit consectetur quo repudiandae! Consequuntur asperiores, ad soluta, modi dolores nulla sapiente vitae. Dignissimos incidunt, inventore sint!</p>
+      </div>
+
+      <hr>
+      <h2 id="tabs">Tabs</h2>
+      <p>Tabs require loading JavaScript as well.</p>
+
+      <ul class="mui-tabs__bar">
+        <li class="mui--is-active"><a data-mui-toggle="tab" data-mui-controls="pane-default-1">Tab 1</a></li>
+        <li><a data-mui-toggle="tab" data-mui-controls="pane-default-2">Tab 2</a></li>
+        <li><a data-mui-toggle="tab" data-mui-controls="pane-default-3">Tab 3</a></li>
+      </ul>
+
+      <div class="mui-tabs__pane mui--is-active" id="pane-default-1">
+        <h3>Pane 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda temporibus magnam repudiandae architecto qui adipisci error ducimus, sed, explicabo illo quaerat accusamus labore at nihil dicta numquam laboriosam fuga a nesciunt vero accusantium! Laudantium consectetur maxime sunt laborum! Laboriosam minus fuga pariatur, saepe maxime, accusantium in, iste voluptas nisi numquam porro necessitatibus reprehenderit incidunt, tempora libero. Voluptatibus odio officia temporibus voluptas, totam in excepturi qui dolor, fugiat officiis reprehenderit, et ad sint! Expedita deserunt ipsam earum non id explicabo adipisci perspiciatis nihil perferendis quod ab culpa, omnis consequuntur, in cumque?</p>
+      </div>
+      <div class="mui-tabs__pane" id="pane-default-2">
+        <h3>Pane 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae accusamus minima error numquam reiciendis. Doloremque, consectetur. Amet vitae doloremque soluta, assumenda odit dignissimos quos molestias tenetur exercitationem architecto! Necessitatibus autem natus ut error, modi fuga quasi dolorem vero ullam, quos similique commodi. Nulla porro dolor non, beatae iste consectetur repellat libero quia rerum similique fuga eius fugiat corporis nam maiores, cumque ut. Placeat repudiandae maiores asperiores illo nulla minus nemo modi sed tempore perferendis atque necessitatibus numquam laboriosam, dolor obcaecati id eligendi officia reiciendis non, veritatis, quos fuga, molestias incidunt?</p>
+      </div>
+      <div class="mui-tabs__pane" id="pane-default-3">Pane-3</div>
+
+      <hr>
+      <h2 id="javascript">JavaScript features</h2>
+      <p>The only JavaScript feature I've found is tabs...</p>
+
+		</div>
+	</div>
+
+	<div class="mui-row">
+		<div class="mui-col-sm-12">
+			<h3>Reference</h3>
+			<ul>
+				<li><a href="https://www.muicss.com/" target="_blank">Official site</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer class="mui-row">
+		<div class="mui-col-sm-12">
+			<p><a href="./">Back</a> to MUI CSS</p>
+			<p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2017-07-23.</p>
+		</div>
+	</footer>
+</div>
+
+	<script src="../../js/mui.min.js"></script>
+</body>
+</html>

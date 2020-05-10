@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Responsive grid - CSS</title>
+  <style>
+    body {
+      background-color: seagreen;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 1em;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2em;
+    }
+
+    #grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .demo-box {
+      display: block;
+      height: 200px;
+      width: 100%;
+      /* background-color: white; */
+      /* color: white; */
+      border: solid 1px maroon;
+      font-weight: bold;
+      text-align: center; /* Horisontal alignment */
+      line-height: 200px; /* Fake vertical alignment by setting line height to height of container */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Responsive grid</h1>
+    <p>This is a responsive grid design, i.e. number of columns in grid is based on how many fits.</p>
+    <p>Example is based on YouTube video by Layout Land, Jen Simmons.</p>
+    <div id="grid-container">
+      <div class="demo-box">1</div>
+      <div class="demo-box">2</div>
+      <div class="demo-box">3</div>
+      <div class="demo-box">4</div>
+      <div class="demo-box">5</div>
+      <div class="demo-box">6</div>
+      <div class="demo-box">7</div>
+      <div class="demo-box">8</div>
+      <div class="demo-box">9</div>
+      <div class="demo-box">10</div>
+      <div class="demo-box">11</div>
+      <div class="demo-box">12</div>
+      <div class="demo-box">13</div>
+      <div class="demo-box">14</div>
+    </div>
+
+    <footer style="font-size: .8em; text-align: center;margin-top: 2em;border-top: solid 1px grey;">
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2020-04-12.</p>
+    </footer>
+  </div>
+</body>
+</html>
