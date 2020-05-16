@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn G.D. Persson">
+	<title>AJAX with XML and JSON data</title>
+	<style type="text/css">
+		html { font-family: Verdana, Helvetica, sans-serif; color: black; background-color: #800000; }
+		h1 { 
+			color: white; 
+			background-color: #800000; 
+			text-align: center;
+			margin-top: -10px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input { font-size: 1em; }
+		footer { 
+			clear: both;
+			text-align: center; 
+			font-size: .8em; 
+			margin: 5px 0px -15px;
+			border-top: solid 1px gray;
+		}
+		#page { 
+			width: 1000px; 
+			margin: 0 auto;
+			border-radius: 20px;
+			padding: 20px;
+			color: black; 
+			background-color: white;
+		}
+		.width500 {
+			width: 400px;
+			float: left;
+			border: solid 1px gray;
+			padding: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		//Global variables to keep towns and films showing in them
+		var towns, townsJSON;
+
+		//Loads towns and films from server as XML, if not already loaded, and shows films in town
+		function showFilms(town) {
+			if(!towns)
+				getTowns(town);
+			else
+				printFilms(town);
+		}
+
+		//Loads towns and films from server as JSON, if not already loaded, and shows films in town
+		function showFilmsJSON(town) {
+			if(!towns)
+				getTownsJSON(town);
+			else
+				printFilmsJSON(town);
+		}
+		
+		function getTowns(town) {
+			//Request text file from server synchronous
+			var ajax = new XMLHttpRequest();
+			
+			//Add event handler for handling returned request
+			ajax.onreadystatechange = function()
+			{
+				//If request loaded - add file content to div tag
+				if (ajax.readyState == 4 && ajax.status == 200)
+				{
+					//Add contents of text file to first child, replacing newlines
+					// with br tags
+					towns = ajax.responseXML;
+					
+					printFilms(town);
+				}
+			}
+			
+			//Open connection and send request
+			ajax.open("GET","ajaxxml.xml");
+			ajax.send('');			
+		}
+		
+		function getTownsJSON(town) {
+			//Request text file from server synchronous
+			var ajax = new XMLHttpRequest();
+			
+			//Add event handler for handling returned request
+			ajax.onreadystatechange = function()
+			{
+				//If request loaded - add file content to div tag
+				if (ajax.readyState == 4 && ajax.status == 200)
+				{
+					console.log(ajax.responseText)
+					//Add contents of text file to first child, replacing newlines
+					// with br tags
+					townsJSON = eval("(" + ajax.responseText + ")");
+					
+					printFilmsJSON(town);
+				}
+			}
+			
+			//Open connection and send request
+			ajax.open("GET","ajaxjson.json");
+			ajax.send('');			
+		}
+		
+		function printFilms(town) {
+			var films = towns.getElementsByTagName(town)[0].getElementsByTagName("f");
+			var ulFilms = document.getElementById("films").firstChild;
+			
+			//Remove existing li tags
+			for(var i = ulFilms.childNodes.length; i > 0 ; i--)
+				ulFilms.removeChild(ulFilms.childNodes[i-1]);
+			
+			if(films)
+			{
+				for(var i = 0; i < films.length; i++)
+				{
+					var li = document.createElement("li");
+					li.appendChild(document.createTextNode(films[i].firstChild.data));
+					ulFilms.appendChild(li);
+				}
+			}
+		}
+		
+		//TODO 2013-02-24: Loading JSON data doesn't work if load XML data first
+		function printFilmsJSON(town) {
+			//Get town "object"
+			var films = eval("townsJSON." + town);
+			var ulFilms = document.getElementById("films").firstChild;
+			
+			//Remove existing li tags
+			for(var i = ulFilms.childNodes.length; i > 0 ; i--)
+				ulFilms.removeChild(ulFilms.childNodes[i-1]);
+			
+			if(films)
+			{
+				for(var i = 0; i < films.length; i++)
+				{
+					var li = document.createElement("li");
+					li.appendChild(document.createTextNode(films[i]));
+					ulFilms.appendChild(li);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>AJAX with XML and JSON data</h1>
+	</header>
+	
+	<p>Klicka på knapp för att visa filmer i respektive stad.</p>
+	
+	<div class="width500">
+		<h2>XML data</h2>
+		<form>
+			<input type="button" onclick="showFilms('goteborg');" value="Göteborg">
+			<input type="button" onclick="showFilms('stockholm');" value="Stockholm">
+			<input type="button" onclick="showFilms('ostersund');" value="Östersund">
+		</form>
+	</div>
+	
+	<div class="width500">
+		<h2>JSON data</h2>
+		<form>
+			<input type="button" onclick="showFilmsJSON('goteborg');" value="Göteborg">
+			<input type="button" onclick="showFilmsJSON('stockholm');" value="Stockholm">
+			<input type="button" onclick="showFilmsJSON('ostersund');" value="Östersund">
+		</form>
+	</div>
+	
+	<div id="films" style="clear: both;"><ul></ul></div>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-02-05.</p>
+	</footer>
+</div>
+</body>
+</html>

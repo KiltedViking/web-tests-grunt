@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canvas example</title>
+</head>
+<body>
+  <h1>Two circles,,,</h1>
+  
+  <canvas id="myCanvas" width="400" height="400"></canvas>
+
+  <script>
+    var canvas = document.querySelector("#myCanvas");
+    var ctx = canvas.getContext('2d');
+    
+    drawSomething(120, 120, 50, 'red');
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    drawSomething(120, 120, 20, 'blue');
+    
+    function drawSomething(x, y, r, color) {
+        ctx.strokeStyle = color;
+        ctx.arc(x, y, r, 0, 2*Math.PI);
+        ctx.stroke();
+    }
+  </script>
+</body>
+</html>

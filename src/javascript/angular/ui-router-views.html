@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ViewApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Routing with ui-router and views - AngularJS</title>
+  <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Routing with ui-router and views - AngularJS</h1>
+        <p><del>TODO: Move from external template to property, or create components...</del></p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav nav-list">
+          <li ui-sref-active="active"><a ui-sref="index">Start page</a></li>
+          <li ui-sref-active="active"><a ui-sref="page2">Page 2</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <ui-view name="left"></ui-view>
+      </div>
+
+      <div class="col-sm-4">
+        <ui-view name="center"></ui-view>
+      </div>
+
+      <div class="col-sm-4">
+
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to AngularJS</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-01-02.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="../../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../../js/angular-1.5.8/angular.js"></script>
+  <script src="../../js/angular-1.5.8/angular-ui-router.js"></script>
+
+  <!-- Custom JavaScript for page - usually a good idea to use external file ;-) -->
+  <script>
+    angular.module("ViewApp", ["ui.router"])
+      .config(ViewConfig);
+
+      ViewConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
+      function ViewConfig($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/");
+
+        $stateProvider
+          .state("index", {
+            url: "/",
+            views: {
+              left: { templateUrl: "./ui-router-views/left.html" },
+              center: { templateUrl: "ui-router-views/center.html" }
+            }
+          })
+          .state("page2", {
+            url: "/page2",
+            views: {
+              left: { template: "<h2>Page 2</h2>" },
+              center: { template: "<h2>Another heading...</h2>" }
+            }
+          });
+      }
+  </script>
+</body>
+</html>

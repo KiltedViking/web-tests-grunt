@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Variables and Functions</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/bjorn.css" type="text/css">
+</head> 
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Variables and Functions</h1>
+        <p>Examples showing how variables and functions are declared and work.</p>
+      </div>
+    </header>
+  
+    <footer>
+      <p><a href="./">Back</a> to JavaScript</p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-10-18.</p>
+    </footer>
+  </div>
+
+  <script>
+    globalUndeclared = 1;
+    var globalDeclared = 2;
+
+    // var lateVariable = 1;
+    function lateDeclaration() {
+
+      //This is a local variable as its declaration will be hoisted before this line
+      localLateVariable = 42;
+      globalUndeclaredInFunction = 3;
+
+      return localLateVariable;
+
+      //This variable declaration will be hoisted 
+      var localLateVariable;
+    }
+    
+    console.log(lateDeclaration());
+    console.log(lateVariable);
+  </script>
+</body>
+</html>

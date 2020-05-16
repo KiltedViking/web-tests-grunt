@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>IndexedDB - HTML</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <h1>IndexedDB - HTML</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Example showing how IndexedDB can be used...</p>
+      </div>
+
+      <div class="col-md-6">
+        <div id="divTarget">
+          <form action="#">
+            <button id="btnCreate" class="btn btn-success">Created database CustomerDB</button>
+            <button id="btnDelete" class="btn btn-danger">Delete database CustomerDB</button>
+
+            <fieldset>
+              <legend>Add person</legend>
+              <label for="firstname">Firstname:</label>
+              <input type="text" id="firstname"><br>
+              <label for="lastname">Lastname:</label>
+              <input type="text" id="lastname"><br>
+              <input type="submit" id="btnSave" value="Save person" class="btn btn-primary">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="backlink">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to HTML5 and JavaScript</p>
+    </div>
+    <footer class="row">
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2016-07-24.</p>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function() {
+      if(!window.indexedDB)
+        alert("Your browser doesn't support IndexedDB!");
+      else
+        console.log("window.indexedDB exists");
+
+      document.getElementById("btnCreate").onclick = createCustomerDB;
+      document.getElementById("btnDelete").onclick = deleteCustomerDB;
+      document.getElementById("btnSave").onclick = saveCustomer;
+    }
+
+    var db;
+    var dbName = "CustomerDB";
+    var tableCustomers = "customers";
+
+    //*** Event handlers for buttons
+    function createCustomerDB(event) {
+      var request = indexedDB.open(dbName);
+
+      request.onsuccess = function(event) {
+        console.log("DB: Database successfully opened!");
+        db = event.target.result;
+      }
+
+      request.onerror = function(event) {
+        console.log("DB: Database FAILED opened");
+      }
+
+      request.onupgradeneeded = function(event) {
+        console.log("DB: Database upgrade required!");
+
+        db = event.target.result;
+
+        var objectStore = db.createObjectStore("customers");
+      }
+    }
+
+    function deleteCustomerDB(event) {
+      indexedDB.deleteDatabase(dbName)
+    }
+
+    function saveCustomer(event) {
+      event.preventDefault();
+
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      // var newCustomer = { firstname: firstname, lastname: lastname };
+      var newCustomer = {}
+      newCustomer.firstname = firstname;
+      newCustomer.lastname = lastname;
+
+      // console.log("Person to add: " + firstname + " " + lastname);
+      console.log(newCustomer);
+
+      //*** Create transaction and set up callbacks
+      var tran = db.transaction([tableCustomers], "readwrite");
+
+      tran.oncomplete = function(event) {
+        console.log("TRAN: Completed");
+      }
+
+      tran.onerror = function(event) {
+        console.log("TRAN: ERROR!");
+      }
+
+      //Create request and set up callbacks
+      var osCustomers = tran.objectStore(tableCustomers);
+      var request = osCustomers.add(newCustomer);
+
+      request.onsuccess = function(event) {
+        console.log("REQUEST: Succeded");
+      }
+
+      request.onerror = function(event) {
+        console.log("REQUEST: ERROR!");
+      }
+
+    }
+  </script>
+</body>
+</html>

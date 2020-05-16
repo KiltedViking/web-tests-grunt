@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Search array - Handlebars</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Search, or filter, array - Handlebars</h1>
+        <p>Example that shows how to search for value in an array, or filter to only
+          items that match a filter.
+        </p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <h2>Filter list</h2>
+        <div class="form-group">
+          <label for="filter">Filter: </label>
+          <input type="text" id="filter" name="filter" class="form-control">
+        </div>
+        <button id="btnFilter" class="btn btn-primary pull-right">Filter!</button>
+      </div>
+
+      <div class="col-sm-6">
+        <div id="output-list"></div>
+      </div>
+
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to Handlebars</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-11.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/handlebars.min.js"></script>
+
+  <script>
+    window.addEventListener("load", function() {
+      var list = [
+        { id: 0, name: "Adam" },
+        { id: 1, name: "Bertil" },
+        { id: 2, name: "Ceasar" },
+        { id: 3, name: "David" },
+        { id: 4, name: "Erik" },
+        { id: 5, name: "Fredrik" },
+        { id: 6, name: "Gustaf" },
+        { id: 7, name: "Helge" },
+        { id: 8, name: "Ivar" },
+        { id: 9, name: "Johan" },
+        { id: 10, name: "Kalle" },
+        { id: 11, name: "Ludvig" }
+      ];
+
+      var source = document.querySelector("#list-template").innerHTML;
+      // console.log(source);
+      var template = Handlebars.compile(source);
+
+      var outputList = document.querySelector("#output-list");
+
+      //Apply any filter...
+      var data = { nameList: filterNameList(list, "") };
+      console.log(data);
+      outputList.innerHTML = template(data);
+
+      var btnFilter = document.querySelector("#btnFilter");
+      btnFilter.addEventListener("click", function(event) {
+        var txtFilter = document.querySelector("#filter");
+        var filter = txtFilter.value;
+        var data = { nameList: filterNameList(list, filter) };
+        console.log(data);
+        outputList.innerHTML = template(data);
+      });
+    })
+
+    function filterNameList(list, filter) {
+      return list.filter(function(item) {
+        if(item.name.toLowerCase().indexOf(filter.toLowerCase()) > -1)
+          return true;
+
+        return false;
+      })
+    }
+  </script>
+
+  <script id="list-template" type="x-handlebars-template">
+    <h2>Names ({{nameList.length}})</h2>
+    <ul>
+    {{#each nameList}}
+      <li>{{name}}</li>
+    {{/each}}
+    </ul>
+  </script>
+</body>
+</html>

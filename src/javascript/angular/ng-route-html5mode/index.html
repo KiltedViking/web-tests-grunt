@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NgRouteApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Routing with ng-route, version 2 - AngularJS</title>
+  <link rel="stylesheet" href="../../../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../css/bjorn.css">
+  <base href="/~bjorn/javascript/angularjs/ng-route-route/">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Routing with ng-route, version 2 - AngularJS</h1>
+        <p>Example testing some more features of AngularJS' ng-route, among them
+          the &quot;HTML5 Mode&quot;.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="nav nav-pills">
+          <li><a href="./">Start page</a></li>
+          <li><a href="page2">Page 2</a></li>
+          <li><a href="page3">Page 3</a> (no config)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <ng-view></ng-view>
+      </div>
+
+      <div class="col-sm-4">
+        <h2>About</h2>
+        <p>Only the first two pages are configured as routes, i.e. the third one
+          will redirect to to first (default) one.
+        </p>        
+      </div>
+
+      <div class="col-sm-4">
+        <h2>&nbsp;</h2>
+        <p>Using &quot;HTML5 Mode&quot;, i.e. removing
+          the hash sign in URL, means that one can't bookmark anything
+          but the root route ("/"):
+        </p>
+        <p>(This example also showed that there was no <code>.route()</code> in AngularJS
+          v. 1.5.8 to replace <code>.when()</code>.)</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="../">Back</a> to AngularJS</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-01-03.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../../js/jquery-1.11.3.min.js"></script>
+  <script src="../../../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../../../js/angular-1.5.8/angular.js"></script>
+  <script src="../../../js/angular-1.5.8/angular-route.js"></script>
+
+  <!-- Custom JavaScript for page - usually a good idea to use external file ;-) -->
+  <script>
+    angular.module("NgRouteApp", ["ngRoute"])
+      .config(NgRouteConfig);
+
+      NgRouteConfig.$inject = ["$routeProvider", "$locationProvider"];
+      function NgRouteConfig($routeProvider, $locationProvider) {
+        $routeProvider
+          .when("/", {
+            template: "<h2>Start page</h2><p>Change page using menu above.</p>"
+          })
+          .when("/page2", {
+            template: "<h2>Page 2</h2>"
+          })
+          .otherwise("/");
+
+        // configure html5 to get links working on jsfiddle
+        $locationProvider.html5Mode(true);
+      }
+  </script>
+</body>
+</html>

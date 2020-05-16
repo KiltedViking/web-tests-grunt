@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Private properties - JavaScript Classes</title>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/bjorn.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Private properties - JavaScript Classes</h1>
+    </header>
+    <p>Example showing how to declare and use private properties in JavaScript classes.
+      These properties are declared with a <code>#</code> as prefix, i.e. <code>#birthYear</code>.
+    </p>
+    <hr>
+    <p>Persons age: <output id="persons-age"></output></p>
+
+    <div class="backlink">
+      <p><a href="./" class="btn btn-primary btn-xs">Back</a> to JavaScript Classes</p>
+    </div>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2019-06-08.</p>
+    </footer>
+  </div>
+
+  <script>
+    class Person {
+      #birthYear;
+
+      constructor(birthYear) {
+        #birthYear = birthYear;
+      }
+
+      function age() {
+        const currentYear = 2019;
+
+        return #birthYear - currentYear;
+      }
+    }
+
+    var person = new Person(1970);
+    var outputElement = document.getElementById("persons-age");
+    outputElement.innerHTML = person.age();
+  </script>
+</body>
+</html>

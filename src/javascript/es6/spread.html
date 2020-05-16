@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spread operator - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Spread operator - JavaScript</h1>
+        <p></p>
+      </div>
+    </header>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to ES2015</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-08-27.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    //Spread operator as an argument to function
+    function add(a, b, ...more) {
+      var sum = a + b;
+      // console.log(more);
+      for(var i = 0; i < more.length; i++) {
+        sum += more[i];
+      }
+      return sum;
+    }
+
+    console.log(add(1, 2));
+    console.log(add(1, 2, 3, 4));
+
+    //Spread an array over arguments of function
+    var numbers = [1, 2, 3, 4, 5];
+    
+    function addFiveNumbers(a, b, c, d, e) {
+      return a + b + c + d + e;
+    }
+    
+    console.log(addFiveNumbers(...numbers));
+  </script>
+</body>
+</html>

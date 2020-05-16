@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../php/searchalbums.xsl"?>
+<albums>
+	<album albumindex="51"><a>Simple Minds</a><t>Sons &amp; fascination + Sister feelings call</t></album>
+	<album albumindex="52"><a>Simple Minds</a><t>New gold dream (81-82-83-84)</t></album>
+	<album albumindex="53"><a>Simple Minds</a><t>Sparkle in the rain</t></album>
+	<album albumindex="54"><a>Simple Minds</a><t>Glittering prize</t></album>
+	<album albumindex="55"><a>Simple Minds</a><t>Good news from the next world</t></album>
+	<album albumindex="271"><a>Simple Minds</a><t>Street fighting years</t></album>
+	<album albumindex="350"><a>Simple Minds</a><t>N?apolis</t></album>
+	<album albumindex="439"><a>Simple Minds</a><t>Real life</t></album>
+	<album albumindex="447"><a>Simple Minds</a><t>In the city of light</t></album>
+	<album albumindex="544"><a>Simple Minds</a><t>Once upon a time</t></album>
+	<album albumindex="545"><a>Simple Minds</a><t>The best of</t></album>
+	<album albumindex="546"><a>Simple Minds</a><t>Neon lights</t></album>
+	<album albumindex="635"><a>Simple Minds</a><t>Real to real</t></album>
+	<album albumindex="636"><a>Simple Minds</a><t>Life in a day</t></album>
+</albums>

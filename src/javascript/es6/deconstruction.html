@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Deconstruction - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Deconstruction - JavaScript</h1>
+        <p>Example showing how decunstructin can be used to "extract" properties
+          from an object.
+        </p>
+      </div>
+    </header>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to ES2015</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-08-27.</p>
+      </div>
+    </footer>
+  </div> 
+  <script>
+  var person = { firstName: "Björn", lastName: "Persson" };
+
+  var { firstName: fn, lastName: ln } = person;
+
+  console.log(fn);
+  console.log(ln);
+  
+  </script>
+</body>
+</html>

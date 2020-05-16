@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Form:input - HTML</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+  <style>
+    .label300 { width: 300px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Form: input - HTML</h1>
+    </header>
+
+    <p>Test of new types for tag <code>input</code>. Browsers seems to have
+      implemented support for them differently... i.e. a date input might be shown
+      as an ordinary textbox or as a 'drop-down selector'.</p>
+
+    <div class="row">
+      <div class="col-md-5 col-sm-5">
+        <h2>New type values</h2>
+
+        <ul>
+          <li><code>search</code> - search box</li>
+          <li><code>tel</code> - telephone number</li>
+          <li><code>url</code> - web address</li>
+          <li><code>email</code> - E-mail address</li>
+          <li><code>date</code> - date</li>
+          <li><code>time</code> - time</li>
+          <li><code>number</code> - numeric value</li>
+          <li><code>range</code> - numeric value using slider</li>
+          <li><code>color</code> - colour well</li>
+        </ul>
+      </div>
+
+      <div class="col-md-7 col-sm-7">
+        <h2>New attributes</h2>
+        <ul>
+          <li><code>maxlength</code> - max number of allowed charachters</li>
+          <li><code>minlength</code> - min number of allowed charachters</li>
+          <li><code>size</code> - number of visible characters</li>
+          <li><code>readonly</code> - if contents is read-only</li>
+          <li><code>required</code> - if value is required</li>
+          <li><code>multiple</code> - if multiple values are allowed</li>
+          <li><code>pattern</code> - regular expression to validate value against</li>
+          <li><code>min</code> - min value allowed</li>
+          <li><code>max</code> - max value allowed</li>
+          <li><code>step</code> - granularity when stepping up/down</li>
+          <li><code>list</code> - ID of list to use as options (use with tag datalist)</li>
+          <li><code>placeholder</code> - an example value to show if no value entered</li>
+          <li><code></code></li>
+        </ul>
+      </div>
+    </div>
+    <form action="#">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Search box</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type search.</p>
+          <label for="search">Enter text to search for:</label>
+          <input type="search" id="search" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Telephone number</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type tel.</p>
+          <label for="tel">Telephone:</label>
+          <input type="tel" id="tel" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Web address</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type url.</p>
+          <label for="url">Web address:</label>
+          <input type="url" id="url" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>E-mail address</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type email.</p>
+          <label for="email">E-mail address:</label>
+          <input type="email" id="email" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Date</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type date.</p>
+          <label for="date">Enter date:</label>
+          <input type="date" id="date" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Time</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type time.</p>
+          <label for="time">Enter time:</label>
+          <input type="time" id="time" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Number</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type number.</p>
+          <label for="number">Number:</label>
+          <input type="number" id="number" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Range</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type range.</p>
+          <label for="range">Set value:</label>
+          <input type="range" id="range" />
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Colour</h3>
+        </div>
+        <div class="panel-body">
+          <p>Using type color.</p>
+          <label for="color">Enter colour:</label>
+          <input type="color" id="color" />
+        </div>
+      </div>
+
+      <h3>New attributes</h3>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3>Miscellaneous</h3>
+        </div>
+        <div class="panel-body">
+          <p>Testing new attributes for input of type text.</p>
+          <div>
+            <label for="attr1" class="label300">Some text with min and max length:</label>
+            <input type="text" id="attr1" minlength="2" maxlength="10" />
+          </div>
+
+          <div>
+            <label for="attr2" class="label300">Some read-only text:</label>
+            <input type="text" id="attr2" readonly value="Should not change" >
+          </div>
+
+          <div>
+            <label for="attr3" class="label300">Some required value:</label>
+            <input type="text" id="attr3" required >
+          </div>
+
+          <div>
+            <label for="attr4" class="label300">Multiple values:</label>
+            <input type="text" id="attr4" multiple >
+          </div>
+
+          <div>
+            <label for="attr5" class="label300">Some value with min and max values:</label>
+            <input type="number" id="attr5" min="0" max="100" >
+          </div>
+
+          <div>
+            <label for="attr6" class="label300">Values by steps:</label>
+            <input type="number" id="attr6" step="4" >
+          </div>
+
+          <div>
+            <label for="attr7" class="label300">List of values:</label>
+            <input type="text" id="attr7" list="attr7list" >
+            <datalist id="attr7list">
+              <option value="1">One</option>
+              <option value="2">Two</option>
+            </datalist>
+          </div>
+
+          <div>
+            <label for="attr8" class="label300">Placeholder:</label>
+            <input type="text" id="attr8" placeholder="bjorn@kiltedviking.net" >
+          </div>
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <input type="submit" value="Send form..." class="btn btn-primary">
+      </div>
+    </form>
+
+    <div class="backlink">
+      <p><a href="./">Back</a> to HTML</p>
+    </div>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-01-07.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+body { 
+	color: black; 
+	background-color: #800000; 
+	font-family: Georgia, Verdana, Helvetica, sans-serif; 
+}
+#page { 
+	color: black; 
+	background-color: white; 
+	width: 1000px; 
+	margin: 0px auto;
+	border-radius: 20px;
+	padding: 20px;
+}
+header { 
+	color: white; 
+	background-color: #800000; 
+	border-radius: 15px; 
+	padding: 5px; 
+	text-align: center; 
+	font-family: Verdana, sans-serif; 
+}
+footer { 
+	text-align: center; 
+	margin-top: 10px; 
+	border-top: solid 1px gray; 
+	margin-bottom: -5px; 
+	font-size: 0.8em;  
+}
+
+label.width150 {
+	clear: both;
+	width: 150px;
+	float: left;
+	margin-top: 10px;
+	padding: 5px;
+	text-align: right;
+}
+input.width150label {
+	float: left;
+	margin-top: 10px;
+	padding: 5px;
+}

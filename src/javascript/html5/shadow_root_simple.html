@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Shadow root, simple - HTML</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+  <style>
+    h2 { color: navy; }
+    .errorRed { color: red; font-weight: bold; }
+  </style>
+</head>
+
+<template id="h2Template">
+  <style>
+    h2 { color: white; background-color: #800000; }
+  </style>
+  <h2>H2 heading from template</h2>
+  <h3>H3 heading from template</h3>
+  <p>A paragraph from template. Styling for H3 heading (above) and paragraph takes on style
+    from H2 in page...
+  </p>
+</template>
+
+<body>
+  <div class="container">
+    <header class="row">
+      <h1>Shadow root, simple - HTML</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Example showing how web components can be used with shadow root...</p>
+        <p>Column (right) has 3 H2 headings where middle one has an ID so that it 
+          can be given a shadow root. Colour of H2 headings have been given a navy
+          blue colour via style in page. (Other styles are from Bootstrap.)</p>
+        <p>Style of heading with shadow root should not use same style as of other
+          headings in page. (To make it <b>really</b> obvious it has also been given
+          diffent colour and background colour. ;-))
+        </p>
+        <output id="outputError"></output>
+      </div>
+
+      <div class="col-md-6">
+        <h2>First H2 heading in page</h2>
+        <p><span>Omnis itaque rerum deleniti error pariatur magnam libero molestias distinctio ex, voluptatum ut quaerat velit? Officia est quod quas, eaque provident soluta. Facilis vero, odio dicta assumenda quas dolores nulla.</span></p>
+        <h2 id="h2WithShadowRoot">Second H2 heading in page with ID</h2>
+        <p>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolorum incidunt delectus earum fugit ipsa perferendis mollitia voluptate, non assumenda, dolore minus beatae sit exercitationem, iusto similique. Ullam, totam, exercitationem.</span>
+        </p>
+        <h2>Third H2 heading in page</h2>
+        <p>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolorum incidunt delectus earum fugit ipsa perferendis mollitia voluptate, non assumenda, dolore minus beatae sit exercitationem, iusto similique. Ullam, totam, exercitationem.</span>
+        </p>
+      </div>
+    </div>
+    <div class="backlink">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to HTML5 and JavaScript</p>
+    </div>
+    <footer class="row">
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2017-09-17.</p>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function() {
+      var template = document.querySelector("#h2Template");
+      var host = document.querySelector("#h2WithShadowRoot");
+      /* 2017-09-17: W3C spec calls method attachShadow() */
+      // if(host.createShadowRoot)
+      // {
+      //   var root = host.createShadowRoot();
+      //   root.appendChild(document.importNode(template.content, true));
+      // }
+      // else 
+      if(host.attachShadow) {
+        var root = host.attachShadow({ mode: "open" });
+        root.appendChild(document.importNode(template.content, true));
+      }
+      else
+      {
+        var span = document.createElement("span");
+        span.classList.add("errorRed");
+        span.innerText = "ERROR: Your browser doesn't support shadow root!";
+        document.getElementById("outputError").appendChild(span);
+      }
+      // document.getElementById("btnCreate").onclick = createCustomerDB;
+      // document.getElementById("btnDelete").onclick = deleteCustomerDB;
+      // document.getElementById("btnSave").onclick = saveCustomer;
+    }
+
+    
+  </script>
+</body>
+</html>

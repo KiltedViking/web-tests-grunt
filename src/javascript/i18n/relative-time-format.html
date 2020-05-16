@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relative Time Format - JavaScript's Intl</title>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/bjorn.css" rel="stylesheet">
+  <style>
+    output { display: inline; } /* Using outlook elements seems to have been illadvised... */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Relative Time Format - JavaScript's Intl</h1>
+    </header>
+    <p>Example showing how to format dates using class Intl.</p>
+    <p>The class <code>Intl</code> is currently only available in Google Chrome (?). Check
+      <a href="https://caniuse.com/#search=Intl" target="_blank" rel="noopener">CanIUse</a>.</p>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>English</h3>
+        <p>Yesterday: <output id="en-yesterday"></output></p>
+        <p>Today: <output id="en-today"></output></p>
+        <p>Tomorrow: <output id="en-tomorrow"></output></p>
+        <p>Last week: <output id="en-last-week"></output></p>
+      </div>
+
+      <div class="col-md-4">
+        <h3>Swedish</h3>
+        <p>Yesterday: <output id="se-yesterday"></output></p>
+        <p>Today: <output id="se-today"></output></p>
+        <p>Tomorrow: <output id="se-tomorrow"></output></p>
+        <p>Last week: <output id="se-last-week"></output></p>
+      </div>
+    </div>
+
+    <div class="backlink">
+      <p><a href="./" class="btn btn-primary btn-xs">Back</a> to I18N</p>
+    </div>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2019-06-08.</p>
+    </footer>
+  </div>
+
+  <script>
+    const rtfEn = new Intl.RelativeTimeFormat('en', {
+      numeric: 'auto'
+    });
+    document.getElementById("en-yesterday").innerHTML = rtfEn.format(-1, 'day');
+    document.getElementById("en-today").innerHTML = rtfEn.format(0, 'day');
+    document.getElementById("en-tomorrow").innerHTML = rtfEn.format(1, 'day');
+    document.getElementById("en-last-week").innerHTML = rtfEn.format(-1, 'week');
+
+    const rtfSe = new Intl.RelativeTimeFormat('sv-SE', {
+      numeric: 'auto'
+    });
+    document.getElementById("se-yesterday").innerHTML = rtfSe.format(-1, 'day');
+    document.getElementById("se-today").innerHTML = rtfSe.format(0, 'day');
+    document.getElementById("se-tomorrow").innerHTML = rtfSe.format(1, 'day');
+    document.getElementById("se-last-week").innerHTML = rtfSe.format(-1, 'week');
+  </script>
+</body>
+</html>

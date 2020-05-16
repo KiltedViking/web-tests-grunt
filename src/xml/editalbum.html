@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<!-- *************************************************************************************
+	* Purpose:		Edit page for Kilted Viking's Albums, an assignment on the course XML
+	*				at Mid Sweden University.
+	* Created by:	Bjorn Persson, bjpe0800@student.miun.se
+	* Created:		2012-12-31
+	************************************************************************************** -->
+	<head>
+		<meta charset="UTF-8" />
+		<title>Kilted Viking's Albums</title>
+		<link rel="stylesheet" href="xml.css" />
+		<link rel="stylesheet" href="js/themes/base/jquery-ui.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!-- Add jQuery UI for auto complete -->
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<!-- Add jQuery XSLT plugin to enable transformation av XML with XSLT -->
+		<script type="text/javascript" src="js/jquery.xslt.js"></script>
+		<!-- Add -->
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<h1>Kilted Viking's Albums</h1>
+			</header>
+			
+			<nav style="text-align: right;">
+				<a href="./">Start page</a>
+			</nav>
+			
+			<fieldset>
+				<legend>.:|[ Add album ]|:.</legend>
+				<form id="frmAlbum" action="php/savealbum.php" method="post">
+					<label for="txtArtist" class="width150">Artist:</label>
+					<input type="text" id="txtArtist" name="txtArtist" maxlength="35" size="37" class="width150label" />
+					<label for="txtTitle" class="width150">Album title:</label>
+					<input type="text" id="txtTitle" name="txtTitle" maxlength="45" size="47" class="width150label" />
+					<label for="txtReleased" class="width150">Year released:</label>
+					<input type="text" id="txtReleased" name="txtReleased" maxlength="4" size="6" class="width150label" />
+					<label for="txtMedia" class="width150">Media:</label>
+					<input type="text" id="txtMedia" name="txtMedia" maxlength="15" size="17" class="width150label" />
+					<label for="txtComment" class="width150">Comment:</label>
+					<input type="text" id="txtComment" name="txtComment" maxlength="150" size="70" class="width150label" />
+					<label for="btnSubmit" class="width150">&nbsp;</label>
+					<input type="submit" id="btnSubmit" name="btnSubmit" value="Save album" class="width150label" />
+				</form>
+			</fieldset>
+			
+			<div id="output"></div>
+
+			<nav style="text-align: right;">
+				<a href="./">Start page</a>
+			</nav>
+			
+			<footer>
+				<p><b>Created by:</b> Bj&ouml;rn Persson. <b>Updated:</b> 2013-01-06.</p>
+			</footer>
+<!-- *** JavaScript **************************************************************** -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#txtArtist").focus();
+			
+			$("#btnSubmit").click(function(event) {
+				event.preventDefault();
+				
+				//TODO: Add XML preamble
+				var xml = $('<formtest></formtest>');
+				xml.append('<?xml version="1.0" encoding="UTF-8" ?>');
+				
+				$("form#frmAlbum input[type='text']").each(function(){
+					//TODO: remove prefix
+					xml.append('<' + $(this).attr('id') + '>' + $(this).val() + '</' +  $(this).attr('id') + '>');
+				});
+				
+				//Use AJAX to submit form
+						$.ajax({
+							type: "POST",
+							url: "php/savealbums.php", 
+							data: { data: $("#txtSearch").html() },
+							dataType: "text",
+							success: showSuccess
+						});
+						
+				//alert(xml.html());
+				
+				$("#output").html(xml);
+			});
+			
+			//Function to execute when result of submitting form is done
+			function showSuccess(data) {
+				$("#divResult").html("Album saved to database.");
+			}
+			/*****************************************************************
+						Set up AJAX for submitting form */
+/*					$("#frmAlbum").submit(function(event) {
+						//Prevent the submit event from happening, i.e. another page loading
+						event.preventDefault();
+						
+						
+					});
+*/					
+		});
+	</script>
+	</body>
+</html>

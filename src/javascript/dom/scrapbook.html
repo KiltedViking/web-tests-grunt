@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Scrapbook for DOM API</title>
+  <link rel="stylesheet" href="../../css/bootstrap.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Scrapbook for DOM API</h1>
+    <p>Some tidbits picked up while watching YouTube video &quot;JavaScript APIs you've
+      never heard of (And some you have)&quot; by Nicholas Zakas.</p>
+
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">Useful DOM methods</div>
+      <ul>
+        <li><code>children</code> - list of child element nodes, i.e. list without
+          text nodes (as childNodes gives)</li>
+        <li><code>firstChildElement</code></li>
+        <li><code>lastChildElement</code></li>
+        <li><code>nextElementChild</code></li>
+        <li><code>previousElementChild</code></li>
+        <li><code></code></li>
+        <li><code></code></li>
+        <li><code></code></li>
+        <li><code></code></li>
+        <li><code></code></li>
+      </ul>
+
+      <ul id="list1">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+      <div id="divOut1"></div>
+    </div>
+
+    <div class="backlink">
+      <p><a href="../">Back</a> to JavaScript</p>
+    </div>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-01-07.</p>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    var list1 = document.getElementById("list1");
+
+    var list1li3 = list1.children[2];
+
+    var divOut1 = document.getElementById("divOut1");
+    divOut1.innerHTML = "Value of third list item: " + list1li3.innerHTML;
+    console.log(list1li3.nodeName);
+  </script>
+</body>
+</html>

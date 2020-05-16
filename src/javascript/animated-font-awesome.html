@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animated FontAwesome icons</title>
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Animated FontAwesome icons</h1>
+        <p>Example showing how to animate FontAwesome icons.</p>
+      </div>
+    </header>
+    
+    <div id="chain" class="fa" style="font-size: 4em;"></div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-02.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    function animateChainLink() {
+      let chain = document.getElementById("chain");
+      chain.innerHTML = "&#xf0c1;";
+
+      setTimeout(function() {
+        chain.innerHTML = "&#xf127;";
+      }, 1000);
+    }
+
+    animateChainLink();
+    setInterval(animateChainLink, 2000);
+  </script>
+</body>
+</html>

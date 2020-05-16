@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DateTimeFormat - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>DateTimeFormat - JavaScript</h1>
+        <p>Examples showing how to use DateTimeFormat.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Date using locale</h3>
+        <p>Examples showing how date can be display using browser's (or, in some cases,
+          operating system's) language settings and using specific locales.
+        </p>
+
+        <h4>Using browser's (or operating system's) settings</h4> 
+        <p><output id="date-time"></output></p>
+
+        <h4>Using Swedish locale</h4> 
+        <p><output id="date-time-se"></output></p>
+
+        <h4>Using US locale</h4> 
+        <p><output id="date-time-us"></output></p>
+
+        <h4>Using British locale</h4> 
+        <p><output id="date-time-gb"></output></p>
+
+        <h4>Using Finnish locale</h4> 
+        <p><output id="date-time-fi"></output></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>References</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">MDN</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript language</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-02.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    var outputDateTime = document.getElementById("date-time"); 
+    var outputDateTimeSe = document.getElementById("date-time-se"); 
+    var outputDateTimeUs= document.getElementById("date-time-us"); 
+    var outputDateTimeGb = document.getElementById("date-time-gb"); 
+    var outputDateTimeFi = document.getElementById("date-time-fi"); 
+    var date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+    
+    // toLocaleString without arguments depends on the implementation,
+    // the default locale, and the default time zone
+    outputDateTime.innerText = new Intl.DateTimeFormat().format(date);
+    // → "12/19/2012" if run with en-US locale (language) and time zone America/Los_Angeles (UTC-0800)
+    outputDateTimeSe.innerText = new Intl.DateTimeFormat("sv-SE").format(date);
+    outputDateTimeUs.innerText = new Intl.DateTimeFormat("en-US").format(date);
+    outputDateTimeGb.innerText = new Intl.DateTimeFormat("en-GB").format(date);
+    outputDateTimeFi.innerText = new Intl.DateTimeFormat("fi-FI").format(date);
+  </script>
+</body>
+</html>

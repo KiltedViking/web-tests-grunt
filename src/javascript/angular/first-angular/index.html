@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FirstAngularApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>First AngularJS</title>
+  <link rel="stylesheet" href="../../../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../bjorn.css">
+</head>
+<body ng-controller="FirstAngularController">
+  <div class="container">
+    <header class="row">
+      <div class="col-md-12">
+        <h1>First AngularJS</h1>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Content</h2>
+
+        <h3>Two-way binding vs. one-way binding</h3>
+        <p>Input is given an attribute ng-model to connect it to controller and 
+           it's value output using interpolation, i.e. name of property enclosed
+           in double braces (also called mustaches or handlebars).</p>
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" ng-model="name">
+        </p>
+        <p>Your name: {{name}}</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-md-12">
+        <p><a href="../" class="btn btn-primary btn-xs">Back</a> to Angular</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-09-20.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../../js/jquery-1.11.3.js"></script>
+  <script src="../../../js/angular-1.4.8/angular.min.js"></script>
+  <script src="../../../js/bootstrap/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

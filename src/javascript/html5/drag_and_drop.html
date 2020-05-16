@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Drag and drop from desktop - HTML</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+  <style>
+    .over {
+      background-color: #c0c0c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <h1>Drag and drop from desktop - HTML</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Example showing how file(s) can be dragged and dropped.</p>
+      </div>
+
+      <div class="col-md-6">
+        <div id="divTarget">
+          <p>Drag and drop file here...</p>
+        </div>
+      </div>
+    </div>
+    <div class="backlink">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to HTML5 and JavaScript</p>
+    </div>
+    <footer class="row">
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2016-07-24.</p>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      // $divTarget = $("#divTarget");
+      // $divTarget.append("<p>Document loaded!</p>");
+      // $divTarget.on("drop", dropHandler);
+
+      divTarget = document.getElementById("divTarget");
+      var newP = document.createElement("p");
+      newP.innerText = "Document loaded! (... using plain JavaScript)"
+      divTarget.appendChild(newP);
+      divTarget.addEventListener("drop", dropHandler);
+      divTarget.addEventListener("dragenter", dragOverHandler);
+      divTarget.addEventListener("dragleave", dragOutHandler);
+
+      //Test so that adding event listener works...
+      divTarget.addEventListener("click", function(event) {
+        var newP = document.createElement("p");
+        newP.innerText = "Div clicked! (... using plain JavaScript)"
+        event.target.appendChild(newP);
+      });
+    });
+
+    function dragOverHandler(event) {
+      event.target.classList.add("over");
+    }
+
+    function dragOutHandler(event) {
+      event.target.classList.remove("over");
+    }
+
+    function dropHandler(event) {
+      // Do not propagate the event
+      event.stopPropagation();
+      // Prevent default behavior, in particular when we drop images or links
+      event.preventDefault();
+
+      // $divTarget = $("#divTarget");
+      // $divTarget.append("<p>File dropped!</p>");
+      divTarget = document.getElementById("divTarget");
+      var newP = document.createElement("p");
+      newP.innerText = "File dropped! (... using plain JavaScript)"
+      divTarget.appendChild(newP);
+    }
+  </script>
+</body>
+</html>

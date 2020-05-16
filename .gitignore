@@ -117,6 +117,7 @@ package-lock.json
 /src/xml/php/db.php
 
 #Ignore folders with other's work ;-)
+/downloads
 /src/bilder
 /src/css/*/*
 /src/css/fonts

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="UiRouterApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Routing with ui-router - AngularJS</title>
+  <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Routing with ui-router - AngularJS</h1>
+        <p>Example showing how to do routing with AngularJS add-on ui-router.
+          ui-router also uses fragments (?) for doing routing (as changing them doesn't
+          require navigation?).
+        </p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <ui-view></ui-view>
+      </div>
+      
+      <div class="col-sm-6">
+        <h2>About</h2>
+        <p>Routing requires the following, beyond basic AngularJS app:</p>
+        <ul>
+          <li>Loading of script file <code>angular-ui-router.js</code>.</li>
+          <li>A tag <code>&lt;ui-view&gt;</code> (or tag with attribute with same name).</li>
+          <li>Config block injected with <code>$stateProvider</code> and (?) <code>$urlRouterProvider</code>.</li>
+          <li>Configuration of each route using <code>$stateProvider.state()</code>.</li>
+        </ul>
+        <p>Some reasons to use ui-router instead of ng-route:</p>
+        <ul>
+          <li>can have several views (ng-route only one).</li>
+          <li>links are created with custom attribute, i.e. changes with 
+            route configurations.</li>
+          <li>allows for nested routes/states.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to AngularJS</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-01-01.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery-1.9.1.js"></script>
+  <script src="../../js/bootstrap/bootstrap.js"></script>
+  <script src="../../js/angular-1.5.8/angular.min.js"></script>
+  <script src="../../js/ui-router/angular-ui-router.min.js"></script>
+  <script>
+    angular.module("UiRouterApp", ["ui.router"])
+      .config(UiRouterConfig);
+
+    UiRouterConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
+    function UiRouterConfig($stateProvider, $urlRouterProvider) {
+      //Route to redicte to if route doesn't exist
+      $urlRouterProvider.otherwise("/");
+
+      $stateProvider
+        .state('index', {
+          url: "/",
+          template: "<h2>Start page</h2><p><a ui-sref='page2'>Page 2</a></p><p>Test value: {{testValue}}</p>",
+          controller: StartPageController
+        })
+        .state('page2', {
+          url: "/page2",
+          template: "<h2>Page 2</h2><p><a ui-sref='index'>Start Page</a></p><p>Test value: {{testValue}}</p>",
+          controller: SecondPageController
+        });
+    }
+  
+    StartPageController.$inject = ["$scope"];
+    function StartPageController($scope) {
+      $scope.testValue = 42;
+    }
+  
+    SecondPageController.$inject = ["$scope"];
+    function SecondPageController($scope) {
+      $scope.testValue = "Test value (string): 42";
+    }
+  </script>
+</body>
+</html>

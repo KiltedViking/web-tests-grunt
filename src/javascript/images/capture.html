@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <input type="file" id="input" capture="environment" accept="image/*">
+  <div id="target">Drop image here...</div>
+  <img src="" alt="" id="image">
+
+  <script>
+    const input = document.getElementById("input");
+    const image = document.getElementById("image");
+    const target = document.getElementById("target");
+
+    input.addEventListener("change", (e) => {
+      console.log(e.target.files);
+      const file = Array.from(e.target.files)[0];
+      image.src = URL.createObjectURL(file);
+    });
+
+    target.addEventListener("drop", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+
+      console.log(e.dataTransfer.files);
+      // image.src = e.dataTransfer.files[0]["name"];
+
+      const file = Array.from(e.dataTransfer.files)[0];
+      image.src = URL.createObjectURL(file);
+    });
+
+    target.addEventListener("dragover", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "copy";
+    });
+  </script>
+</body>
+</html>

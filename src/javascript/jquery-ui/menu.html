@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>JavaScript Menu - expandable/collapsable</title>
+		<link rel="stylesheet" href="../../css/jquery-ui.min.css">
+		<style type="text/css">
+			body { background-color: #800000; color:black; font-family: Verdana, Arial, Helvetica, sans-serif; }
+			#page { background-color: white; color:black; width: 1000px; margin: 0 auto; border-radius: 20px; padding: 20px; }
+			nav#leftmenu { float: left; }
+			div#content { margin: 0 145px; }
+			div#rightmenu { float: right; }
+			footer { clear: both; font-size: 80%; text-align: center; margin-top: 50px; border-top: solid 1px gray; }
+			/* Modify CSS set by jQuery UI */
+			.ui-menu { width: 125px; }
+			.ui-widget { font-family: inherit; font-size: inherit; }
+			.ui-widget-content { border: inherit; }
+			.ui-menu-item { background-color: #800000; color: white; height: 2em; }
+			.ui-widget-content a { color: white; }
+			.ui-menu-icon { background-image: url("images/ui-icons_ffffff_256x240.png"); color: white; background-color: #800000;; }
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<h1>JavaScript Menu - expandable/collapsable</h1>
+			</header>
+			<nav id="leftmenu">
+				<ul id="menu">
+					<li><a href="#">Item 1</a></li>
+					<li><a href="#">Item 2</a>
+						<ul>
+							<li><a href="#">Item 2a</a></li>
+							<li><a href="#">Item 2b</a></li>
+						</ul>
+					</li>
+					<!-- <li>-</li> -->
+					<li><a href="#">Item 3</a></li>
+				</ul>
+			</nav>
+			<div id="rightmenu">
+				<h3>Links</h3>
+				<ul>
+					<lI>Link 1</li>
+					<lI>Link 1</li>
+				</ul>
+			</div>
+			<div id="content">
+				<h2>About</h2>
+				<p>Adding jQuery UI menu to page.</p>
+				<p>... also trying out new design for kiltedviking.net.</p>
+				<h2>Steps taken</h2>
+				<p></p>
+				<ul>
+					<lI>Added reference to jQuery and jQuery UI source files. For the latter I also added reference (link) to theme's CSS file.</li>
+					<li>Added a two-level list, i.e. one list item ("Item 2") containing another list.</li>
+					<li>Gave top-level list an ID (&quot;menu&quot;),</li>
+					<li>Grabbed list via ID and called function menu(), in jQuery UI, on element.</li>
+					<li>(For safety I placed call of function above in function ready().)</li>
+				</ul>
+			</div>
+			<footer>
+				<p><a href="./">Back</a> to jQuery UI</p>
+				<p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2014-01-05.</p>
+			</footer>
+		</div>
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#menu").menu();
+			});
+		</script>
+	</body>
+</html>

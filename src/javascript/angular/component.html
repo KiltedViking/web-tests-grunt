@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ComponentApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Component - AngularJS</title>
+  <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-md-12">
+        <h1>Component - AngularJS</h1>
+        <p>Example showing how to create a component and send data to it. (It also
+          shows how to get data from controller and how to use <code>ng-repeat</code>. 
+          ;-))</p>
+      </div>
+    </header>
+
+    <!-- Bind controller -->
+    <div class="row" ng-controller="ComponentController as ctrl">
+      <div class="col-md-4">
+        <h2>Data from controller</h2>
+        <p>Title: {{ ctrl.title }}</p>
+      </div>
+
+      <div class="col-md-4">
+        <h2>Albums (in controller)</h2>
+        <ul>
+          <li ng-repeat="album in ctrl.albums">
+            {{ album.artist }} - {{ album.title }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <album-list title="Albums (in component)" albums="ctrl.albums"></album-list>
+      </div>
+    </div>
+
+    <footer class="row">
+      <p><a href="./">Back</a> to AngularJS</p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-10-12.</p>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery-1.9.1.js"></script>
+  <script src="../../js/bootstrap/bootstrap.js"></script>
+  <script src="../../js/angular-1.5.8/angular.min.js"></script>
+  <script src="component.js"></script>
+</body>
+</html>

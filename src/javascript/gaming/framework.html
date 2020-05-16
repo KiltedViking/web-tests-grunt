@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creating simple HTML5 game framework</title>
+</head>
+<body>
+  <!-- Don't add any elements as JavaScript code will overwrite it.... ;-) -->
+  <script>
+    // vars for counting frames/s, used by the measureFPS function
+    var frameCount = 0;
+    var lastTime;
+    var fpsContainer;
+    var fps;
+
+    var measureFPS = function(newTime){
+      // test for the very first invocation
+      if(lastTime === undefined) {
+        lastTime = newTime;
+        return;
+      }
+      // calculate the delta between last & current frame
+      var diffTime = newTime - lastTime;
+
+      if (diffTime >= 1000) {
+        fps = frameCount;
+        frameCount = 0;
+        lastTime = newTime;
+      }
+
+      // and display it in an element we appended to the
+      // document in the start() function
+      fpsContainer.innerHTML = 'FPS: ' + fps;
+      frameCount++;
+    };
+
+
+    var GameFramework = function() {
+      var mainLoop = function(time) {
+        //A first go at checking that something happens...
+        //document.body.innerHTML = Math.round(Math.random() * 100, 1);
+
+        //A Second go at having something happen...
+        // compute FPS, called each frame, uses the high resolution time parameter 
+        // given by the browser that implements the requestAnimationFrame API
+        measureFPS(time);
+
+        //Main function, called each frame
+        requestAnimationFrame(mainLoop);
+      };
+
+      var start = function() {
+        //Second go...
+        // adds a div for displaying the fps value
+        fpsContainer = document.createElement('div');
+        document.body.appendChild(fpsContainer);
+
+        requestAnimationFrame(mainLoop)
+      };
+
+      // Our GameFramework returns a public API visible from outside its scope
+      // Here we only expose the start method, under the "start" property name.
+      return {
+        start: start
+      };
+    };
+
+    //Create an instance of framework and start "game""
+    var game = new GameFramework();
+    game.start();
+  </script>
+</body>
+</html>

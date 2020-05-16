@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WYSIWYG editor - YUI</title>
+		<style type="text/css">
+			body { background-color: #800000; color:black; font-family: Verdana, Arial, Helvetica, sans-serif; }
+			#page { background-color: white; color:black; width: 1000px; margin: 0 auto; border-radius: 20px; padding: 20px; }
+			nav#leftmenu { float: left; }
+			div#content { margin: 0 145px; }
+			div#rightmenu { float: right; }
+			footer { clear: both; font-size: 80%; text-align: center; margin-top: 50px; border-top: solid 1px gray; }
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<h1>WYSIWYG editor - YUI</h1>
+			<h2>About</h2>
+			<p>Adding WYSIWYG editor to page, YUI here. In version 3 of YUI there is no GUI... (i.e. example mothballed).</p>
+			<h2>Steps taken</h2>
+			<ul>
+				<li>Add a block element, like div, to page (and maybe set its ID [&quot;myeditor&quot;]).</li>
+				<li>Add reference to YUI source files.</li>
+				<li>Load plug-in &quot;editor-base&quot;.</li>
+				<li>Create an instance of EditorBase and call function render() on instance supplying ID of element as parameter.</li>
+			</ul>
+			<form action="yui.html" method="post">
+				<div id="myeditor" name="myeditor" style="border: solid 1px grey">
+					<h1>A header</h1>
+					<p>A paragraph</p>
+				</div>
+			</form>
+			<div class="backlink">
+				<p><a href="./">Back</a> to WYSIWYG editors</p>
+			</div>
+
+			<footer>
+				<p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2014-01-12.</p>
+			</footer>
+		</div>
+		<script type="text/javascript" src="../../js/yui-min.js"></script>
+		<script type="text/javascript">
+			YUI().use('editor-base', function(Y) { 
+				var editor = new Y.EditorBase({
+					//2014-01-12: This way of adding contents doesn't work in YUI 3.14.1 (but does in 3.9.1).
+					//content: '<h1>A header</h1><p>A paragraph</p>'
+				});
+				
+				//Add bi-directional editing support
+				//editor.plug(Y.Plugin.EditorBidi);
+				
+				//Render editor in element with ID "myeditor"
+				editor.render('#myeditor');
+			 });
+		</script>
+	</body>
+</html>

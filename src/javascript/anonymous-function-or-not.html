@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Anonymous function, or not - JavaScript</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Anonymous function, or not - JavaScript</h1>
+        <p>Testing if Microsoft's course material at edX is correct or not.</p>
+        <p>A function is added as an event listener to first button, but giving it
+          a name doesn't make it available by name elsewhere in code. So it is in fact an anonymous
+          function, as stated in course material! (Even though giving it a name is
+          unnecessary. ;-))
+        </p>
+      </div>
+    </header>
+    <div class="row">
+      <div class="col-sm-12">
+        <p><button id="btn1">Event handler with so called (?) anonymous function</button></p>
+        <p><button id="btn2">Event handler calling so called (?) anonymous function</button></p>
+        <p><button id="btn3">A third button to check that named functions can be assigned</button></p>
+        <h2>Output</h2>
+        <output id="dateTarget"></output>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btn1').addEventListener('click', function handleClick() {
+      document.getElementById('dateTarget').innerHTML = "<b>Button 1 clicked:</b> " + Date();
+    });
+
+    //Function handleClick() is not defined in global scope, i.e. it is an anonymous function!
+    // document.getElementById('btn2').addEventListener('click', handleClick);
+
+    // handleClick();
+
+    //A "named" function (non-anonymous) for assigning as 3rd button event handler
+    function namedFunction(event) {
+      document.getElementById('dateTarget').innerHTML = "<b>Button 3 clicked:</b> " + Date();
+    }
+
+    document.getElementById('btn3').addEventListener('click', namedFunction);
+  
+  </script>
+</body>
+</html>

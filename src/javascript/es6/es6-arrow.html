@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6 features - =&gt; - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>ES6 features - =&gt;</h1>
+        <p>Example using arrow function (=&gt;). Works in all browsers but IE.</p>
+      </div>
+    </header>
+
+    <div class="row content">
+      <div class="col-sm-12">
+        <output></output>
+        <button id="button">Click me!</button>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to ECMAScript 6</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-28.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    console.log("Creating event handler");
+    var clickHandler = () => alert("Hello world!");
+    console.log("Created event handler");
+    
+    window.onload = function() {
+      console.log("DOM loaded - attaching event handler");
+      var button = document.getElementById("button");
+      button.addEventListener("click", clickHandler);
+      console.log("Event handler attached");
+    };
+  </script>
+</body>
+</html>

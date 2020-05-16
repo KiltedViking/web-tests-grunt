@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Executing on page load - JavaScript</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Executing on page load</h1>
+        <p>This is an example showing how to execute JavaScript on page load, i.e.
+          when DOM has been loaded.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Result</h2>
+        <output></output>
+        <p>(Results also output in console.)</p>
+      </div>
+    </div>
+    
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-27.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    console.log("Reached end of file");
+
+    /**** Using event onload **************************************************/
+    // window.onload = function() {
+    //     console.log("Document loaded");
+    // }
+
+    /**** Using method addEventListener and event DOMContent Loaded ***********/
+    document.addEventListener("DOMContentLoaded", function ( /*event*/ ) {
+      console.log("DOM fully loaded and parsed");
+
+      var output = document.getElementsByTagName("output")[0];
+      output.innerText = "DOM fully loaded and parsed";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Template - Handlebars</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Template - Handlebars</h1>
+        <p>Example showing how to create template in Handelbars.js</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="output"></div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a></p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-10.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script id="output-template" type="text/x-handlebars-template">
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+  </script>
+  <script src="../../js/handlebars.min.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      //Data to insert into template
+      var object = {
+        title: "Hello world!",
+        description: "Output via Handlebars"
+      }
+      //Get reference to template and compilte it into Handlebars template
+      var source = document.querySelector("#output-template").innerHTML;
+      var template = Handlebars.compile(source);
+      var html = template(object);
+
+      //Get reference to output element and set it's inner HTML to generated HTML
+      var output = document.querySelector("#output");
+      output.innerHTML = html;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First animated canvas test</title>
+    <style>
+        /* Set width of content and center in browser */
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
+        /* Make canvas size visible */
+        canvas { border: dotted 1px green; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>First animated canvas test</h1>
+        <p>Draws a rectangles that moves sideways and bounces of edges.</p>
+        
+        <canvas id="myCanvas" width=200 height=200>
+            Your browser doesn't support this feature...
+            You need to update your browser or start using a better one...
+        </canvas>
+        
+        <footer>
+            <p><a href="./">Back</a> to HTML</p>
+            <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-06-12.</p>
+        </footer>
+    </div>
+    <script>
+        var canvas, ctx, id;
+        var currentX = 10, step = 1;
+
+        //Only start drawing when DOM is loaded        
+        window.onload = init;
+        
+        //Initiate drawing in canvas
+        function init() {
+            canvas = document.querySelector("#myCanvas");
+            ctx = canvas.getContext('2d');
+
+            //Request (next step in) animation
+            id = requestAnimationFrame(animate);
+        }
+
+        //Animate rectangle
+        function animate() {
+            //Clear canvas to prepare for drawing next step in animation
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawRect(currentX, 10, 80, 100, 'red');
+
+            //If right (or left) side of rectangle reached right (or left) edge of canvas 
+            if(((currentX + 80) > canvas.width) || ((currentX < 0)))
+                step = -step;
+            
+            currentX += step;   //"Move" x sideways 
+
+            //Request (next step in) animation
+            id = requestAnimationFrame(animate);
+        }
+
+        //Draw rectangle
+        function drawRect(x1, y1, x2, y2, fillStyle) {
+            //Save settings for canvas
+            ctx.save();
+  
+            //Change settings for canvas and draw in canvas
+            ctx.fillStyle = fillStyle;
+            ctx.fillRect(x1, y1, x2, y2);
+
+            //Restore settings for canvas till before calling function
+            ctx.restore();
+        }
+    </script>
+</body>
+</html>

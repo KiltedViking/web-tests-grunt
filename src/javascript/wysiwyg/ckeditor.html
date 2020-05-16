@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WYSIWYG editor - CKEditor</title>
+		<style type="text/css">
+			body { background-color: #800000; color:black; font-family: Verdana, Arial, Helvetica, sans-serif; }
+			#page { background-color: white; color:black; width: 1000px; margin: 0 auto; border-radius: 20px; padding: 20px; }
+			nav#leftmenu { float: left; }
+			div#content { margin: 0 145px; }
+			div#rightmenu { float: right; }
+			footer { clear: both; font-size: 80%; text-align: center; margin-top: 50px; border-top: solid 1px gray; }
+		</style>
+		<script type="text/javascript" src="../../js/ckeditor.js"></script>
+	</head>
+	<body>
+		<div id="page">
+			<h1>WYSIWYG editor - CKEditor</h1>
+			<h2>About</h2>
+			<p>Adding WYSIWYG editor to page, CKEditor here.</p>
+			<h2>Steps taken</h2>
+			<ul>
+				<li>Add textarea to page in form (and maybe set its ID [&quot;myeditor&quot;]).</li>
+				<li>Add &quot;ckeditor&quot; as class for textarea.</li>
+				<li>Add reference to CKEditor source files.</li>
+			</ul>
+			<form action="ckeditor.html" method="post">
+				<textarea id="myeditor" name="myeditor" class="ckeditor">
+					<p>This is some text in WYSIWYG.</p>
+					<h1>A header</h1>
+				</textarea>
+			</form>
+			<div class="backlink">
+				<p><a href="./">Back</a> to WYSIWYG editors</p>
+			</div>
+
+			<footer>
+				<p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2014-01-12.</p>
+			</footer>
+		</div>
+
+		<script>
+			ClassicEditor
+					.create( document.querySelector('#myeditor'))
+					.catch( error => {
+							console.error( error );
+					});
+		</script>
+	</body>
+</html>

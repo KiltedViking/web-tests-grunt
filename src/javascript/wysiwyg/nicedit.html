@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WYSIWYG editor - NicEdit</title>
+		<style type="text/css">
+			body { background-color: #800000; color:black; font-family: Verdana, Arial, Helvetica, sans-serif; }
+			#page { background-color: white; color:black; width: 1000px; margin: 0 auto; border-radius: 20px; padding: 20px; }
+			nav#leftmenu { float: left; }
+			div#content { margin: 0 145px; }
+			div#rightmenu { float: right; }
+			footer { clear: both; font-size: 80%; text-align: center; margin-top: 50px; border-top: solid 1px gray; }
+		</style>
+		<!-- <script type="text/javascript" src="../../js/jquery-1.9.1.js"></script> -->
+		<script type="text/javascript" src="../../js/nicEdit/nicEdit.js"></script>
+		<script type="text/javascript">
+			bkLib.onDomLoaded(function() { 
+				//nicEditors.allTextAreas();
+				new nicEditor({iconsPath : '../../js/nicEdit/nicEditorIcons.gif'}).panelInstance('myeditor');
+			 });
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<h1>WYSIWYG editor - NicEdit</h1>
+			<h2>About</h2>
+			<p>Adding WYSIWYG editor to page, NicEdit here.</p>
+			<h2>Steps taken</h2>
+			<ul>
+				<li>Add textarea to page in form (and maybe set its ID [&quot;myeditor&quot;]).</li>
+				<li>Add reference to NicEdit source files.</li>
+				<li>Add call to bkLib.onDomLoaded() with anaonymous function as parameter.</li>
+				<li>In anonymous function, create an instance of nicEditor prototype passing value for property iconsPath and calling function panelInstance() passing name of textarea.</li>
+			</ul>
+			<form action="nicedit.html" method="post">
+				<textarea id="myeditor" name="myeditor" style="width: 600px; height: 100px;">
+					<p>This is some text in WYSIWYG.</p>
+					<h1>A header</h1>
+				</textarea>
+			</form>
+			<div class="backlink">
+				<p><a href="./">Back</a> to WYSIWYG editors</p>
+			</div>
+
+			<footer>
+				<p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2014-01-06.</p>
+			</footer>
+		</div>
+	</body>
+</html>

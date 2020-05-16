@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Modules in ES2015- JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Modules in ES2015 - JavaScript</h1>
+        <p>Examples showing how to create and use in ES2015.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to ES2015</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-01-15.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="modules/Album.js"></script>
+  <script>
+    // import Album from "./modules/Album";
+
+    var Album = require(".modules/Album");
+
+    var a1 = new Album();
+
+    console.log(a1);
+  
+  </script>
+</body>
+</html>

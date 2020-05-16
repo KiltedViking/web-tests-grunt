@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Properties - jQuery</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Properties - jQuery</h1>
+        <p>Examples showing properties (<code>.prop()</code>) for a few types of 
+          elements, plus showing properties relationship to attributes <code>.attr()</code>.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <h2>Test elements</h2>
+
+        <div class="well">
+          <button id="btn-checkbox" class="btn btn-primary btn-sm pull-right">Show</button>
+          <input type="checkbox" id="checkbox">
+          <label for="checkbox">Checkbox</label>
+        </div>
+        
+        <div class="well">
+          <button id="btn-checkbox2" class="btn btn-primary btn-sm pull-right">Show</button>
+          <input type="checkbox" id="checkbox2" checked="checked">
+          <label for="checkbox2">Checkbox 2</label>
+        </div>
+        
+        <div class="well">
+          <button id="btn-paragraph" class="btn btn-primary btn-sm pull-right">Show</button>
+          <p id="paragraph">Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+
+        <div>
+          
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <h2>Property values</h2>
+        <div id="output"></div>
+      </div>
+      
+      <div class="col-sm-6">
+        <h2>Descriptions</h2>
+        <h3>Common properties</h3>
+        <dl>
+          <dt>Node name</dt>
+          <dd>??? (same as tag name?)</dd>
+
+          <dt>Node type</dt>
+          <dd>Number (1 = element, 3 = text, 9 = document, 11 = document fragment) <br />
+            [<a href="https://developer.mozilla.org/en/docs/Web/API/Node/nodeType"
+            target="_blank" rel="noopener">MDN</a>]</dd>
+
+          <dt>Tag name</dt>
+          <dd>Name of HTML tag</dd>
+
+          <dt>Owner document</dt>
+          <dd>Reference to HTML document (not jQUery element!)</dd>
+        </dl>
+
+        <h3>Element specific properties</h3>
+        <dl>
+          <dt>Type (prop and attr)</dt>
+          <dd>Type property/attribute</dd>
+
+          <dt>Checked</dt>
+          <dd>If checkbox is checked</dd>
+
+          <dt>Default checked</dt>
+          <dd>If checked attribute added in original document</dd>
+
+          <dt>Default selected</dt>
+          <dd>If selected attribute added in original document</dd>
+        </dl>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-01-04.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      //Test that script working, i.e. that jQuery file loaded and working ;-)
+      // alert("Document loaded! ;-)");
+
+      $("#btn-checkbox").click(function(event) {
+        var $elem = $("#checkbox");
+        var $output = $("#output");
+
+        showProperties($elem, $output);
+      });
+      
+      $("#btn-checkbox2").click(function(event) {
+        var $elem = $("#checkbox2");
+        var $output = $("#output");
+
+        showProperties($elem, $output);
+      });
+      
+      $("#btn-paragraph").click(function(event) {
+        var $elem = $("#paragraph");
+        var $output = $("#output");
+
+        showProperties($elem, $output);
+      });
+    });
+
+    function showProperties($element, $output) {
+        var $rootElem = $(document.createElement("div"));
+
+        //Common properties
+        $rootElem.append("<h3>Common</h3>");
+        var $newElem = $(document.createElement("p"));
+        $newElem.append("Node name: " + $element.prop("nodeName") + "<br />");
+        $newElem.append("Node type: " + $element.prop("nodeType") + "<br />");
+        $newElem.append("Tag name: " + $element.prop("tagName") + "<br />");
+        $rootElem.append($newElem);
+
+        //Element specific properties
+        $rootElem.append("<h3>Element specific</h3>");
+        $newElem = $(document.createElement("p"));
+        $newElem.append("Type (prop): " + $element.prop("type") + "<br />");
+        $newElem.append("Type (attr): " + $element.attr("type") + "<br />");
+        $newElem.append("Checked: " + $element.prop("checked") + "<br />");
+        $newElem.append("Default checked: " + $element.prop("defaultChecked") + "<br />");
+        $newElem.append("Default selected: " + $element.prop("defaultSelected"));
+        $rootElem.append($newElem);
+        
+        $rootElem.append("<h3>Owner document</h3>");
+        $ownerDoc = $($element.prop("ownerDocument"));
+        $newElem = $(document.createElement("p"));
+        $newElem.append("Node name: " + $ownerDoc.prop("nodeName") + "<br />");
+        $newElem.append("Node type: " + $ownerDoc.prop("nodeType") + "<br />");
+        $newElem.append("Tag name: " + $ownerDoc.prop("tagName") + "<br />");
+        $rootElem.append($newElem);
+        console.log($element.prop("ownerDocument"));
+
+        $output.html($rootElem);
+    }
+  
+  </script>
+</body>
+</html>

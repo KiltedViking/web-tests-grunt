@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First canvas test</title>
+    <style>
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
+        canvas {
+            border: dotted 1px green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>First canvas test</h1>
+        <p>Draws 2 rectangles with different sizes and colours.</p>
+        
+        <canvas id="myCanvas" width=200 height=200>
+            Your browser doesn't support this feature...
+            You need to update your browser or start using a better one...
+        </canvas>
+        
+        <footer>
+            <p><a href="./">Back</a> to HTML</p>
+            <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-06-05.</p>
+        </footer>
+    </div>
+
+    <script>
+        var canvas, ctx;
+        
+        window.onload = init;
+        
+        function init() {
+            canvas = document.querySelector("#myCanvas");
+            ctx = canvas.getContext('2d');
+            
+            //Change settings for canvas and draw rectangles
+            ctx.fillStyle = 'red';
+            ctx.fillRect(10, 10, 100, 100);
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(120, 10, 50, 50);
+        }
+    </script>
+</body>
+</html>

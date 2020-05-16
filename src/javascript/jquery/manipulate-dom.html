@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Manipulate DOM - jQuery</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Manipulate DOM - jQuery</h1>
+        <p>Examples showing how to manipulate DOM using jQuery's <code>.text()</code>
+          and <code>.html()</code>.</p>
+        <p>Locates list item using value for selected list option and sets text, 
+          or HTML, in textbox for located list item when clicking buttons.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>Form for manipulation</h2>
+        
+        <div class="form-group">
+          <label for="id-to-change">Item to change</label>
+          <select name="id-to-change" id="id-to-change" class="form-control">
+            <option value="id1">Item1</option>
+            <option value="id2">Item2</option>
+            <option value="id3">Item3</option>
+            <option value="id4">Item4</option>
+            <option value="id5">Item5</option>
+            <option value="id6">Item6</option>
+            <option value="id7">Item7</option>
+            <option value="id8">Item8</option>
+            <option value="id9">Item9</option>
+            <option value="id10">Item10</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="new-text">New text or HTML</label>
+          <input type="text" id="new-text" name="new-text" class="form-control">
+        </div>
+
+        <div>
+          <button id="btnChangeText" class="btn btn-primary pull-right">Change item's text</button>
+          <button id="btnChangeHtml" class="btn btn-success pull-right">Change item's HTML</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <h2>List to manipulate</h2>
+        <ul>
+          <li id="id1">Item1</li>
+          <li id="id2">Item2</li>
+          <li id="id3">Item3</li>
+          <li id="id4">Item4</li>
+          <li id="id5">Item5</li>
+          <li id="id6">Item6</li>
+          <li id="id7">Item7</li>
+          <li id="id8">Item8</li>
+          <li id="id9">Item9</li>
+          <li id="id10">Item10</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-11.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    //When document fully loaded - execute function
+    $(function() {
+      //Set focus in first textbox
+      $(":text").focus();
+
+      //Add event handler for click event to button btnChangeText
+      $("#btnChangeText").click(function() {
+        //Get get reference to list item to change by getting selected list option
+        var $itemToChange = $("#" + $("#id-to-change").val());    //Ex: #id4
+
+        //Get reference to textbox with new text (as refererenced more that once) 
+        var $newText = $("#new-text");
+        //Set text of selected list item and clear textbox
+        $itemToChange.text($newText.val());
+        $newText.val("");
+      });
+
+      //Add event handler for click event to button btnChangeHtml
+      $("#btnChangeHtml").click(function() {
+        //Get selected id and get reference to list item to change
+        var $itemToChange = $("#" + $("#id-to-change").val());    //Ex: #id4
+
+        //Get reference to textbox with new text (as refererenced more than once)
+        var $newText = $("#new-text");
+        //Set text of selected list item and clear textbox
+        $itemToChange.html($newText.val());
+        $newText.val("");
+      });
+    });
+  </script>
+</body>
+</html>

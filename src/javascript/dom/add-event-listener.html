@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Event Listener - JavaScript</title>
+  <style>
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+    /* Style own type of buttons */
+    .my-button {
+      color: white;
+      background-color: #800000;
+      padding: 1em;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Add Event Listener - JavaScript</h1>
+  <p>Associate event handlers to elements - three span tags in this example.</p>
+
+  <p>
+    <span class="my-button" id="button1">Click me ;-)</span>
+    <span class="my-button" id="button2">Click me too ;-)</span>
+    <span class="my-button" id="button3">Please click me ;-)</span>
+  </p>
+
+  <fieldset>
+    <legend>Output</legend>
+    <output id="output">&nbsp;</output>
+  </cfieldset>
+
+  <script>
+    //Get reference to buttons and add event handler to them
+    const buttons = document.getElementsByClassName("my-button");
+    for(var i = 0; i < buttons.length; i++)
+    {
+      buttons[i].addEventListener("click", btnClickHandler);
+    }
+
+    //Event handler - e is event (MouseEvent)
+    function btnClickHandler(e) {
+      //Get reference to output element
+      const output = document.getElementById("output");
+      //Get text on button and use in output
+      const btnText = e.target.innerHTML;
+      output.innerHTML = `You clicked button <b>${btnText}</b>`;
+    }
+  </script>
+</body>
+</html>

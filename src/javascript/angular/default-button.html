@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DefaultButtonApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Default button - AngularJS</title>
+  <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-md-12">
+        <h1>Default button - AngularJS</h1>
+        <p>Example showing how to make a button default, i.e. the one clicked if 
+          visitor presses Enter key.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-6" ng-controller="DefaultButtonController as ctrl">
+        <form action="#">
+          <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" 
+              class="form-control" ng-model="ctrl.name">
+          </p>
+          <p>
+            <button type="submit" class="btn btn-primary" ng-click="ctrl.sendForm($event)">Send</button>
+          </p>
+          <p>{{ ctrl.output }}</p>
+        </form>
+      </div>
+    </div>
+
+    <footer class="row">
+      <p><a href="./">Back</a> to JavaScript</p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-10-02.</p>
+    </footer>
+  </div>
+  <script src="../../js/jquery-1.11.3.js"></script>
+  <script src="../../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../../js/angular-1.4.8/angular.min.js"></script>
+  <script src="default-button.js"></script>
+  <script>
+    $(function() { $("#name").focus(); })
+  </script>
+</body>
+</html>

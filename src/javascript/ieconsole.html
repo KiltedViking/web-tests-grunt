@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>IE Console</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <h1>IE Console</h1>
+    <p>This page shows how console can be used in IE11 and is based on knowledge learnt
+      in MVA course How to Debug a Website with Internet Explorer F12 Tools.</p>
+    <p>Press F12 to show console, etc..</p>
+
+    <footer>
+      <p><a href="./">JavaScript Index</a></p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2015-07-26.</p>
+    </footer>
+  </div>
+  <script>
+    var PI = 3.14;
+    var r, circ;
+
+    console.log("Hello World via log!");
+    window.console.info("Hello World via info!");
+    console.warn("Hello World via warn!");
+    console.error("Hello World via error!");
+
+    var box = document.createElement("div");
+
+    console.dirxml(box);  //Print as a DOM element/node
+    console.dir(box);     //Print as an object with properties
+    console.debug("Hello World via debug!");
+
+    console.group("A name");
+    console.log("First message in group A name");
+    console.log("Second message in group A name");
+    console.groupEnd();
+
+    console.time("Timer name"); //Start timer
+    //Do something... could make example looping or sleeping
+    console.timeEnd("Timer name"); //Stop timer
+
+    //console.clear();  //Clear console
+
+    //Force error by having Math library misspellt
+    // circ = 2.0 * PI * math.round(r - 2);
+    circ = 2.0 * PI * Math.round(r - 2);
+  </script>
+  <!-- Load JavaScript files -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>

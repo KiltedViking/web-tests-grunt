@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Form: datalist - HTML</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+  <style>
+    .label300 { width: 300px; }
+    /* Set background colour of input field if invalid */
+    input:invalid { background-color: pink; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Form: datalist - HTML</h1>
+    </header>
+
+    <p>Example showing how datalist can be used. A polyfill is needed for Safari 9 (9.1.1).</p>
+
+    <fieldset>
+        <legend>Enter login details</legend>
+        <form id="myform" action="#">
+            <p>
+                <label for="artist">Artist:</label>
+                <input type="text" id="artist" placeholder="Choose artist" list="myartists">
+                <datalist id="myartists">
+                    <option value="Amy McDonald">A wee lassie</option>
+                    <option value="Prince">Strange man</option>
+                    <option value="Simple Minds">Laddies from bonny Alba</option>
+                </datalist>
+            </p>
+            <p>
+                <input type="submit" class="btn btn-primary" value="Do not send the form...">
+                <output id="myoutput"></output>
+            </p>
+        </form>
+    </fieldset>
+
+    <div class="backlink">
+      <p><a href="./" class="btn btn-primary">Back</a> to HTML</p>
+    </div>
+
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-06-14.</p>
+    </footer>
+    </div>
+
+    <script>
+        //When page loaded - run function
+        window.onload = function() {
+            //Get reference to form
+            myform = document.getElementById("myform");
+
+            //When form is submitted - prevent action from happening
+            myform.onsubmit = function(event) {
+                event.preventDefault();
+
+                //Get reference to output element and inform visitor that submit prevented
+                myoutput = document.getElementById("myoutput");
+                myoutput.innerHTML = "Submit prevented";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Prototype - JavaScript</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Prototype - JavaScript</h1>
+        <p>Example showing how to use <code>prototype</code>.
+        </p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <output></output>        
+      </div>
+
+      </div>
+    <footer>
+      <p><a href="./">Back</a> to JavaScript</p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-20.</p>
+    </footer>
+  </div>
+  <!-- Load JavaScript files -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript for page - usually a good idea to use external file ;-) -->
+  
+  <script>
+    function Person(name) {
+      this.name = name;
+
+      //Having functions here => all instances will contain code
+      // this.valueOf = function() {
+      //   return this.name;
+      // }
+
+      // this.toString = function() {
+      //   return this.name;
+      // }
+    }
+
+    //By moving functions to prototype => instances share code
+    Person.prototype = {
+      valueOf: function() {
+        return this.name;
+      },
+
+      toString: function() {
+        return this.name;
+      }
+    };
+
+    var p1 = new Person("Björn"), p2 = new Person("Sune");
+
+    console.log(p1);
+    console.log(p2);
+  </script>
+</body>
+</html>

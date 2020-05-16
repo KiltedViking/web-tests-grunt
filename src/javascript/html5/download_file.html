@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Download file - HTML</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <h1>Download file - HTML</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Example showing how a MP3 file can be downloaded for playing locally. The
+          example is based on (copied from) example on W3C course "HTML5 Part 2: Advanced 
+          Techniques for Designing HTML5 Apps" at <a href="https://www.edx.org/" 
+          target="_blank" rel="noopener">edX</a>. Changes I have made to the original example:
+        </p>
+        
+        <ul>
+          <li>Use jQuery for DOM manipulation (as already loaded for Bootstrap support).</li>
+          <li>Found and added fix for Safari (as tested in version 9.1.1).</li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <div id="player" style="margin-left: 20px">
+          <p><button id="loadSong" class="btn btn-primary">Load song</button></p>
+          <p><button id="playSong" disabled class="btn btn-success">Play</button>
+          <button id="stopSong" disabled class="btn btn-danger">Stop</button></p>
+          <p>
+            <output id="divOutput"></output>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="backlink">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to HTML5 and JavaScript</p>
+    </div>
+    <footer class="row">
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2016-07-17.</p>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    // WebAudio context
+    var context;
+    try {
+      // Fix up for prefixing
+      window.AudioContext = window.AudioContext || window.webkitAudioContext;
+      context = new window.AudioContext();
+    }
+    catch(ex) {
+      $("#divOutput").html("ERROR: Something went wrong with AudioContext!");
+    }
+    var source = null;
+    var audioBuffer = null;
+
+    //When document loaded - set up event handlers
+    $(document).ready(function() {
+      if(context) {
+        $("#loadSong").on("click", function(e) {
+          downloadSoundFile("Tabla_SOUNDDOGS.mp3");
+        });
+        $("#playSong").on("click", playSound);
+        $("#stopSong").on("click", stopSound);
+      }
+      else {
+        $("#divOutput").html("Something went wrong with AudioContext! context not set.");
+      }
+    });
+
+    // Load a binary file from a URL as an ArrayBuffer.
+    function downloadSoundFile(url) {
+      //Create request and configure
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);  
+      xhr.responseType = 'arraybuffer'; // THIS IS NEW WITH HTML5!
+
+      //Set event handlers for success and error
+      xhr.onload = function(e) {
+        console.log("Song downloaded, decoding...");
+        initSound(this.response); // this.response is an ArrayBuffer.
+      };
+
+      xhr.onerror = function(e) {
+        console.log("error downloading file");
+      }
+  
+      //Perform request
+      xhr.send();
+      console.log("Ajax request sent... wait until it downloads completely");
+    }
+
+    function initSound(audioFile) {
+      // The audio file may be an mp3 - we must decode it before playing it from memory
+      context.decodeAudioData(audioFile, function(buffer) {
+        console.log("Song decoded!");
+        // audioBuffer the decoded audio file we're going to work with
+        audioBuffer = buffer;
+
+        // Enable all buttons once the audio file is decoded
+        $("#playSong").prop("disabled", false);
+        $("#stopSong").prop("disabled", false);
+
+        console.log("Binary file has been loaded and decoded, use play / stop buttons!");
+      }, function(e) {
+        $("#divOutput").html("ERROR: Couldn't decode file.");
+        console.log('Error decoding file', e);
+      });
+    }
+
+    function playSound() {
+      // Build a source node for the audio graph
+      source = context.createBufferSource();
+      source.buffer = audioBuffer;
+      source.loop = false;
+
+      // connect to the speakers
+      source.connect(context.destination);
+      source.start(0); // Play immediately.
+    }
+
+    function stopSound() {
+      if (source) {
+        source.stop();
+      }
+    }
+  </script>
+</body>
+</html>

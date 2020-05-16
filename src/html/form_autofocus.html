@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Form: autofocus attribute - HTML</title>
+  <link rel="stylesheet" href="../css//bootstrap.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+  <style>
+    .label300 { width: 300px; }
+    /* Set background colour of input field if invalid */
+    input:invalid { background-color: pink; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Form: autofocus attribute - HTML</h1>
+    </header>
+
+    <p>Example showing how attributes autofocus and required for form controls work.</p>
+    <ul>
+        <li>Focus should be set to first control when liage loads. </li>
+        <li>Background of text fields should be pink if not filled in, as they are required.</li>
+    </ul>
+
+    <fieldset>
+        <legend>Enter login details</legend>
+        <form id="myform" action="#">
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter username" autofocus required>
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </p>
+            <p>
+                <input type="submit" class="btn btn-primary" value="Do not send the form...">
+                <output id="myoutput"></output>
+            </p>
+        </form>
+    </fieldset>
+
+    <div class="backlink">
+      <p><a href="./" class="btn btn-primary">Back</a> to HTML</p>
+    </div>
+
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-01-07.</p>
+    </footer>
+    </div>
+
+    <script>
+        //When page loaded - run function
+        window.onload = function() {
+            //Get reference to form
+            myform = document.getElementById("myform");
+
+            //When form is submitted - prevent action from happening
+            myform.onsubmit = function(event) {
+                event.preventDefault();
+
+                //Get reference to output element and inform visitor that submit prevented
+                myoutput = document.getElementById("myoutput");
+                myoutput.innerHTML = "Submit prevented";
+            }
+        }
+    </script>
+</body>
+</html>

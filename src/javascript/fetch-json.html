@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fetch() and JSON - JavaScript</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>fetch() and JSON</h1>
+        <p>Example using method <code>fetch()</code> to retrieve JSON data and displaying. Example
+          works in most browsers, except IE.
+        </p>
+        <p><b>TODO:</b> Check that <code>Request</code> object created and present data on page.</p>
+      </div>
+    </header>
+
+    <div class="row content">
+      <div class="col-sm-12">
+        <output></output>
+        <h2>Reference</h2>
+        <p>The <code>fetch()</code> function is part of the Fetch API and takes an URL as parameter and returns a promise.</p>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+            target="_blank" rel="noopener">MDN</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Perssonm. <b>Updated:</b> 2017-07-01.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // var url = "/data/albums.json";
+    var url = "/data/albums.json";
+    // var httpRequest = new XMLHttpRequest();
+    var output = document.getElementsByTagName("output")[0];
+    
+    //TODO: Check that object created (as doesn't work in IE)
+    var request = new Request(url);
+
+    fetch(request)
+      .then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        //TODO: Present data in page
+        console.log(data);
+      });
+
+    // //Do some test to check that object created...
+    // if(httpRequest) {
+    //   //Set event handler
+    //   httpRequest.onreadystatechange = function(result) {
+        
+    //     //If XHR request done
+    //     if(httpRequest.readyState === XMLHttpRequest.DONE)
+    //     {
+    //       //If request succeedes
+    //       if(httpRequest.status === 200) {
+    //         console.log("Request succeeded");
+    //         console.log("Result: " + httpRequest.responseText);
+    //         output.innerHTML = "<div class='alert alert-info'>" + httpRequest.responseText + "</div>";
+    //       }
+    //       else {
+    //         output.innerHTML = "<div class='alert alert-danger'>ERROR: Request of data failed!</div>";
+    //       }
+    //     }
+    //   }
+
+    //   httpRequest.open("GET", url);
+    //   httpRequest.send();
+    // }
+    // else {
+    //   output.innerHTML = "<div class='alert alert-danger'>ERROR: Something went wrong!<br /><br /> ... or you really need to upgrade your browser!</div>";
+    // }
+  </script>
+</body>
+</html>

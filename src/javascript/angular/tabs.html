@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TabApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Tabs - AngularJS</title>
+  <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../bjorn.css">
+  <style>
+    .tab-content { 
+      padding: 10px;
+      border-right: solid 1px gray; 
+      border-bottom: solid 1px gray; 
+      border-left: solid 1px gray; 
+    }
+  </style>
+</head>
+<body>
+  	<div class="container" ng-controller="TabCtrl">
+      <div class="row">
+        <h1>Tabs - AngularJS</h1>
+
+        <p><b>TODO:</b> Make it work using AngularJS. Now it only works using Bootstrap.</p>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <!--<li role="presentation" ng-class="{active:TabCtrl.isSelected(1)}">-->
+          <li role="presentation" class="active">
+            <!--<a role="tab" ng-click="TabCtrl.selectTab(1)" data-toggle="tab" href="tab1">Tab 1</a>-->
+            <a role="tab" data-toggle="tab" href="#tab1">Tab 1</a>
+          </li>
+          <li role="presentation" ng-class="{active:TabCtrl.isSelected(2)}">
+            <!--<a role="tab" ng-click="TabCtrl.selectTab(2)" data-toggle="tab" href="tab2">Tab 2</a>-->
+            <a role="tab" data-toggle="tab" href="#tab2">Tab 2</a>
+          </li>
+          <li role="presentation" ng-class="{active:TabCtrl.isSelected(3)}">
+            <!--<a role="tab" ng-click="$TabCtrl.selectTab(3)" data-toggle="tab" href="tab3">Tab 3</a>-->
+            <a role="tab" data-toggle="tab" href="#tab3">Tab 3</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tab1" role="tabpanel">
+            <h2>Panel 1</h2>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sequi ipsum optio, quod non consectetur explicabo nam quae at libero enim ex. Molestiae praesentium numquam quasi, natus porro! Vel, eos.</p>
+              <p>Tempora ex alias nam aut? Labore ratione assumenda, placeat maiores quo commodi distinctio libero eveniet aliquam officia unde autem voluptas laudantium, quas sequi dolorum. Nemo repudiandae alias, sunt cumque recusandae!</p>
+              <p>Provident sequi placeat, maiores possimus ea facilis magnam temporibus repellendus laudantium cumque nesciunt doloribus sint aut animi repellat aliquid quia tempore quo impedit architecto. Nam quasi quod necessitatibus ut et.</p>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab2" role="tabpanel">
+            <h2>Panel 2</h2>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sequi ipsum optio, quod non consectetur explicabo nam quae at libero enim ex. Molestiae praesentium numquam quasi, natus porro! Vel, eos.</p>
+              <p>Tempora ex alias nam aut? Labore ratione assumenda, placeat maiores quo commodi distinctio libero eveniet aliquam officia unde autem voluptas laudantium, quas sequi dolorum. Nemo repudiandae alias, sunt cumque recusandae!</p>
+              <p>Provident sequi placeat, maiores possimus ea facilis magnam temporibus repellendus laudantium cumque nesciunt doloribus sint aut animi repellat aliquid quia tempore quo impedit architecto. Nam quasi quod necessitatibus ut et.</p>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab3" role="tabpanel">
+            <h2>Panel 3</h2>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore sequi ipsum optio, quod non consectetur explicabo nam quae at libero enim ex. Molestiae praesentium numquam quasi, natus porro! Vel, eos.</p>
+              <p>Tempora ex alias nam aut? Labore ratione assumenda, placeat maiores quo commodi distinctio libero eveniet aliquam officia unde autem voluptas laudantium, quas sequi dolorum. Nemo repudiandae alias, sunt cumque recusandae!</p>
+              <p>Provident sequi placeat, maiores possimus ea facilis magnam temporibus repellendus laudantium cumque nesciunt doloribus sint aut animi repellat aliquid quia tempore quo impedit architecto. Nam quasi quod necessitatibus ut et.</p>
+            </div>
+          </div>
+        </div>
+
+        <output></output>
+        <p>{{selectedTab}}</p>
+        <!--<table>
+          <tr><th>Row number</th></tr>
+          <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i}}</td></tr>
+        </table>-->
+      </div>
+    </div>
+
+    <script src="../../js/jquery-1.11.3.js"></script>
+    <script src="../../js/bootstrap/bootstrap.min.js"></script>
+    <script src="../../js/angular-1.4.8/angular.min.js"></script>
+    <script>
+      var tabApp = angular.module('TabApp', []);
+      console.log("Creating controller...");
+
+      tabApp.controller('TabCtrl', function TabCtrl($scope) {
+        console.log("Initialising controller...");
+        
+        $scope.selectedTab = 1;
+
+        $scope.selectTab = function selectTab(tab) {
+          $scope.selectedTab = tab;
+          console.log("Selected tab: " + tab);
+        }
+
+        $scope.isSelected = function isSelected(tab) {
+          console.log("Checking if tab is selected... " + tab);
+      
+          return tab == $scope.selectedTab;
+        }
+
+        console.log("Done initialising controller...")
+        console.log($scope);
+      }); 
+    </script>
+</body>
+</html>

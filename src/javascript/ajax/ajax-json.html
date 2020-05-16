@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AJAX and JSON - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>AJAX and JSON</h1>
+        <p>Example using AJAX to retrieve JSON data and displaying.</p>
+      </div>
+    </header>
+
+    <div class="row content">
+      <div class="col-sm-12">
+        <output></output>
+        <h2>Reference</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started">MDN</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to AJAX with plain JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Perssonm. <b>Updated:</b> 2017-07-01.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    var url = "/data/albums.json";
+    var httpRequest;
+    var httpRequest = new XMLHttpRequest();
+    // var httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    var output = document.getElementsByTagName("output")[0];
+
+    //Do some test to check that object created...
+    if(httpRequest) {
+      //Set event handler
+      httpRequest.onreadystatechange = function(result) {
+        
+        //If XHR request done
+        if(httpRequest.readyState === XMLHttpRequest.DONE)
+        {
+          //If request succeedes
+          if(httpRequest.status === 200) {
+            console.log("Request succeeded");
+            console.log("Result: " + httpRequest.responseText);
+            output.innerHTML = "<div class='alert alert-info'>" + httpRequest.responseText + "</div>";
+          }
+          else {
+            output.innerHTML = "<div class='alert alert-danger'>ERROR: Request of data failed!</div>";
+          }
+        }
+      }
+
+      httpRequest.open("GET", url);
+      httpRequest.send();
+    }
+    else {
+      output.innerHTML = "<div class='alert alert-danger'>ERROR: Something went wrong!<br /><br /> ... or you really need to upgrade your browser!</div>";
+    }
+
+    console.log(httpRequest);
+  </script>
+</body>
+</html>

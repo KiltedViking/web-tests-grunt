@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6 features - class - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>ES6 features - class</h1>
+        <p>Example using <code>class</code>. Works in all browsers but IE.</p>
+      </div>
+    </header>
+
+    <div class="row content">
+      <div class="col-sm-12">
+        <p>Example defines a class <code>Person</code> and a subclass <code>Student</code>.</p>
+        <output></output>
+        <h2>Reference</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
+            target="_blank" rel="noopener">MDN</a></li>
+          <li><a href="https://caniuse.com/#feat=es6-class" target="_blank" rel="noopener">caniuse</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to ECMAScript 6</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-07-01.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    class Person {
+      constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+    }
+
+    class Student extends Person {
+      constructor(firstName, lastName, courses) {
+        super(firstName, lastName);
+        this.courses = courses || [];
+      }
+    }
+
+    let p = new Person("Björn", "Persson");
+    let s = new Student("Sune", "Ohlsson");
+
+    console.log(p);
+    console.log(s);
+  </script>
+</body>
+</html>

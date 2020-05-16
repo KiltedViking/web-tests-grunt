@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Numbers - JavaScript</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Numbers - JavaScript</h1>
+        <p>Example showing some useful things about decimal numbers.
+        </p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <output></output>        
+      </div>
+
+      </div>
+    <footer>
+      <p><a href="./">Back</a> to JavaScript</p>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-20.</p>
+    </footer>
+  </div>
+  <!-- Load JavaScript files -->
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript for page - usually a good idea to use external file ;-) -->
+  
+  <script>
+    var output = document.querySelector("output");
+
+    var sum = 0.1 + 0.2;
+
+    output.textContent = "Sum of 0.1 + 0.2 = " + sum;
+    console.log(sum);
+    console.log(typeof sum);
+    console.log(typeof sum.toFixed(2));
+    console.log(sum instanceof Number);
+
+    var result = parseFloat((0.1 + 0.2).toFixed(2));
+
+  </script>
+</body>
+</html>

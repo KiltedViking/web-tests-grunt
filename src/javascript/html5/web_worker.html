@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Web worker - HTML</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bjorn.css" type="text/css">
+  <style>
+    .errorRed { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <h1>Web worker - HTML</h1>
+    </header>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Example showing how web workers can be used.</p>
+        <p>This page sends two numbers, in JSON object, to web worker that returns result.</p>
+        <output id="outputError"></output>
+      </div>
+
+      <div class="col-md-6">
+          <div id="divOutput"></div>
+      </div>
+    </div>
+    <div class="backlink">
+        <p><a href="./" class="btn btn-primary btn-xs">Back</a> to HTML5 and JavaScript</p>
+    </div>
+    <footer class="row">
+        <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Updated:</b> 2016-07-25.</p>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function() {
+      try {
+        //Create web worker from JS file
+        var worker = new Worker("web_worker_add.js");
+
+        //Set up event handler for messages from web worker
+        worker.onmessage = function(event) {
+          document.getElementById("divOutput").innerText = "Result of adding 1 and 2: " + event.data;
+        }
+
+        worker.onerror = function(event) {
+          document.getElementById("divOutput").innerText = "ERROR: An error occured in web worker...";
+        }
+
+        worker.postMessage({ x: 1, y: 2 });
+      }
+      catch (ex) {
+        document.getElementById("divOutput").innerText = "ERROR: An error occured in parent page...";
+      }
+    }
+  </script>
+</body>
+</html>

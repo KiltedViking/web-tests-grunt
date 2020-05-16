@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Essentials (Revised)</title>
+</head>
+<body>
+  <div class="container">
+  <h1>JavaScript Essentials (Revised)</h1>
+  <p>Knowledge gained watching YouTube video JavaScript Essentials (Revised).</p>
+
+  <h2>Syntax</h2>
+  <h3>typeof</h3>
+  <p>The use of typeof might not always perform as expected. instanceof helps
+    you get around this with objects.</p>
+  <script>
+    console.group("typeof");
+    console.log(typeof 'My name');
+    console.log(typeof 42);
+    var person = {
+      firstName: 'Björn',
+      lastName: 'Persson'
+    };
+    console.log(typeof person);
+    var persons = [{
+      firstName: 'Björn',
+      lastName: 'Persson'
+    }];
+
+    console.log(typeof persons);
+    console.log(persons instanceof Array);
+    console.groupEnd();
+  </script>
+
+  <h3>Functions</h3>
+  <p>Self-executing functions are used to encapsulate, i.e. not add to global name
+    space.</p>
+  <p>Closure is important. When using setTimeout(), the result might not be quite
+    work as expected...</p>
+    <p>Common JS module pattern...</p>
+
+  <script>
+  console.group("functions");
+    (function() {
+      var messages = ['hello', 'there'];
+      for (var m in messages) {
+        setTimeout(function() {
+          console.log(messages[m]);
+        }, 1);
+      };
+    })();
+    console.groupEnd();
+  </script>
+
+  <h3>OO JavaScript</h3>
+  <p></p>
+
+  <script>
+    var Person = function(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+
+      //This function will be a property of instance - NOT the "class" (prototype)
+      // this.getName = function() {
+      //   return this.firstName + ' ' + this.lastName;
+      // }
+    };
+
+    //By adding function to prototype, the code will be shared
+    Person.prototype.getName2 = function() {
+      return this.firstName + ' ' + this.lastName;
+    };
+
+    var aPerson = new Person('Björn', 'Persson');
+
+    var Employee = function(firstName, lastName, employeeId) {
+      Person.call(this, firstName, lastName);
+      this.employeeId = employeeId;
+    };
+
+    //Inherit from Person
+    Employee.prototype = Object.create(Person.prototype);
+    //Add adopted constructor, i.e. not use Person's
+    Employee.prototype.constructor = Employee;
+
+    var anEmployee = new Employee('Sune', 'Ohlsson', 1);
+
+    //Creating class Person as a module
+    var PersonMod = (function() {
+      var Person = function() {
+
+      };
+
+      return Person;
+    })();
+  </script>
+
+  </div>
+</body>
+</html>

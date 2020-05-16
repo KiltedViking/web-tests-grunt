@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>First example - AngularJS</title>
+  <link rel="stylesheet" href="../../css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../../bjorn.css">
+  <script src="../../js/angular-1.4.8/angular.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>First example - AngularJS</h1>
+    </header>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h3>One-way binding</h3></div>
+      <div class="panel-body">
+        <p>This example shows how a textbox and two placeholders (in heading and paragraph) can be
+          connected to an Angular model and when content in textbox changes, so
+          will any other bindings.</p>
+        <form action="#">
+          <h4>Hello world, {{name}}!</h4>
+          <p>Hope you enjoy you visit to my website, {{name}}!</p>
+          <p>Enter your name: <input type="text" id="name" text="" ng-model="name"></p>
+        </form>
+        <p><b>Please note</b> that this example &quot;pollutes&quot; the global
+          namespace! Solution to this is to add a controller, i.e. wrap model ins
+          a module.</p>
+      </div>
+    </div>
+
+    <div class="backlink">
+      <p><a href="./">Back</a> to AngularJS</p>
+    </div>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-01-09.</p>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery-1.9.1.js"></script>
+  <script src="../../js/bootstrap/bootstrap.js"></script>
+  <script>
+    $(document).ready(funtion() {
+      $('#name').focus();
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<!-- *************************************************************************************
+	* Purpose:		Startpage for Kilted Viking's Albums, an assignment on the course XML
+	*				at Mid Sweden University.
+	* Created by:	Bjorn Persson, bjpe0800@student.miun.se
+	* Created:		2012-12-06
+	************************************************************************************** -->
+	<head>
+		<meta charset="UTF-8" />
+		<title>Kilted Viking's Albums</title>
+		<link rel="stylesheet" href="../css/xml.css" />
+		<link rel="stylesheet" href="../js/themes/base/jquery-ui.css" />
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<!-- Add jQuery UI for auto complete -->
+		<script type="text/javascript" src="../js/jquery-ui.js"></script>
+		<!-- Add jQuery XSLT plugin to enable transformation av XML with XSLT -->
+		<script type="text/javascript" src="../js/jquery.xslt.js"></script>
+		<!-- Add -->
+	</head>
+	<body>
+		<div id="page">
+			<header>
+				<h1>Kilted Viking's Albums</h1>
+			</header>
+			
+			<div style="float: right; width: 100px; text-align: center; padding: 5px;">
+				<a href="editalbum.html">Add album</a>
+			</div>
+			
+			<fieldset>
+				<legend>Search albums</legend>
+				<form id="frmSearch" action="php/searchalbums.php">
+					<div>
+						<label for="txtSearch">Enter name of artist or album to search for:</label>
+						<input type="text" id="txtSearch" name="txtSearch" />
+						<input type="submit" id="btnSubmit" value="Search" />
+					</div>
+				</form>
+			</fieldset>
+			
+			<fieldset>
+				<legend>Result</legend>
+				<div id="divResult">
+				
+				</div>
+			</fieldset>
+			
+			<footer>
+				<p><b>Created by:</b> Bj&ouml;rn Persson. <b>Updated:</b> 2013-01-06.</p>
+			</footer>
+<!-- *** JavaScript **************************************************************** -->
+			<script type="text/javascript">
+				/* Set up page, handlers amoung all things */
+				$(document).ready(function() {
+					var myArr = [];	//Array to hold auto complete data
+					
+					//Set focus on search box at page load
+					$("#txtSearch").focus();
+					
+					/***************************************************************
+						Set up autocomplete for search box, honestly stolen from
+						http://www.johnstonianera.com/jquery-autocomplete-xml/ */
+					$.ajax({
+						type: "GET",
+						url: "php/artistlist.php", // change to full path of file on server
+						dataType: "xml",
+						success: parseXml,
+						complete: setupAC,
+							error: function() {
+								alert("ERROR: Can't access list with artists!");
+							}
+					});
+						
+					//Parse XML and add to array
+					function parseXml(xml)
+					{
+					  //find every query value
+					  $(xml).find("a").each(function()
+					  {
+					    myArr.push($(this).text());
+					  });
+					}
+					
+					//Set up autocomplete (jQuery-UI)
+					function setupAC() {
+						$("input#txtSearch").autocomplete({
+							source: myArr,
+							minLength: 2,
+							select: function(event, ui) {
+								$("input#txtSearch").val(ui.item.value);
+								$("#frmSearch").submit();
+							}
+						});
+					}
+					
+					/*****************************************************************
+						Set up search using AJAX */
+					$("#frmSearch").submit(function(event) {
+						//Prevent the submit event from happening, i.e. another page loading
+						event.preventDefault();
+						//Use AJAX to load search result
+						$.ajax({
+							type: "GET",
+							url: "php/searchalbums.php", 
+							data: { txtSearch: $("#txtSearch").val() },
+							dataType: "xml",
+							success: setSearchResult
+						});
+						
+					});
+					
+					//Function to execute when search result is returned
+					function setSearchResult(data) {
+						//Test of jQuery XSLT plugin - transform returned data using an XSLT document
+						$("#divResult").xslt({ xml: data, xslUrl: "php/searchalbums.xsl" });
+					}
+ 
+				});
+			</script>
+		</div>
+	</body>
+</html>

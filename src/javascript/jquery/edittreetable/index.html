@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EditTreeTable - jQuery plug-in</title>
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../../css/bjorn.css">
+  <style>
+    /* body { background-color:#fafafa; font-family:'Open Sans';} */
+		.treetable{
+
+		}
+		.treetable .fa{
+			cursor: pointer;
+			padding-right: 5px;
+		}
+		.treetable .rowhidden{
+			display: none;
+		}
+		.treetable .j-addChild{
+			display: none;
+		}
+		.treetable .selected .j-addChild{
+			display: block;
+		}
+		.treetable .btn-outline{
+			background-color: transparent;
+		}
+		.treetable .form-control{
+			width: auto;
+			display: inline-block;
+		}
+		.treetable .textalign-center{
+			text-align: center;
+		}
+		.treetable .j-expend{
+			cursor: pointer;
+			width: 35% !important;
+			text-align: left !important;
+		}
+		.treetable .maintitle{
+			width: 35% !important;
+		}
+		.treetable .j-remove{
+			padding: 8px;
+			cursor: pointer;
+			font-size: 16px;
+			color:red;
+		}
+		.treetable .tt-header{
+			margin-top:10px;
+		}
+		.treetable .class-level-2 .class-level-ul .j-expend{
+			position: relative;
+			left: 22px;
+		}
+		.treetable .class-level-3 .class-level-ul .j-expend{
+			position: relative;
+			left: 44px;
+		}
+		.treetable .class-level-4 .class-level-ul .j-expend{
+			position: relative;
+			left: 66px;
+		}
+		.treetable .class-level-1 {
+			border-bottom: dashed 1px #eee;
+		}
+		.treetable .class-level-ul{
+			padding: 0;
+			margin-bottom: 2px;
+		}
+		.treetable .class-level-ul li {
+			float: left;
+			text-align: center;
+			vertical-align: middle;
+			padding: 1px 10px;
+			min-width: 120px;
+			list-style: none;
+		}
+		.treetable .class-level-ul:after {
+			display: block;
+			clear: both;
+			height: 0;
+			content: "\0020";
+		}
+		.treetable .tt-header div span {
+			width: auto;
+			line-height: 29px;
+			display: inline-block;
+			min-width: 120px;
+			text-align: center;
+		}
+		.treetable .tt-body{
+			border: solid 1px #DDD;
+			padding-top: 1px;
+			background-color:#FFF;
+		}
+		.treetable .tt-header div{
+			border: solid 1px #DDD;
+			border-bottom:none;
+			background-color:#FFF;
+		}
+	</style>
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>EditTreeTable - jQuery plug-in</h1>
+      </div>
+    </header>
+
+    <div id="tree" class="treetable"></div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="../">Back</a>to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-07-30.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../../js/jquery.min.js"></script>
+  <script src="../../../js/jquery.edittreetable.js"></script>
+  <script>
+    var data = [
+      { 
+        id: 1,
+        name: "First",
+        pid: 0,
+        innercode: "1A"
+      },
+      { 
+        id: 2,
+        name: "Second",
+        pid: 1,
+        innercode: "1A2A"
+      },
+      { 
+        id: 3,
+        name: "Third",
+        pid: 1,
+        innercode: "1A3A"
+      },
+      { 
+        id: 4,
+        name: "Fourth",
+        pid: 1,
+        innercode: "1A4A"
+      },
+      { 
+        id: 5,
+        name: "Fifth",
+        pid: 1,
+        innercode: "1A5A"
+      },
+      { 
+        id: 6,
+        name: "Sixth",
+        pid: 0,
+        innercode: "2A"
+      }
+    ];
+
+    $("#tree").bstreetable({
+      data:data,
+      maintitle:"languages",
+      nodeaddCallback:function(data,callback){
+        alert(JSON.stringify(data));
+        // do something
+        callback({id:18,name:data.name,pid:data.pid});
+      },
+      noderemoveCallback:function(data,callback){
+        alert(JSON.stringify(data));
+        // do something
+        callback();
+      },
+      nodeupdateCallback:function(data,callback){
+        alert(JSON.stringify(data));
+        // do something
+        callback();
+      }
+    });
+
+    // $("#tree").bstreetable({
+    //   container:window,
+    //   data:[],
+    //   extfield:[],
+    //   nodeaddEnable:true,
+    //   maxlevel:4,
+    //   nodeaddCallback:function(data,callback){},
+    //   noderemoveCallback:function(data,callback){},
+    //   nodeupdateCallback:function(data,callback){},
+    //   customalert:function(msg){
+    //     alert(msg);
+    //   },
+    //   customconfirm:function(msg){
+    //     return confirm(msg);
+    //   },
+    //   text:{
+    //     NodeDeleteText:"Are You Sure To Delete This Node?"
+    //   }
+    // });
+  </script>
+</body>
+</html>

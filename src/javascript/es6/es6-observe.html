@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6 features - Object.observe() - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>ES6 features - Object.observe()</h1>
+        <p>Example using ES6 features Object.observe(). Today, 2017-06-28, this feature
+          is not supported by any browser. (See console.)
+        </p>
+      </div>
+    </header>
+
+    <div class="row content">
+      <div class="col-sm-12">
+        <output></output>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to ECMAScript 6</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-06-28.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    //Create object
+    var person = {
+      name: ""
+    };
+
+    //Create event handler
+    function changeHandler(changes) {
+      console.log(changes);
+    }
+
+    //Attach object to observe to event handler
+    Object.observe(person, changeHandler);
+  </script>
+</body>
+</html>

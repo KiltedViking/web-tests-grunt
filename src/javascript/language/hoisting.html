@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hoisting</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Hoisting - JavaScript language</h1>
+        <p>This page tries to explain hoisting and problems associated with it.</p>
+      </div>
+    </header>
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p>Script tag contains two functions - <code>doMath1()</code> and <code>doMath2()</code>
+          - where the first uses regular function declaration while the second one 
+          uses function expresstion (variable). The former one will execute fine while
+          the latter one will throw an error - TypeError: add is not a function.</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript language</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-08-19.</p>
+      </div>
+    </footer> 
+  </div>  
+  <script>
+  
+  //1. Variable declarations are hoisted to top and assigned undefined.
+  //2. Function declarations are hoisted next.
+  //3. Executable code is now executed until end, or any return statement.
+  
+  //Functions assigned to variables are NOT hoisted!
+
+
+  function doMath1() {
+    var a, b;
+    a = 1;
+    b = 2;
+
+    return add(a, b);
+
+    //Function gets hoisted
+    function add(x, y) {
+      return x + y;
+    }
+  }
+
+  function doMath2() {
+    var a, b;
+    a = 3;
+    b = 4;
+
+    return add(a, b);
+
+    //Variable gets hoisted, but it doesn't get assigned before return statement
+    //=> TypeError: add is not function ... 'add' is undefined
+    var add = function (x, y) {
+      return x + y;
+    }
+  }
+
+  console.log("Result 1: ");
+  console.log(doMath1());
+  console.log("Result 2: ");
+  console.log(doMath2());
+
+  </script>
+</body>
+</html>

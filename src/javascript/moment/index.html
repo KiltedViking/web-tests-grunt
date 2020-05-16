@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Moment.js</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Moment.js</h1>
+        <p>Examples showing how to use JavaScript library Moment.js to manipulate
+          and query Date objects.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Create Date object from string</h3>
+        <p>
+          <code>var date1 = moment(&quot;2017-09-04&quot;)</code>
+          <span id="date1"></span>
+        </p>
+
+        <h3>Adding a month</h3>
+        <p>Date object will be mutated when adding!</p>
+        <p>
+          <code>date1.add(1, &quot;month&quot;)</code>
+          <span id="date2"></span>
+        </p>
+        <p>Clone object before adding to leave original Date object as is. <code>date1</code>
+          was mutated when 1 month was added above.</p>
+        <p>
+          <code>date1.clone().add(1, &quot;month&quot;)</code>
+          <span id="date3"></span>
+        </p>
+        <p>
+            <code>date1</code>
+            <span id="date4"></span>
+          </p>
+
+        <h3>Expressing how long date is from now</h3>
+        <p>
+          <code>date1.fromNow())</code>
+          <span id="date5"></span>
+        </p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="../">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-04.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/moment.js"></script>
+  <script>
+    var date1 = moment("2017-09-04");
+    
+    document.getElementById("date1").innerText = date1;
+    document.getElementById("date2").innerText = date1.add(1, "month");
+    document.getElementById("date3").innerText = date1.clone().add(1, "month");
+    document.getElementById("date4").innerText = date1;
+    document.getElementById("date5").innerText = date1.fromNow();
+  </script>
+</body>
+</html>

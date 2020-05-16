@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Manipulate DOM's attributes - jQuery</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Manipulate DOM's attributes - jQuery</h1>
+        <p>Examples showing how to manipulate DOM using jQuery's <code>.attr()</code>.</p>
+        <p>Locates list item using value for selected list option and sets text, 
+          or HTML, in textbox for located list item when clicking buttons.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>Form for manipulation</h2>
+        
+        <div class="form-group">
+          <label for="id-to-change">Item to change</label>
+          <select name="id-to-change" id="id-to-change" class="form-control">
+            <option value="id1">Item1</option>
+            <option value="id2">Item2</option>
+            <option value="id3">Item3</option>
+            <option value="id4">Item4</option>
+            <option value="id5">Item5</option>
+            <option value="id6">Item6</option>
+            <option value="id7">Item7</option>
+            <option value="id8">Item8</option>
+            <option value="id9">Item9</option>
+            <option value="id10">Item10</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="colour">Color to set</label>
+          <select name="colour" id="colour" class="form-control">
+            <option value="ff0000">Red</option>
+            <option value="ff8000">Orange</option>
+            <option value="00ff00">Green</option>
+            <option value="#2eccfa">Light blue</option>
+            <option value="0000ff">Blue</option>
+            <option value="8000ff">Purple</option>
+          </select>
+        </div>
+
+        <div>
+          <button id="btnChangeColour" class="btn btn-primary pull-right">Change item's text colour</button>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <h2>List to manipulate</h2>
+        <ul>
+          <li id="id1">Item1</li>
+          <li id="id2">Item2</li>
+          <li id="id3">Item3</li>
+          <li id="id4">Item4</li>
+          <li id="id5">Item5</li>
+          <li id="id6">Item6</li>
+          <li id="id7">Item7</li>
+          <li id="id8">Item8</li>
+          <li id="id9">Item9</li>
+          <li id="id10">Item10</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-11.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script>
+    //When document fully loaded - execute function
+    $(function() {
+      //Set focus in first listbox
+      $("select").first().focus();
+
+      //Add event handler for click event to button btnChangeText
+      $("#btnChangeColour").click(function() {
+        //Get get reference to list item to change by getting selected list option
+        var $itemToChange = $("#" + $("#id-to-change").val());    //Ex: #id4
+
+        //Get reference to textbox with new text (as refererenced more that once) 
+        var colour = $("#colour").val();
+        //Set text of selected list item and clear textbox
+        $itemToChange.attr("style", "color: #" + colour + "; border: solid 1px #" + colour);
+      });
+    });
+  </script>
+</body>
+</html>
