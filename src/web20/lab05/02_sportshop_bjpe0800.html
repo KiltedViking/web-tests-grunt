@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn G.D. Persson">
+	<title>Sport shop (bjpe0800)</title>
+	<style type="text/css">
+		html { 
+			font-family: Palatino, Verdana, Helvetica, sans-serif; 
+			color: black; 
+			background-color: #800000;
+		}
+		h1, h2, h3, h4, h5, h6 { font-family: "Chalkduster", Verdana, Helvetica, sans-serif; }
+		h1 { 
+			color: white; 
+			background-color: #800000; 
+			text-align: center;
+			margin-top: -10px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input, select, option { font-size: 1em; font-family: "Helvetica", Verdana, Helvetica, sans-serif; }
+		footer { 
+			clear: both;
+			text-align: center; 
+			font-size: .8em; 
+			margin: 5px 0px -15px;
+			border-top: solid 1px gray;
+		}
+		th { color: white; background-color: #800000; }
+		#page { 
+			width: 1000px; 
+			margin: 0 auto;
+			border-radius: 20px;
+			padding: 20px;
+			color: black; 
+			background-color: white;
+		}
+		.backlink { 
+			text-align: center; 
+			border-top: solid 1px gray;
+		}
+		.kommentar { font-size: .8em; }
+		ul.horisontal>li { display: inline; }
+		ul.horisontal>li>a { padding: 3px 10px; }
+		ul.horisontal>li>a:hover {
+			color: white;
+			background-color: #800000;
+		}
+		label.label150 {
+			display: inline-block;
+			width: 150px;
+			font-weight: bold;
+		}
+		.width500 {
+			width: 400px;
+			float: left;
+			border: solid 1px gray;
+			padding: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="02_sportshop/vara_bjpe0800.js"></script>
+	<script type="text/javascript">
+		//Global variables to keep articles in
+		var articles = [];
+
+		/*** Application specific functions **********************************/
+		function addArticle() {
+			var frm = document.getElementById("frmArticle");
+			var art = new Vara();
+			art.varunummer = frm.ano.value;
+			art.namn = frm.aname.value;
+			art.beskrivning = frm.adescription.value;
+			art.pris = frm.aprice.value;
+			art.enhetspris = frm.apricepiece.value;
+			art.lagerstatus = frm.astock.value;
+			
+			var per = frm.aperiod.value;
+			if(!per == "")
+			{
+				art.setVarutyp(per);
+			}
+			
+			for(var i = 0; i < frm.acategories.options.length; i++)
+				if(frm.acategories.options[i].selected)
+					art.setKategori(frm.acategories[i].text);
+			
+			articles.push(art);
+			
+			var tbl = document.getElementById("tblArticles");
+			tbl.innerHTML += art.getTableRow();
+		}
+		
+		function createFromJSON() {
+			var str = "{varunummer: '33', namn: 'Nisses', beskrivning: 'Nisses halsduk', pris: 89, enhetspris: 99, lagerstatus: 55, sommarvara: false, vintervara: true, kategorier: ['kl&auml;der', 'halsduk']}";
+			var art = new Vara(str);
+			articles.push(art);
+			
+			var tbl = document.getElementById("tblArticles");
+			tbl.innerHTML += art.getTableRow();
+		}
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>Sport shop (bjpe0800)</h1>
+	</header>
+	
+	<p>Fyll i formulär och klicka på knapp för att lägga till en artikel, eller klicka på "JSON-knappen"
+		för att lägga till (hårdkodad) artikel med JSON-sträng.</p>
+	
+	<fieldset>
+		<legend>[Lägg till artikel]</legend>
+	<form id="frmArticle">
+		<label for="ano" class="label150">Varunummer:</label><input type="text" id="ano" size="10"><br>
+		<label for="aname" class="label150">Namn:</label><input type="text" id="aname" size="30"><br>
+		<label for="adescription" class="label150">Beskrivning:</label><input type="text" id="adescription" size="75"><br>
+		<label for="aprice" class="label150">Pris:</label><input type="text" id="aprice" size="10"><br>
+		<label for="apricepiece" class="label150">Enhetspris:</label><input type="text" id="apricepiece" size="10"><br>
+		<label for="astock" class="label150">Lagerstatus:</label><input type="text" id="astock" size="10"><br>
+		
+		<label for="aperiod" class="label150">Användningstid:</label><select id="aperiod">
+				<option value="">- Välj användningstid -</option>
+				<option value="s">Sommar</option>
+				<option value="v">Vinter</option>
+			</select><br>
+		<label for="acategories" class="label150">Kategorier (flera kan väljas):</label><select id="acategories" multiple="multiple" size="5">
+				<option>bollspel</option>
+				<option>lagutrustning</option>
+				<option>friluftsliv</option>
+				<option>kläder</option>
+				<option>skor</option>
+			</select><br><br>
+			
+		<label for="btnAddArticle" class="label150"></label><input type="button" id="btnAddArticle" onclick="addArticle();" value="Lägg till artikel"><br><br>
+		<label for="btnAddArticleJSON" class="label150"></label><input type="button" id="btnAddArticleJSON" onclick="createFromJSON();" value="Lägg till artikel med JSON">
+	</form>
+	</fieldset>
+	
+	<h2>Artiklar</h2>
+	<table id="tblArticles">
+		<tr>
+			<th>Varunr</th><th>Namn</th><th>Beskrivning</th><th>Pris</th><th>Enhetspris</th><th>Lagerstatus</th><th>Användningstid</th><th>Kategorier</th>
+		</tr>
+	</table>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-02-19.</p>
+	</footer>
+</div>
+</body>
+</html>

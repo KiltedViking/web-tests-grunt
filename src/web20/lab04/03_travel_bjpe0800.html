@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn G.D. Persson">
+	<title>Best&auml;llning av flygbiljett (bjpe0800)</title>
+	<style type="text/css">
+		html { 
+			font-family: Palatino, Verdana, Helvetica, sans-serif; 
+			color: black; 
+			background-color: #800000;
+		}
+		h1, h2, h3, h4, h5, h6 { font-family: "Charcoal CY", Verdana, Helvetica, sans-serif; }
+		h1 { 
+			color: white; 
+			background-color: #800000; 
+			text-align: center;
+			margin-top: -10px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input, select { font-size: 1em; font-family: "Charcoal CY", Verdana, Helvetica, sans-serif; }
+		footer { 
+			clear: both;
+			text-align: center; 
+			font-size: .8em; 
+			margin: 5px 0px -15px;
+			border-top: solid 1px gray;
+		}
+		#page { 
+			width: 1000px; 
+			margin: 0 auto;
+			border-radius: 20px;
+			padding: 20px;
+			color: black; 
+			background-color: white;
+		}
+		.backlink { 
+			text-align: center; 
+			border-top: solid 1px gray;
+		}
+		.kommentar { font-size: .8em; }
+		ul.horisontal>li { display: inline; }
+		ul.horisontal>li>a { padding: 3px 10px; }
+		ul.horisontal>li>a:hover {
+			color: white;
+			background-color: #800000;
+		}
+		.width500 {
+			width: 400px;
+			float: left;
+			border: solid 1px gray;
+			padding: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="03_travel/03_travel_bjpe0800.js"></script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>Best&auml;llning av flygbiljett (bjpe0800)</h1>
+	</header>
+	
+	<p>V&auml;lj avreseort och destination f&ouml;r biljett att best&auml;lla.</p>
+	
+	<form>
+		<p><label for="lstDeparture">Fr&aring;n:</label><br>
+			<select id="lstDeparture" onchange="showDestinations()">
+				<option value=""> - V&auml;lj avreseort - </option>
+				<option value="goteborg">G&ouml;teborg</option>
+				<option value="stockholm">Stockholm</option>
+				<option value="ostersund">&Ouml;stersund</option>
+			</select></p>
+		<p><label for="lstDestination">Till:</label><br>
+			<select id="lstDestination"><option value="-1"> - V&auml;lj destination - </option></select></p>
+	</form>
+		
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-02-14.</p>
+	</footer>
+</div>
+</body>
+</html>

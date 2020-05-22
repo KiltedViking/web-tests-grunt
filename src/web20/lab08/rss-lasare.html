@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn Persson (bjpe0800)">
+	<title>RSS-läsare skapad med Ajax</title>
+	<link rel="stylesheet" type="text/css" href="presentation.css"></link>
+	<link href="bjpe0800.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.cookie.js"></script>
+	<script type="text/javascript" src="asynkron.js"></script>
+	<script type="text/javascript">
+
+		function visaRSSfeed(XHR)
+		{
+		    //alert(XHR.responseText);
+		
+		    var nyheter = document.getElementById("nyheter");
+			nyheter.innerHTML = "";
+		
+		    //Skapar tre parallella arrayer som var och inne innehåller XML-noderna
+		    //<title>, <description> og <link> från RSS-filen som läser från
+		    var titelNoder = XHR.responseXML.getElementsByTagName("title");
+		    var nyhetstextNoder = XHR.responseXML.getElementsByTagName("description");
+		    var lankNoder = XHR.responseXML.getElementsByTagName("link");
+		
+		    var raknare = 0;
+		    var i;		//startar loopen på 1 för att första element i XML-dokumentet är enbart RSS-filens titel 
+		    for (i = 1; i < titelNoder.length; i++)
+			{
+		
+		      //Hämtar titel, nyhetstext och länk till nyhet nr i
+		      var titel = titelNoder[i].childNodes[0].nodeValue;
+		      var nyhetstext = nyhetstextNoder[i].childNodes[0].nodeValue;
+		      var lank = lankNoder[i].childNodes[0].nodeValue;
+		
+		      //Hämta DOM-trädets titel
+		      var textnod = document.createTextNode(titel);  		//flyter omkring 
+		      var nyttDOMelement = document.createElement("h2");	//flyter omkring
+		      nyttDOMelement.appendChild(textnod); 					//lägger texten i ett nytt div-element
+		      nyheter.appendChild(nyttDOMelement);  				//lägger in det nya div-elementet i DOM-trädet
+		      nyttDOMelement.className = "titelstil"; 				//använder stilmall-klassen från css-filen
+		
+		
+		      //Lägg in nyhetstexten i DOM-trädet
+		      var textnod1 = document.createTextNode(nyhetstext);	//flyter omkring
+		      var nyttDOMelement1 = document.createElement("div");	//flyter omkring
+		      nyttDOMelement1.appendChild(textnod1); 				//lägger texten i ett nytt div-element
+			  nyttDOMelement1.innerHTML = nyhetstext;
+		      nyheter.appendChild(nyttDOMelement1);  				//lägger in det nya div-elementet i DOM-trädet
+		
+		
+		      //Lägg in länken i DOM-trädet, ALTERNATIV METOD med innerHTML-egenskapen
+		      //Man måste ha <a href> runt en länk:
+		      var fungerandeLank = "<a href='" + lank + "' target='_blank'>" + lank + "&nbsp;&gt;&gt;</a>";
+		      var nyttDOMelement2 = document.createElement("div");	//flyter i løse luften
+		      nyttDOMelement2.innerHTML = fungerandeLank;  			//OBSERVERA: Vi använder .innerHTML här
+		      nyheter.appendChild(nyttDOMelement2);  				//lägger in det nya div-elementet i DOM-trädet
+			}	//slut på for-loop
+			
+			$("#action").html("");
+		}	//visaRSSfeed
+		
+		function hamtaRSS()
+		{
+			//Get selected newspaper
+			var newspaper = $("#newspapers [type='radio']:checked").val();
+			
+			if(newspaper != undefined)
+			{
+				var h2Name = $("#newspapername");
+				
+				$("#action").html("Laddar flöde... [" + newspaper + "]");
+				
+				if(newspaper == "ab")
+					$(h2Name).html("Aftonbladet");
+				else if(newspaper == "dn")
+					$(h2Name).html("Dagens nyheter");
+				else if(newspaper == "kp")
+					$(h2Name).html("Kvällsposten");
+				
+				var url = "hamta-URL.php?newspaper=" + newspaper;
+			    hamtaFranServern(url, visaRSSfeed);
+			}
+			else
+				$("#action").html("Ett flöde måste väljas!");
+		}
+	
+		//var divNewspapers = document.getElementById("newspapers");
+		//divNewspapers.style="hidden";
+		
+		$(document).ready(function () {
+			//Add click event handler to radio buttons
+			$("#newspapers [type='radio']").click(hamtaRSS);
+		});
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+  		<h1>Läs RSS-feed här!</h1>
+	</header>
+	<div id="feeds">
+		<form>
+			<div id="newspapers">
+				<p>Markera nyhetsflöden att hämta.</p>
+				<p><input type="radio" name="newspaper" id="ab" value="ab">
+				<label for="ab">Aftonbladet</label><br>
+				<input type="radio" name="newspaper" id="dn" value="dn">
+				<label for="dn">Dagens nyheter</label><br>
+				<input type="radio" name="newspaper" id="kp" value="kp">
+				<label for="kp">Kvällsposten</label></p>
+			</div>
+		
+	    	<input type="button" value="Hämta RSS-feed" onclick="hamtaRSS();" />
+			<div id="action"></div>
+		</form>
+	</div>
+
+	<div id="news">
+		<h2 id="newspapername">&nbsp;</h2>
+	  	
+		<div id="nyheter" class="ruta"></div>
+	</div>
+	<footer>
+		<p><b>Redesigned and extended by:</b> Björn G.D. Persson (bjpe0800).
+			<b>Updated:</b> 2012-04-05.</p>
+	</footer>
+</div>
+</body>
+</html>

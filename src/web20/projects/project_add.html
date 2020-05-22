@@ -1,0 +1,49 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="UTF-8" />
+  <title>Add project - Kilted Viking's Projects</title>
+  <link rel="stylesheet" href="css/kvprojects.css" type="text/css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      //Set focus on first text field
+      $("input[type='text']:first", document.forms[0]).focus();
+    });
+  </script>
+</head>
+<body>
+  <div id="page">
+    <header>
+      <h1>Add project</h1>
+    </header>
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="./">Projects</a></li>
+        <li><a href="project_add.php">Add project</a></li>
+      </ul>
+    </nav>
+    <section id="main">
+      <h2>Project information</h2>
+      <div id="projects">
+        <form id="projectform" action="php/project_add.php" method="post">
+          <div>
+            <label for="txtName">Name:</label><input type="text" name="txtName" id="txtName" size="75" maxlength="90"><br>
+            <label for="txtStartDate">Start date:</label><input type="text" name="txtStartDate" id="txtStartDate" size="10" maxlength="10"><br>
+            <label for="txtEndDate">End date:</label><input type="text" name="txtEndDate" id="txtEndDate" size="10" maxlength="10"><br>
+            <label for="txtResponsible">Responsible:</label><input type="text" name="txtResponsible" id="txtResponsible" size="75" maxlength="90"><br>
+            <label for="txtComments">Comments:</label><br><textarea name="txtComments" id="txtComments" cols="75" rows="5"></textarea>
+          </div>
+          <div class="projectbuttons">
+            <input type="submit" value="Add project">
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G.D. Persson (bjpe0800). <b>Updated:</b> 2012-05-09.</p>
+    </footer>
+  </div>
+</body>
+</html>

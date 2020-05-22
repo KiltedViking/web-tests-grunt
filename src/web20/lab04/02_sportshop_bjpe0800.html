@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn G.D. Persson">
+	<title>Sport shop (bjpe0800)</title>
+	<style type="text/css">
+		html { 
+			font-family: Palatino, Verdana, Helvetica, sans-serif; 
+			color: black; 
+			background-color: #800000;
+		}
+		h1, h2, h3, h4, h5, h6 { font-family: "Charcoal CY", Verdana, Helvetica, sans-serif; }
+		h1 { 
+			color: white; 
+			background-color: #800000; 
+			text-align: center;
+			margin-top: -10px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input { font-size: 1em; font-family: "Charcoal CY", Verdana, Helvetica, sans-serif; }
+		footer { 
+			clear: both;
+			text-align: center; 
+			font-size: .8em; 
+			margin: 5px 0px -15px;
+			border-top: solid 1px gray;
+		}
+		#page { 
+			width: 1000px; 
+			margin: 0 auto;
+			border-radius: 20px;
+			padding: 20px;
+			color: black; 
+			background-color: white;
+		}
+		.backlink { 
+			text-align: center; 
+			border-top: solid 1px gray;
+		}
+		.kommentar { font-size: .8em; }
+		ul.horisontal>li { display: inline; }
+		ul.horisontal>li>a { padding: 3px 10px; }
+		ul.horisontal>li>a:hover {
+			color: white;
+			background-color: #800000;
+		}
+		.width500 {
+			width: 400px;
+			float: left;
+			border: solid 1px gray;
+			padding: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		//Global variables to keep articles in
+		var artiklarXML, artiklarJSON;
+
+		/*** Application specific functions **********************************/
+		//Loads articles from server as XML, if not already loaded, and add articles to page
+		function showArticlesXML() {
+			if(!artiklarXML)
+				getArticlesXML();
+			else
+				addArticlesToPageXML();
+		}
+
+		//Loads articles from server as JSON, if not already loaded, and add articles to page
+		function showArticlesJSON() {
+			if(!artiklarJSON)
+				getArticlesJSON();
+			else
+				addArticlesToPageJSON();
+		}
+		
+		/*** AJAX functions **********************************/
+		function getArticlesXML() {
+			//Request text file from server asynchronous
+			var ajax = new XMLHttpRequest();
+			
+			//Add event handler for handling returned request
+			ajax.onreadystatechange = function()
+			{
+				//If request loaded - add file content to div tag
+				if (ajax.readyState == 4 && ajax.status == 200)
+				{
+					//Store XML in global variable
+					artiklarXML = ajax.responseXML;
+					
+					addArticlesToPageXML();
+				}
+			}
+			
+			//Open connection and send request
+			ajax.open("GET","02_sportshop/artiklar.xml");
+			ajax.send('');			
+		}
+		
+		function getArticlesJSON() {
+			//Request text file from server asynchronous
+			var ajax = new XMLHttpRequest();
+			
+			//Add event handler for handling returned request
+			ajax.onreadystatechange = function()
+			{
+				//If request loaded - add file content to div tag
+				if (ajax.readyState == 4 && ajax.status == 200)
+				{
+					//Store JSON in global variable
+					artiklarJSON = eval("(" + ajax.responseText + ")");
+					
+					addArticlesToPageJSON();
+				}
+			}
+			
+			//Open connection and send request
+			ajax.open("GET","02_sportshop/artiklar.js");
+			ajax.send('');			
+		}
+		
+		/*** DOM functions **********************************/
+		//Clears all child elements from element in argument
+		function clearChildElements(elem) {
+			for(var i = elem.childNodes.length; i > 0 ; i--)
+				elem.removeChild(elem.childNodes[i-1]);		
+		}
+		
+		//Adds li element to ulElem with text and id (optional)
+		function addLi(ulElem, text, id) {
+			var li = document.createElement("li");
+			li.appendChild(document.createTextNode(text));
+			if(id)
+				li.setAttribute("id", id);
+			ulElem.appendChild(li);
+		}
+		
+		//Add articles to page by adding DOM elements from XML data
+		function addArticlesToPageXML() {
+			var artiklar = artiklarXML.getElementsByTagName("artiklar")[0].getElementsByTagName("a");
+			var ulArtiklar = document.getElementById("divArticlesXML").firstChild;
+			var currArtikel;
+			
+			//Remove existing li tags
+			clearChildElements(ulArtiklar);
+			
+			if(artiklar)
+			{
+				for(var i = 0; i < artiklar.length; i++)
+				{
+					currArtikel = artiklar[i].getElementsByTagName("namn")[0];
+					//Test if .textContent works - otherwise use .text (for IE)
+					addLi(ulArtiklar, currArtikel.textContent ? currArtikel.textContent : currArtikel.text, artiklar[i].getAttribute("id"));
+				}
+			}
+		}
+		
+		//Add articles to page by adding DOM elements from JSON data
+		function addArticlesToPageJSON() {
+			var artiklar = artiklarJSON.artiklar;
+			var ulArtiklar = document.getElementById("divArticlesJSON").firstChild;
+			
+			//Remove existing li tags
+			clearChildElements(ulArtiklar);
+			
+			if(artiklar)
+			{
+				for(var i = 0; i < artiklar.length; i++)
+				{
+					addLi(ulArtiklar, artiklar[i].namn, artiklar[i].id);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>Sport shop (bjpe0800)</h1>
+	</header>
+	
+	<p>Klicka på knapp för att visa artiklar hämtade med respektive teknologi.</p>
+	
+	<form>
+		<input type="button" onclick="showArticlesXML();" value="Visa artiklar (XML)">
+		<input type="button" onclick="showArticlesJSON();" value="Visa artiklar (JSON)">
+	</form>
+	
+	<div id="divArticlesXML" style="clear: both;"><ul></ul></div>
+	<div id="divArticlesJSON" style="clear: both;"><ul></ul></div>
+	
+	<p class="kommentar">(Denna lösning hämtar data som XML och JSON, beroende på vilken knapp man klickar på.
+		Sen visas namn på artiklar i lista, där alternativens attribut ID sätts till artikelns
+		ID.<br>
+		Min tolkning av inlämningsuppgift är att lösa datautväxling med XML och JSON - 
+		inte presentation av data. :-))</p>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-02-11.</p>
+	</footer>
+</div>
+</body>
+</html>

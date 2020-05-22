@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn Persson (bjpe0800)">
+	<title>R&auml;kneduell (bjpe0800)</title>
+	<style type="text/css">
+		html { 
+			font-family: Palatino, Verdana, Helvetica, sans-serif; 
+			color: black; 
+			background-color: #800000; 
+		}
+		h1, h2, h3, h4, h5, h6 { font-family: "Chalkduster", Verdana, Helvetica, sans-serif; }
+		h1 { 
+			color: white; 
+			background-color: #800000; 
+			text-align: center;
+			margin-top: -10px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input { 
+			font-size: 1em; 
+			font-family: "Helvetica", Verdana, Helvetica, sans-serif; 
+		}
+		footer { 
+			clear: both;
+			text-align: center; 
+			font-size: .8em; 
+			margin: 5px 0px -15px;
+			border-top: solid 1px gray;
+		}
+		#page { 
+			width: 1000px; 
+			margin: 0 auto;
+			border-radius: 20px;
+			padding: 20px;
+			color: black; 
+			background-color: white;
+		}
+		.backlink { 
+			text-align: center; 
+			border-top: solid 1px gray;
+		}
+		.kommentar { font-size: .8em; }
+		ul.horisontal>li { display: inline; }
+		ul.horisontal>li>a { padding: 3px 10px; }
+		ul.horisontal>li>a:hover {
+			color: white;
+			background-color: #800000;
+		}
+	</style>
+	<script type="text/javascript" src="03_rakneduell/rakneduell_bjpe0800.js"></script>
+	<script type="text/javascript">
+		var MAX_TIME = 10000;	//Maximum value for random numbers
+		
+		/*** Event handlers for readyState == 4 in AJAX ******************************/
+		function addHandler(numbers) 
+		{
+			var num;
+			
+			for(var i = 0; i < numbers.length; i++)
+			{
+				num = numbers[i];
+				setTimeout("addNewValue(" + num + ")", Math.random() * MAX_TIME);
+			}
+		}
+		
+		function subtractHandler(numbers) 
+		{
+			var num;
+			
+			for(var i = 0; i < numbers.length; i++)
+			{
+				num = numbers[i];
+				setTimeout("subtractNewValue(" + num + ")", Math.random() * MAX_TIME);
+			}
+		}
+		
+		/*** Functions for adding and subtracting  ******************************/
+		function addNewValue(aVal) 
+		{
+			var divCounter = document.getElementById("counter");
+			var divValues = document.getElementById("values");
+						
+			divCounter.innerHTML = parseInt(divCounter.innerHTML) + parseInt(aVal);
+			divValues.innerHTML += "Adding " + aVal + " - new sum: " + divCounter.innerHTML + "<br>";
+		}
+		
+		function subtractNewValue(aVal) 
+		{
+			var divCounter = document.getElementById("counter");
+			var divValues = document.getElementById("values");
+			
+			divCounter.innerHTML = parseInt(divCounter.innerHTML) - parseInt(aVal);
+			divValues.innerHTML += "Subtracting " + aVal + " - new sum: " + divCounter.innerHTML + "<br>";
+		}
+		
+		/*** Page related functions ********************************************/
+		//Function to call when page is loaded
+		function pageOnLoad()
+		{
+			//If namespace for solution is defined - create instances of class Duel
+			if(window.bjpe0800) 
+			{
+				var adder = new bjpe0800.Duel('03_rakneduell/add.txt', addHandler);
+				var subtractor = new bjpe0800.Duel('03_rakneduell/subtract.txt', subtractHandler);
+			}
+			else //... else show error message
+			{
+				var divC = document.getElementById("counter");
+				var newP = document.createElement("p");
+				newP.innerHTML = "<span style='color: red; border: dotted 3px red; padding: 5px 30px;'>ERROR: Can't find object bjpe0800!</span>";
+				divC.appendChild(newP);
+			}		
+		}
+		
+		window.onload = pageOnLoad;	//Add function as event handler for OnLoad event
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>R&auml;kneduell (bjpe0800)</h1>
+	</header>
+	
+	<p>Luta dig tillbaka och se tal adderas och subtraheras. :-)</p>
+	
+	<div id="counter">0</div>
+	<div id="values"></div>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-03-03.</p>
+	</footer>
+</div>
+</body>
+</html>

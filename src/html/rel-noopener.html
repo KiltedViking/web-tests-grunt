@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="800000">
+  <link rel="icon" sizes="192x192" href="my-icon.png">
+  <title>rel: noopener</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>rel: noopener</h1>
+        <p>Example showing how to use <code>rel=&quot;noopener&quot;</code> together
+          with <code>target=&quot;_blank&quot;</code> to secure visitor.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Problem</h2>
+        <p>Tabs opened using <code>target=&quot;_blank&quot;</code> share the same 
+          <code>window</code> object, which means that target website can change 
+          source tabs content, i.e. <code>window.opener.location = newURL</code>.</p>
+
+        <h3>Test links</h3>
+        <p>First link opens another page without <code>rel</code> attribute set while
+          the second link has it set.       </p>
+        <ul>
+          <li><a href="rel-noopener2.html" target="_blank">Page 2 without noopener</a></li>
+          <li><a href="rel-noopener2.html" target="_blank" rel="noopener">Page 2 with noopener</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to HTML</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-17.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

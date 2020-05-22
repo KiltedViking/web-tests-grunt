@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style type="text/css">
+    #page { width: 1000px; margin: 0 auto;}
+  </style>
+</head>
+<body>
+<div id="page">
+  <h1>Test of JSON</h1>
+  <div id="output"></div>
+</div>
+  <script type="text/javascript">
+    var obj = { dberror: "Can't connect to database...", projects: []};
+    var divOutput = document.getElementById("output");
+    divOutput.innerHTML = obj.dberror;
+  </script>
+</body>
+</html> 

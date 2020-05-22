@@ -5,6 +5,7 @@
   "main": "scripts.js",
   "scripts": {
     "build": "grunt build",
+    "start": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "grunt watch"
   },

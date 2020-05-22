@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn Persson (bjpe0800)">
+	<title>Registrering (bjpe0800)</title>
+	<link href="bjpe0800.css" rel="stylesheet" type="text/css">
+	<script src="03_registrering/registrering_bjpe0800.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		/*** Application related functions *************************************/
+		//Event handler for OnSubmit for form
+		function registrera()
+		{
+			var uri = "";
+			//Get hold of controls
+			var inputAnvandarnamn = document.getElementById("anvandarnamn");
+			var inputLosenord = document.getElementById("losenord");
+			var inputLosenord2 = document.getElementById("losenord2");
+			//Get values from controls
+			var txtAnvandarnamn = inputAnvandarnamn.value;
+			var txtLosenord = inputLosenord.value;
+			var txtLosenord2 = inputLosenord2.value;
+			
+			//If username and password entered and OK - validate...
+			if(checkValue(txtAnvandarnamn, "n") && checkValue(txtLosenord, "p") && checkValue(txtLosenord2, "p"))
+			{
+				//If password and confirmation of password matches...
+				if(txtLosenord == txtLosenord2)
+				{
+					//Add usernamn and password to URI
+					uri = "03_registrering/registrering_bjpe0800.php?username=" + inputAnvandarnamn.value 
+						+ "&password=" + inputLosenord.value;
+					
+					var login = new bjpe0800.CreateAccount(uri, inform);
+				}
+				else	//... otherwise inform visitor about error
+				{
+					inform("FEL: Lösenord matchar inte! Fyll i lösenord och bekräfta igen.");
+					inputLosenord.value = "";
+					inputLosenord.focus();
+					inputLosenord2.value = "";
+				}
+			}
+			else	//... otherwise inform visitor about error
+				inform("FEL: Du måste fylla i både användarnamn och lösenord samt bekräfta lösenord!<br>"
+					+ "Alternativt är användarnamn eller lösenord för korta! "
+					+ "Användarnamn måste bestå av minst 3 tecken och lösenord minst 8 tecken.");
+			
+			return false;	//Stop original action, i.e. submitting form
+		}
+		
+		//Inform visitor of result of validation
+		function inform(text)
+		{
+			var divMessage = document.getElementById("message");
+			divMessage.innerHTML = text;
+		}
+		
+		//Check value. Types are "n" for username or "p" for password
+		function checkValue(val, type)
+		{
+			var res = false;
+			
+			if(type == "n")	//If username...
+				res = val.length > 2;
+			else if(type == "p")	//... else password
+				res = val.length > 7;
+				
+			return res;
+		}
+		
+		/*** Page related functions ********************************************/
+		//Function to call when page is loaded
+		function pageOnLoad()
+		{
+			//If namespace for solution is defined - create instances of class Duel
+			if(window.bjpe0800) 
+			{
+				var form = document.getElementById("formular");
+				form.onsubmit = registrera;
+				form.elements[0].focus();
+			}
+			else
+			{
+				var divMessage = document.getElementById("message");
+				var newP = document.createElement("p");
+				newP.innerHTML = "<span style='color: red; border: dotted 3px red; "
+					+ "padding: 5px 30px;'>ERROR: Can't find object bjpe0800!</span>";
+				divMessage.appendChild(newP);
+			}
+		}
+		
+		window.onload = pageOnLoad;	//Add function as event handler for OnLoad event
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>Registrering (bjpe0800)</h1>
+	</header>
+	
+	<p>Fyll i användarnamn och lösenord för att registrera dig.</p>
+	
+	<form id="formular" action="03_registrering_hanterare_bjpe0800.html" method="post">
+		<p><label for="anvandarnamn" class="width150">Användarnamn:</label>
+			<input type="text" id="anvandarnamn"> (existerande användare: ann, grant, and john)</p>
+		<p><label for="losenord" class="width150">Lösenord:</label>
+			<input type="password" id="losenord"></p>
+		<p><label for="losenord2" class="width150">Bekräfta lösenord:</label>
+			<input type="password" id="losenord2"></p>
+		<p><label for="submit" class="width150"></label>
+			<input type="submit" id="submit" value="Registrera konto"></p>
+	</form>
+	
+	<div id="message"></div>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-03-04.</p>
+	</footer>
+</div>
+</body>
+</html>

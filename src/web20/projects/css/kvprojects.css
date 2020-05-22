@@ -1,0 +1,60 @@
+body {
+  color: black;
+  background-color: #800000;
+  font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+h1 {
+  color: white;
+  background-color: #800000;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#page {
+  color: black;
+  background-color: white;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+#menu {
+  float: left;
+  width: 200px;
+}
+
+#main {
+  float: left;
+  width: 750px;
+}
+
+#main .project {
+  margin: 10px 0;
+  border: solid 1px gray;
+  padding: 5px;
+}
+
+#main .projectbuttons {
+  float: right;
+}
+
+#projectform  label{
+  width: 120px;
+  font-weight: bold;
+  float: left;
+}
+
+.center { text-align: center; }
+
+footer { clear: both; }
+footer>p {
+  text-align: center;
+  border-top: solid 1px gray;
+}

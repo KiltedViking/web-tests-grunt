@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="utf-8">
+	<title>Mina foto</title>
+	<script type="text/javascript">
+		function showBig(anImg)
+		{
+			var imgBig = document.getElementById("big");
+			var imgSmall = anImg.src;
+			imgBig.src = anImg.src;
+			imgBig.style.display = "block";
+		}
+	</script>
+	<style type="text/css">
+		html { font-family: Verdana, Helvetica, sans-serif; }
+		#big { display: none; }
+		.bigStyle { display: block; position: absolute; top: 1; left: 1; }
+		.foto { float: left; text-align: center; }
+	</style>
+</head>
+<body>
+<h1>Mina foto</h1>
+<p>Klicka på foto för att förstora.</p>
+<div id="foton">
+	<div class="foto">
+		<img src="02_foto1_bjpe0800.jpg" width="300" height="225" onclick="showBig(this)"><br>
+		Ruthven barracks
+	</div>
+	<div class="foto">
+		<img src="02_foto2_bjpe0800.jpg" width="300" height="225" onclick="showBig(this)"><br>
+		Bridge at Carrbridge
+	</div>
+	<div class="foto">
+		<img src="02_foto3_bjpe0800.jpg" width="300" height="225" onclick="showBig(this)"><br>
+		Glen Nevis
+	</div>
+</div>
+<img id="big" width="900" height="675" onclick="hideBig">
+</body>
+</html>

@@ -131,7 +131,8 @@ module.exports = function(grunt) {
               'node_modules/semantic-ui-css/semantic.js',
               'node_modules/semantic-ui-css/semantic.min.js',
               'node_modules/tinymce/tinymce*.js',
-              'downloads/jquery-ui-1.12.1/*.js'
+              'downloads/jquery-ui-1.12.1/*.js',
+              'downloads/jquery.xslt.build.full.js-0.0.5/*.js'
             ], 
             dest: 'dist/js/',
             filter: 'isFile',

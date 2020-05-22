@@ -1,0 +1,94 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="UTF-8" />
+  <title>Kilted Viking's Projects</title>
+  <link rel="stylesheet" href="css/kvprojects.css" type="text/css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $.ajax({
+        url: "php/select_projects_json.php",
+        statusCode: {
+          404: function() {
+            alert("Page not found...");
+          }
+        }
+      }).done(function(data) {
+        //alert($(data).text());
+        var divProjects = $("#projects");
+        /*$(data).find("project").each(function() {
+          var id = $(this).find("id").text();
+          var name = $(this).find("name").text();
+          var created = $(this).find("created").text();
+          var startdate = $(this).find("startdate").text();
+          var enddate = $(this).find("enddate").text();
+          var responsible = $(this).find("responsible").text();
+          var comments = $(this).find("comments").text();
+          var htmlProjects = "";
+          
+          if(created) {
+            htmlProjects = "<div class=\"project\"><div><b>Project name:</b> " + name 
+              + "<br><b>Created:</b> " + created 
+              + "<br><b>Start date:</b> " + startdate 
+              + " <b>End date:</b> " + enddate
+              + "<br><b>Responisble:</b> " + responsible 
+              + "<br><b>Comments:</b><br> " + comments 
+              + "</div><div class=\"projectbuttons\"><a href=\"/projectinfo.html?id=" + id
+              + "\" class=\"projectmoreinfo\">More info</a></div><div>&nbsp;</div>"
+              + "</div>"
+          }
+          else
+            htmlProjects = "<div class=\"projects\"><b>ERROR:</b> " + name + "</b></div>";
+        */    
+          //alert(data + "\n\n" + data.projects);
+          var arrProjects = $.parseJSON(data);
+          var htmlProjects = "";
+          //alert(data + "\n\n" + arrProjects.projects.length);
+          if(undefined == arrProjects.dberror || arrProjects.dberror == "") {
+            for(var i = 0; i < arrProjects.projects.length; i++)
+            {
+              htmlProjects += "<div class=\"project\"><div><b>Project name:</b> " + arrProjects.projects[i].name 
+                + "<br><b>Created:</b> " + arrProjects.projects[i].created 
+                + "<br><b>Start date:</b> " + arrProjects.projects[i].startdate 
+                + " <b>End date:</b> " + arrProjects.projects[i].enddate
+                + "<br><b>Responisble:</b> " + arrProjects.projects[i].responsible 
+                + "<br><b>Comments:</b><br> " + arrProjects.projects[i].comments 
+                + "</div><div class=\"projectbuttons\"><a href=\"/php/projectinfo.php?id=" + arrProjects.projects[i].id
+                + "\" class=\"projectmoreinfo\">More info</a></div><div>&nbsp;</div>"
+                + "</div>"
+            }
+          }
+          else
+            htmlProjects = "<div class=\"projects\"><b>ERROR:</b> " + arrProjects.dberror + "</b></div>";
+            
+          $(divProjects).append(htmlProjects);
+        //});
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="page">
+    <header>
+      <h1>Kilted Viking's Projects</h1>
+    </header>
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a id="mnuProjects" href="php/projects.php">Projects</a></li>
+        <li><a id="mnuProjectAdd" href="project_add.html">Add project</a></li>
+      </ul>
+    </nav>
+    <section id="main">
+      <h2>Projects</h2>
+      <div id="projects">
+      
+      </div>
+    </section>
+    <footer>
+      <p><b>Created by:</b> Bj&ouml;rn G.D. Persson (bjpe0800). <b>Updated:</b> 2012-05-17.</p>
+    </footer>
+  </div>
+</body>
+</html>

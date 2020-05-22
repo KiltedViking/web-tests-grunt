@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bj&ouml;rn G.D. Persson (MiUn)</title>
+  <style type="text/css">
+    body { color: black; background-color: #800000; font-family: Georgia, Helvetica, serif; }
+    #page { color: black; background-color: white; width: 1000px; margin: 0px auto; border-radius: 20px; padding: 20px; }
+    h1, h2, h3, h4, h5, h6 { font-family: Verdana, Lucida, sans-serif; }
+    h1 { text-align: center; color: white; background-color: #800000; margin-top: -5px; border-radius: 10px; padding: 5px; }
+    footer { font-size: .8em; text-align: center; margin-bottom: -20px; border-top: solid 1px gray; }
+    #error { color: red; background-color: white; margin: 0 20px; border: dashed 2px red; text-align: center; }
+  </style>
+</head>
+<body>
+<div id="page">
+  <header>
+    <h1>Bj&ouml;rn G.D. Persson (MiUn)</h1>
+  </header>
+
+  <!-- Error message about missing jQuery library that is hidden with jQuery -->
+  <div id="error">
+    <p>Problem loading jQuery library! Please try reloading page, or activating JavaScript, for a better viewing experience...</p>
+  </div>
+  
+  <p>A student at Mid Sweden University attending a course on Web 2.0.</p>
+  
+  <h2>Exercises on course Web 2.0 with AJAX</h2>
+  
+  <p>Below are links to my solutions for the exercises. <b>Please note:</b> Some 
+  	pages are in Swedish only!</p>
+  
+  <div style="width: 400px; float: left;">
+    <ul>
+      <li>Exercise 1 (reported as PDF in WebCT)</li>
+      <li><a href="lab02/">Exercise 2</a></li>
+      <li><a href="lab03/">Exercise 3</a></li>
+      <li><a href="lab04/">Exercise 4</a></li>
+      <li><a href="lab05/">Exercise 5</a></li>
+    </ul>
+  </div>
+  <div style="width: 400px; float: left;">
+    <ul>
+      <li><a href="lab06/">Exercise 6</a></li>
+      <li><a href="lab07/">Exercise 7</a></li>
+      <li><a href="lab08/">Exercise 8</a></li>
+      <li><a href="lab09/">Exercise 9</a></li>
+      <li><a href="lab10/">Exercise 10</a></li>
+    </ul>
+  </div>
+  
+  <div style="clear: both;"></div>
+  
+  <h2>Links to other sites</h2>
+  
+  <ul>
+    <li><a href="https://www.kiltedviking.net/" class="externallink" rel="noopener">My website</a> (kiltedviking.net)</li>
+  </ul>
+  
+  <footer>
+    <p><b>Created by:</b> Bj&ouml;rn G.D. Persson. <b>Last updated:</b> 2012-01-16.</p>
+  </footer>
+</div>
+<!-- Reference jQuery library from Googles server -->
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+    //Test if jQuery object (and thereby library) available
+  if(window.jQuery) {
+      //When document loaded (ready)
+    $(document).ready(function() {
+      $("#error").hide(); //Hide error message about missing jQuery library
+      
+      var links =  $(".externallink"); //Grab all external links
+      
+        //For each link, add target attribute and append 'external link suffix'
+      $(links).each(function() {
+        $(this).attr("target", "_blank").append(" &gt;&gt;");
+      });
+    });
+   }
+</script>
+</body>
+</html>

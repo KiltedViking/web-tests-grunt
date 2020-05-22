@@ -1,0 +1,49 @@
+html { 
+	font-family: Palatino, Verdana, Helvetica, sans-serif; 
+	color: black; 
+	background-color: #800000; 
+}
+h1, h2, h3, h4, h5, h6 { font-family: Chalkduster, Verdana, Helvetica, sans-serif; }
+h1 { 
+	color: white; 
+	background-color: #800000; 
+	text-align: center;
+	margin-top: -10px;
+	border-radius: 5px;
+	padding: 5px;
+}
+input { 
+	font-size: 1em; 
+	font-family: "Helvetica", Verdana, Helvetica, sans-serif; 
+}
+label.width150 {
+	display: inline-block;
+	width: 150px;
+	font-weight: bold;
+}
+footer { 
+	clear: both;
+	text-align: center; 
+	font-size: .8em; 
+	margin: 5px 0 -15px;
+	border-top: solid 1px gray;
+}
+#page { 
+	width: 1000px; 
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 20px;
+	color: black; 
+	background-color: white;
+}
+.backlink { 
+	text-align: center; 
+	border-top: solid 1px gray;
+}
+.kommentar { font-size: .8em; }
+ul.horisontal>li { display: inline; }
+ul.horisontal>li>a { padding: 3px 10px; }
+ul.horisontal>li>a:hover {
+	color: white;
+	background-color: #800000;
+}

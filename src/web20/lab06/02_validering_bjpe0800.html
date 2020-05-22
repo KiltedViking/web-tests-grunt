@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn Persson (bjpe0800)">
+	<title>Inloggning med validering (bjpe0800)</title>
+	<link href="bjpe0800.css" rel="stylesheet" type="text/css">
+	<script src="02_validering/validering_bjpe0800.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		/*** Application related functions *************************************/
+		//Event handler for OnSubmit for form
+		function loggain()
+		{
+			var uri = "";
+			var inputAnvandarnamn = document.getElementById("anvandarnamn");
+			var inputLosenord = document.getElementById("losenord");
+			var txtAnvandarnamn = inputAnvandarnamn.value;
+			var txtLosenord = inputLosenord.value;
+			
+			//If username and password entered - validate...
+			if(txtAnvandarnamn.length > 0 && txtLosenord.length > 0)
+			{
+				//Add usernamn and password to URI
+				uri = "02_validering/validering_bjpe0800.php?anvandarnamn=" + inputAnvandarnamn.value 
+					+ "&losenord=" + inputLosenord.value;
+				
+				var login = new bjpe0800.LoginText(uri, inform);
+			}
+			else	//... otherwise inform visitor about error
+				inform("FEL: Du måste fylla i både användarnamn och lösenord!");
+			
+			return false;	//Stop original action, i.e. submitting form
+		}
+		
+		//Inform visitor of result of validation
+		function inform(text)
+		{
+			var divMessage = document.getElementById("message");
+			divMessage.innerHTML = text;
+		}
+		
+		/*** Page related functions ********************************************/
+		//Function to call when page is loaded
+		function pageOnLoad()
+		{
+			//If namespace for solution is defined - create instances of class Duel
+			if(window.bjpe0800) 
+			{
+				var form = document.getElementById("formular");
+				form.onsubmit = loggain;
+			}
+			else
+			{
+				var divMessage = document.getElementById("message");
+				var newP = document.createElement("p");
+				newP.innerHTML = "<span style='color: red; border: dotted 3px red; "
+					+ "padding: 5px 30px;'>ERROR: Can't find object bjpe0800!</span>";
+				divMessage.appendChild(newP);
+			}		
+		}
+		
+		window.onload = pageOnLoad;	//Add function as event handler for OnLoad event
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>Inloggning med validering (bjpe0800)</h1>
+	</header>
+	
+	<p>Fyll i användarnamn och lösenord för att se hemligt meddelande.</p>
+	
+	<form id="formular" action="02_loggain_hanterare_bjpe0800.html" method="post">
+		<p><label for="anvandarnamn" class="width150">Användarnamn:</label>
+			<input type="text" id="anvandarnamn"> (per)</p>
+		<p><label for="losenord" class="width150"	>Lösenord:</label>
+			<input type="password" id="losenord"> (1234)</p>
+		<p><label for="submit" class="width150"></label>
+			<input type="submit" id="submit" value="Logga in"></p>
+	</form>
+	
+	<div id="message"></div>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-03-04.</p>
+	</footer>
+</div>
+</body>
+</html>

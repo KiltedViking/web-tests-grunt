@@ -1,0 +1,28 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function engelska()
+		{
+			document.getElementById("engelsk_text").style.visibility = "visible"
+		}
+		function svenska()
+		{
+			document.getElementById("svensk_text").style.visibility = "visible"
+		}
+		function gom()
+		{
+			document.getElementById("engelsk_text").style.visibility = "hidden"
+			document.getElementById("svensk_text").style.visibility = "hidden"
+		}
+  </script>
+</head>
+<body onload="gom()">	<!-- Gom bada texter nar sida laddas -->
+  <p>Välj språk:
+  	<!-- Visa text nar mus fors over lank och gom nar fors bort -->
+    <a href="#" onMouseOver="engelska()" onMouseOut="gom()">Engelska</a>
+    <a href="#" onMouseOver="svenska()" onMouseOut="gom()">Svenska</a>
+  </p>
+  <div id="engelsk_text">Here is the english version</div>
+  <div id="svensk_text">Här visas svenska</div>
+</body>
+</html>

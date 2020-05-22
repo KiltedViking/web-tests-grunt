@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+	<meta charset="utf-8">
+	<meta author="Bj&ouml;rn Persson (bjpe0800)">
+	<title>Visa hemlighet (bjpe0800)</title>
+	<style type="text/css">
+		html { font-family: Verdana, Helvetica, sans-serif; color: black; background-color: #800000; }
+		h1 { 
+			color: white; 
+			background-color: #800000; 
+			text-align: center;
+			margin-top: -10px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		input { font-size: 1em; }
+		footer { 
+			text-align: center; 
+			font-size: .8em; 
+			margin: 5px 0px -15px;
+			border-top: solid 1px gray;
+		}
+		#page { 
+			width: 1000px; 
+			margin: 0 auto;
+			border-radius: 20px;
+			padding: 20px;
+			color: black; 
+			background-color: white;
+		}
+	</style>
+	<script type="text/javascript">
+		function verifieraLosenord() 
+		{
+			var txtPassword = document.getElementById("txtpassword");
+			
+			if(txtPassword.value.length > 0)
+				getPassword();
+		}
+		
+		function getPassword() 
+		{
+			//Request text file from server synchronous
+			var ajax = new XMLHttpRequest();
+			
+			//Add event handler for handling returned request
+			ajax.onreadystatechange = function()
+			{
+				//If request loaded - add file content to div tag
+				if (ajax.readyState == 4 && ajax.status == 200)
+				{
+					//Grab hold of textbox w password and div to add text to
+					var txtPassword = document.getElementById("txtpassword");
+					var divHemlighet = document.getElementById("hemlighet");	
+					
+					//If password from server matches password in textbox
+					if(ajax.responseText.trim() == txtPassword.value) 
+						visaHemlighet(divHemlighet.childNodes[0]);
+					else
+						visaFelmeddelande(divHemlighet.childNodes[0]);
+				}
+			}
+			
+			//Open connection and send request
+			ajax.open("GET","02_losenord/losenord.txt");
+			ajax.send('');
+		}
+		
+		function visaHemlighet(elem) {
+			elem.innerHTML = "Mitt hemliga meddelande";
+		}
+		
+		function visaFelmeddelande(elem) {
+			elem.innerHTML = "Fel lösenord!";
+		}
+	</script>
+</head>
+<body>
+<div id="page">
+	<header>
+		<h1>Visa hemlighet (bjpe0800)</h1>
+	</header>
+	
+	<p>Klicka på knapp för att visa verifiera lösenord och visa hemligt meddelande, om rätt lösenord.</p>
+	
+	<div>
+		<form>
+			<p>Lösenord: <input type="password" id="txtpassword">
+				<input type="button" onclick="verifieraLosenord();" value="Visa hemlighet"></p>
+		</form>
+	</div>
+	
+	<div id="hemlighet"><p></p></div>
+	
+	<footer>
+		<p><b>Skapad av:</b> Bj&ouml;rn G.D. Persson. <b>Uppdaterad:</b> 2012-01-27.</p>
+	</footer>
+</div>
+</body>
+</html>

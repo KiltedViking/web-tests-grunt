@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<artiklar>
+	<a id="ax1" sommarvara="true" vintervara="false">
+		<namn>Fotboll</namn>
+		<beskrivning>En fotboll av läder</beskrivning>
+		<pris>10</pris>
+		<enhetspris></enhetspris>
+		<kategorier>
+			<k>Fotboll</k>
+			<k>Redskap</k>
+		</kategorier>
+	</a>
+	<a id="ax2" sommarvara="false" vintervara="true">
+		<namn>Skidor</namn>
+		<beskrivning>Träplankor för enklare förflyttning på snö</beskrivning>
+		<pris>20</pris>
+		<enhetspris></enhetspris>
+		<kategorier>
+			<k>Skidor</k>
+			<k>Redskap</k>
+		</kategorier>
+	</a>
+	<a id="ax3" sommarvara="false" vintervara="true">
+		<namn>Skidbyxa</namn>
+		<beskrivning>Klädesplagg för att bättre klara vinterkyla</beskrivning>
+		<pris>30</pris>
+		<enhetspris></enhetspris>
+		<kategorier>
+			<k>Skidor</k>
+			<k>Klädesplagg</k>
+		</kategorier>
+	</a>
+	<a id="ax4" sommarvara="true" vintervara="false">
+		<namn>Fotboll</namn>
+		<beskrivning>En fotboll av läder</beskrivning>
+		<pris>10</pris>
+		<enhetspris></enhetspris>
+		<kategorier>
+			<k>Fotboll</k>
+			<k>Redskap</k>
+		</kategorier>
+	</a>
+</artiklar>
