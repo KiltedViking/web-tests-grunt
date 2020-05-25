@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Footer in element - Bootstrap</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <style>
+    .project-container {
+     height: auto !important; 
+     /*padding-bottom: 40px;*/
+    }
+    .project { 
+      height: 300px; 
+      border: dotted 1px gray; 
+      margin-bottom: -40px; 
+      /*padding-bottom: 40px; */
+      /* position: relative; */ 
+    }
+    .last {
+      height: 50px;
+    }
+    .footer { 
+      color: white; 
+      background-color: green; 
+      height: 40px; 
+      text-align: center;  
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Footer in element - Bootstrap</h1>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-3 project-container">
+        <section class="project">
+          <h2>A header</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quam 
+            pariatur dignissimos, iure nostrum ratione! Labore alias commodi officia 
+            repudiandae minima ducimus assumenda corporis velit, iste blanditiis, 
+            facere libero quae.</p>
+          <p class="last"></p>
+        </section>
+        <p class="footer">A footer</p>
+      </div>
+
+      <div class="col-sm-3 project-container">
+        <section class="project">
+          <h2>A header</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quam 
+            pariatur dignissimos, iure nostrum ratione! Labore alias commodi officia 
+            repudiandae minima ducimus assumenda corporis velit, iste blanditiis, 
+            facere libero quae.</p>
+        </section>
+      </div>
+
+      <div class="col-sm-3 project-container">
+        <section class="project" style="overflow: scroll;">
+          <h2>A header</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quam 
+            pariatur dignissimos, iure nostrum ratione! Labore alias commodi officia 
+            repudiandae minima ducimus assumenda corporis velit, iste blanditiis, 
+            facere libero quae.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quam 
+            pariatur dignissimos, iure nostrum ratione! Labore alias commodi officia 
+            repudiandae minima ducimus assumenda corporis velit, iste blanditiis, 
+            facere libero quae.</p>
+          <p class="last">&nbsp;</p>          
+        </section>
+        <p class="footer">A footer</p>
+      </div>
+
+      <div class="col-sm-3 project-container">
+        <div class="panel">
+          <div class="panel-heading">
+            <h4>Projekt 1</h4>
+          </div>
+          <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis 
+              facilis suscipit laborum tenetur iusto quia nam eius ipsa sit aut 
+              voluptatem laboriosam saepe nulla odit, vero fugiat cum repellendus. Et?</p>
+            <p>Voluptatibus consequatur quas optio error quam, sit, reprehenderit 
+              assumenda necessitatibus velit. Quod voluptatibus ea nemo. Recusandae 
+              nulla deserunt culpa repellendus hic ipsum maxime, temporibus voluptatem. 
+              Quis commodi sunt accusamus nihil.</p>
+          </div>
+          <div class="panel-footer">
+            Another footer
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-29.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

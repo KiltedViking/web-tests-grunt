@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Show/hide - jQuery</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+  <style>
+    #block1 {
+      width: 150px;
+      height: 150px;
+      border: solid 1px green;
+      color: green;
+      background-color: lightgreen;
+    }
+    button {
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Show/hide - jQuery</h1>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p><button id="button1" class="btn btn-primary">Show/hide block 1</button></p>
+        <div id="block1">Some text...</div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson <b>Updated:</b> 2016-12-14.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery-2.1.4.js"></script>
+  <script>
+    $(function() {
+      $("#button1").click(function(event) {
+        $("#block1").slideToggle(500);
+      });
+    });
+  </script>
+</body>
+</html>

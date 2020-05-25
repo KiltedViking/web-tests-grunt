@@ -1,6 +1,6 @@
-# Folder web20
+# Folder `web20`
 
-This folder contains my solutions to assignments on course Web 2.0 given by Mid Sweden University (Mitthögskolan).
+This folder contains my solutions to assignments on course Web 2.0 with AJAX given by Mid Sweden University (Mitthögskolan) in 2012 (?).
 
 
 Björn G. D. Persson, "Kilted Viking"

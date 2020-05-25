@@ -1,0 +1,34 @@
+/* Copy of test-site.css for fluid container */
+/* body {
+    color: white;
+    background-color: #800000;
+} */
+
+body p, body ol, body ul {
+    font-family: Georgia;
+}
+
+.container {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0 20px;  
+}
+
+footer {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    border-top: solid 1px gray;
+}
+
+.panel-primary {
+    border-color: #800000;
+}
+
+.panel-primary>.panel-heading {
+    color: white;
+    background-color: #800000;
+    border-color: #800000;
+}

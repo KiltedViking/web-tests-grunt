@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Center test</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;	/* Include padding and border in width, i.e. "reset" */
+		}
+		/* Set all "containers" to 100% */
+		html, body {
+			height: 100%;
+			width: 100%;
+		}
+		/* Parent = table */
+		#page {
+			display: table;
+			height: 100%;
+			width: 100%;
+			border: 1px dotted blue;
+			padding: 5px;
+		}
+		/* Child = table cell */
+		#content {
+			display: table-cell;
+			/* horizontal-align: center; */
+			vertical-align: middle;
+			border: 1px solid red;
+			padding: 5px;
+		}
+		/* Centers content horisontally */
+		#myarticle {
+			box-sizing: border-box;	/* Include padding and border in width */
+			display: block;
+			margin: 0 auto;
+			width: 400px;
+			/* height: 200px;  */
+			border: 1px solid gray;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<div id="content">
+			<div id="myarticle">
+				<h1>Center test</h1>
+				<p>Box with heading and this text (outlined with grey border) should be centered both vertically and horisontally.</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p><a href="./">Back</a> to CSS</p>
+		<p><strong>Created by:</strong> Bj&ouml;rn G. D. Persson. <strong>Updated:</strong> 2020-05-22.</p>
+	</footer>
+</body>
+</html>

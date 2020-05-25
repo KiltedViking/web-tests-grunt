@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Property window.location - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Property window.location - JavaScript</h1>
+        <p>Example showing how one can do different things depending on hostname
+          (with domain).
+        </p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Some content...</h2>
+        <output id="output1"><p></p></output>
+        <output id="output2"></output>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+      <p id="back-link" hidden="hidden"><a href="../">Back</a> to JavaScript</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    window.addEventListener("load", function() {
+      //Get hostname from location property
+      var hostname = window.location.hostname;
+      //If hostname is local site - show back link and and some content to output tags..
+      if(hostname === "local.tests.com") {
+        //Enable back link
+        var backLink = document.getElementById("back-link");
+        backLink.hidden = false;
+
+        //Add content to first output tag's first child node (a P tag)
+        var divOutput1 = document.getElementById("output1");
+        divOutput1.childNodes[0].innerHTML = "<b>The hostname of window.location is:</b> " + hostname
+
+        //Add node to second output tag
+        var divOutput2 = document.getElementById("output2");
+        var p = document.createElement("p");
+        p.textContent = hostname;
+        divOutput2.appendChild(p);
+      }
+      else {  //... otherwise do something else...
+        //Add content to first output tag's first child node (a P tag)
+        var divOutput1 = document.getElementById("output1");
+        divOutput1.firstChild.textContent = "The hostname of window.location is: " + hostname
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test of debugger statement in JavaScript</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<style>
+		footer.row {
+			border-top: solid 1px gray;
+			font-size: .8em;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>Test of <code>debugger</code> statement <small>in JavaScript</small></h1>
+			<p>This page contains the <code>debugger</code> statement that stops before
+				next iteration in loop.</p>
+			<p>Open developer tools (F12) to start debugging and have execution stop at 
+				<code>debugger</code> statement.</p>
+			<p>See console for output.</p>
+		</div>
+		<footer class="row">
+			<p><a href="./">Back</a> to JavaScript</p>
+			<p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2015-11-16.</p>
+		</footer>
+	</div>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script>
+		for(var i = 0; i < 10; i++)
+		{
+			console.log("Value of i: " + i);
+			
+			debugger;
+		}	
+	</script>
+</body>
+</html>

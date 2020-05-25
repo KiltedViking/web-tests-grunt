@@ -248,6 +248,19 @@ module.exports = function(grunt) {
               watchTask: true,
               server: './dist'
           }
+      },
+      serve: {
+        bsFiles: {
+          src : [
+            'dist/**/*.html',
+            'dist/css/*.css',
+            'dist/javascript/**/*.js',
+            ]
+        },
+        options: {
+            watchTask: false,
+            server: './dist'
+        }
       }
     },
   });

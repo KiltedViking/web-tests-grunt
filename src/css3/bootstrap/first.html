@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>First try at Bootstrap</title>
+	<!-- Latest compiled and minified CSS and Optional theme -->
+	<!--
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	-->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+	<style type="text/css">
+		body {
+			color: black;
+			background-color: #800000;
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		}
+		div#page>.container {
+			color: black;
+			background-color: white;
+			/*width: 1000px;*/
+			border-radius: 10px;
+		}
+		footer>p {
+			text-align: center;
+			font-size: .8em;
+			border-top: 1px solid gray;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#myitems" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<!-- Adding text disfigures button... -->
+							<!-- <span>Menu</span> -->
+						</button>
+						<a class="navbar-brand" href="#">First try</a>
+					</div>
+
+					<!-- Menu items - also the collapsable part -->
+					<div class="collapse navbar-collapse" id="myitems">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="active"><a href="#">Travels</a></li>
+							<li><a href="#">Resorts</a></li>
+							<li><a href="#">Activities</a></li>
+							<li><a href="#">About us</a></li>
+						</ul>
+
+					</div>
+				</div>
+			</nav>
+
+			<header>
+				<h1>First try at Bootstrap <small>version 3</small></h1>
+			</header>
+
+			<div>
+				<p class="lead">A first try at using Bootstrap to design page.</p>
+				<p>CSS was designed from Bootstrap starter template. Font(s) were chosen &quot;for fun&quot; and testing. ;-)</p>
+			</div>
+
+			<footer>
+				<p><a href="./">Back</a> to Bootstrap</p>
+				<p><b>Created by:</b> Bj&ouml;rn Persson. <b>Created:</b> 2015-05-18.</p>
+			</footer>
+		</div>
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+</body>

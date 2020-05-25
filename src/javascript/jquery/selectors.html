@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Selectors - jQuery</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Selectors</h1>
+        <p>Example showing how to use jQuery selector to find an option in listbox based on
+          text and then retrieving option's value (&qout;ID&quot;).</p>
+      </div>
+    </header>
+    
+    <div class="row">
+      <div class="col-sm-4">
+        <input type="text" name="search-term" id="search-term" class="form-control" 
+          placeholder="Enter text to search for in list">
+        <button id="search-button" class="btn btn-primary">Search and select</button>
+      </div>
+
+      <div class="col-sm-4">
+        <select name="first-select" id="first-select" class="form-control">
+          <option value="1">Text1 for value 1 - (1+42)</option>
+          <option value="2">Text2 for value 2 - (2+42)</option>
+          <option value="3">Text3 for value 3 - (3+42)</option>
+          <option value="4">Text for value 4 - (4+42)</option>
+          <option value="5">Text for value 5 - (5+42)</option>
+          <option value="6">Text for value 6 - (6+42)</option>
+          <option value="7">Text for value 7 - (7+42)</option>
+          <option value="8">Text for value 8 - (8+42)</option>
+          <option value="9">Text for value 9 - (9+42)</option>
+          <option value="10">Text for value Text10 - (10+42)</option>
+          <option value="11">Text for value Text11 - (11+42)</option>
+          <option value="12">Text for value 12 - (12+42)</option>
+          <option value="13">Text for value 13 - (13+42)</option>
+          <option value="14">Text for value 14 - (14+42)</option>
+          <option value="15">Text for value 15 - (15+42)</option>
+          <option value="16">Text for value 16 - (16+42)</option>
+          <option value="17">Text for value 17 - (17+42)</option>
+          <option value="18">Text for value 18 - (18+42)</option>
+          <option value="19">Text for value 19 - (19+42)</option>
+          <option value="20">Text for value 20 - (20+42)</option>
+          <option value="21">Text for value 21 - (21+42)</option>
+          <option value="22">Text for value 22 - (22+42)</option>
+          <option value="23">Text for value 23 - (23+42)</option>
+          <option value="24">Text for value 24 - (24+42)</option>
+          <option value="25">Text for value 25 - (25+42)</option>
+          <option value="26">Text for value 26 - (26+42)</option>
+          <option value="27">Text for value 27 - (27+42)</option>
+          <option value="28">Text for value 28 - (28+42)</option>
+          <option value="29">Text for value 29 - (29+42)</option>
+          <option value="30">Text for value 30 - (30+42)</option>
+          <option value="31">Text for value 31 - (31+42)</option>
+          <option value="32">Text for value 32 - (32+42)</option>
+          <option value="33">Text for value 33 - (33+42)</option>
+          <option value="34">Text for value 34 - (34+42)</option>
+          <option value="35">Text for value 35 - (35+42)</option>
+          <option value="36">Text for value 36 - (36+42)</option>
+          <option value="37">Text for value 37 - (37+42)</option>
+          <option value="38">Text for value 38 - (38+42)</option>
+          <option value="39">Text for value 39 - (39+42)</option>
+          <option value="40">Text for value 40 - (40+42)</option>
+        </select>
+        <p>Number of matches: <span id="first-select-matches"></span></p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-11-22.</p>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="../../js/jquery-2.1.4.js"></script>
+  <script>
+    $(function(event) {
+      // $("#search-button").click(function(event) {
+      //   console.log("search-button clicked!");
+      // });
+
+      $("#search-button").click(searchAndSelect).addClass("disabled");
+      $("#search-term").keyup(setButtonState);
+    });
+  
+    var searchAndSelect = function(event) {
+      console.log("searching...");
+      var term = $("#search-term").val();
+      var options = $("#first-select option:contains(" + term + ")");
+      $("#first-select-matches").text(options.length);
+
+      if(options.length === 1) {
+        $("#first-select").val(options[0].value);
+      }
+    };
+
+    var setButtonState = function(event) {
+      // console.log(event.target);
+      if(event.target.value.length > 0) {
+        $("#search-button").removeClass("disabled");
+      }
+      else {
+        $("#search-button").addClass("disabled");
+      }
+    };
+  </script>
+</body>
+</html>

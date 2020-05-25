@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>getJSON() and promise - jQuery</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>getJSON() and promise - jQuery</h1>
+        <p>Example showing how to get JSON using jQuery's <code>$.getJSON()</code>
+          using promise (instead of callback function).</p>
+      </div>
+    </header>
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Output</h2>
+        <!-- Element to add unordered list to -->
+        <div id="output"></div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2017-07-21.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery-1.5.1.js"></script>
+  <script>
+    //Example copied from http://api.jquery.com/jquery.getjson/ and then slightly
+    //adjusted to match my liking. ;-)
+
+    //Changed url from "ajax/test.json" to "getjson-data.json"
+    var url = "getjson-data.json";
+
+    // var $xhr = $.getJSON(url, function() {
+    //   console.log("Request succeeded!");
+    // })
+    var $xhr = $.getJSON(url)
+    .done(function(result) {
+      var items = [];
+      
+      $.each(result, function(k, v) {
+        items.push("<li id='" + k + "'>" + v + "</li>");
+      });
+
+      $("<ul/>", {
+        "class": "my-new-list",
+        html: items.join("")
+      }).appendTo("#output"); //Changed from "body" to "#output"
+    })
+    .fail(function(err) {
+      //... do what?
+      console.log(err);
+    });
+  </script>
+</body>
+</html>

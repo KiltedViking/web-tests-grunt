@@ -117,7 +117,9 @@ package-lock.json
 /src/xml/php/db.php
 
 #Ignore folders with other's work ;-)
-/downloads
+/_unsorted
+/downloads/jquery-ui-1.12.1/**/*
+/downloads/jquery.xslt.build.full.js-0.0.5/**/*
 /src/bilder
 /src/css/*/*
 /src/css/fonts

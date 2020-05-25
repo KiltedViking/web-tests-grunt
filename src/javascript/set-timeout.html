@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>setTimeout() - JavaScript</title>
+  <style>
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    footer {
+      border-top: solid 1px gray;
+      text-align: center;
+      font-size: .8em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>setTimeout() - JavaScript</h1>
+        <p>Example showing how setTimeout() can be used to count to 10 (prints out &quot;DONE!&quot;)</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- Result from JavaScript output below -->
+        <output></output>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-28.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  var counter = 0, output;
+
+  //Start executing when document loaded
+  window.addEventListener("load", function() {
+    console.log("DOM loaded");
+    output = document.querySelector("output");
+    output.textContent = "Counter value: ";
+    doIt(); //Start "timer"
+  });
+
+  //Function "doing" the timer, i.e. called every second
+  function doIt() {
+    counter++;
+    
+    if(counter < 10) {
+      output.textContent += counter + " ";
+      setTimeout(doIt, 1000);
+    }
+    else {
+      output.textContent += " DONE!";
+    }
+  }
+  </script>
+</body>
+</html>

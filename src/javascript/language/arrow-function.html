@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arrow function - JavaScript language</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Arrow function - JavaScript language</h1>
+        <p>Example showing how to use arrow function in JavaScript.</p>
+      </div>
+    </header>
+    
+    <div class="row">
+      <div class="col-sm-4">
+        <p>(See console for results.)</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript language</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-08-28.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery-1.5.1.js"></script>
+  <script>
+    //Function declaration
+    function myFunction(a, b) {
+      return a + b;
+    }
+
+    //Rewritten using arrow function
+    var mySecondFunction = (a, b) => a + b;
+
+    //Using block with arrow function
+    var myThirdFunction = () => {
+      //Must add keyword return when using block!
+      return "Hello world!";
+    };
+
+    //Result of last statement return when not using block
+    var myFourthFunction = () => "Hello world!";
+
+    // Calling functions and outputting to console
+    console.log(myFunction(1, 2));
+    console.log(mySecondFunction(3, 4));
+    console.log(myThirdFunction());
+    console.log(myFourthFunction());
+  </script>
+</body>
+</html>

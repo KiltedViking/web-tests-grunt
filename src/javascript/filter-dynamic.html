@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Filter dynamically - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Filter dynamically - JavaScript</h1>
+        <p>Example showing how filter can be implemented using only &quot;plain old&quot;
+          JavaScript. ;-) A complete list is loaded with page and then a filtered
+          list created from the complete list when content in textbox changes.
+        </p>
+      </div>
+    </header>
+    
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>Output</h2>
+        <p>Enter text to filter items in list.</p>
+        <p> Filter: <input type="text" id="filter">
+        =&gt; <span id="nbOfItems">0</span> items</p>
+        <ul id="output"></ul>
+      </div>
+
+      <div class="col-sm-8">
+        <h2>Reference</h2>
+        <p>List of fruit was found at <a href="https://simple.wikipedia.org/wiki/List_of_fruits"
+          target="_blank" rel="noopener">Wikipedia</a>.</p>
+
+        <h2>Bugs and other things to look at</h2>
+        <p>Clearing textbox using it's &quot;x icon&quot; won't trigger filtering.</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-07-20.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    //Original list of items
+    var items = [ "apricot", "banana", "cherry", "dade", "elderberry", "fig", "gooseberry",
+      "honeyberry", "jackfruit", "kiwifruit", "lemon", "mango", "nectarine", "orange", 
+      "peach", "quince", "raspberry", "satsuma", "tamarillo", "ugli fruit", "yuzu"];
+    var ulElementID = "output";
+    var nbOfItemsID = "nbOfItems";
+
+    /*** Add event listener for DOM load **************************************/
+    window.addEventListener("load", initialise);
+
+    //Event listener for DOM load event
+    function initialise(event) {
+      //Create list
+      updateList("output", items, nbOfItemsID);
+
+      //Add event listerner to key-up event for text box
+      var input = document.getElementById("filter");
+      input.addEventListener("keyup", keyUpHandler);
+    }
+
+    //Event listener for key-up event
+    function keyUpHandler(event) {
+      //Get any text to use to filter list
+      var filterValue = this.value.toLowerCase();
+
+      var filteredList = items.filter(function(text) {
+        return text.toLowerCase().indexOf(filterValue) > -1;
+      });
+
+      //Update list with new array
+      updateList(ulElementID, filteredList, nbOfItemsID);
+    }
+
+    //Adds elements in list to element identified by element ID + shows number in list
+    function updateList(ulElementID, list, nbOfItemsID) {
+      var ul = document.getElementById(ulElementID);
+      ul.innerHTML = "";  //Clear list
+
+      for (var i = 0; i < list.length; i++) {
+        var li = document.createElement("li");
+        li.innerText = list[i];
+        ul.appendChild(li);
+      }
+
+      if(nbOfItemsID) {
+        document.getElementById(nbOfItemsID).innerText = list.length;
+      }
+    }
+
+  </script>
+</body>
+</html>

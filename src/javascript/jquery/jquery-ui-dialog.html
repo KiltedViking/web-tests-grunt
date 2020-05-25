@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>jQuery UI Dialog</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/tests-site.css">
+    <!--Add style for jQuery-UI-->
+    <link rel="stylesheet" href="../../css/redmond/jquery-ui-1.8.16.custom.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>jQuery UI Dialog</h1>
+                <p>This example shows a button to open a modal dialog using jQuery-UI. 
+                    (The example purposefully uses old versions of jQuery and jQuery-UI 
+                    to match versions in application currently in production.)</p>
+                
+                <!--Button to open dialog containing data used for and in dialog-->
+                <p><a href="./jquery-ui-dialog2.html" id="myButton" class="btn btn-primary" 
+                    data-dialog-title="Hello world!" data-dialog-save="Save" data-dialog-cancel="Cancel">Open dialog</a></p>
+                
+                <!--div usually containing content for dialog. In this case the content is loaded from other file.-->
+                <div id="myDialog"></div>
+            </div>
+        </div>
+        <footer class="row">
+            <div class="col-sm-12">
+                <p><a href="./">Back</a> to jQuery</p>
+			    <p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2017-02-27.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../../js/jquery-1.5.1.js"></script>
+    <script src="../../js/jquery-ui-1.8.11.js"></script>
+    <!--Bootstrap requires jQuery 1.9.1 or higher!!-->
+    <!--<script src="../js/bootstrap.js"></script>-->
+    <script>
+        // Run when document finished loading
+        $(function() {
+            //Get reference to DOM elements
+            var btn = $("#myButton");
+            
+            //Attach click event to button/link
+            btn.live("click", function() {
+                //Get url to file with content and reference to div for dialog
+                var url = $(this).attr("href");
+                var dlg = $("#myDialog");
+                
+                //Create dialog
+                dlg.dialog({
+                    position: "center",
+                    minWidth: 700,
+                    minHeight: 200,
+                    title: $(this).data("dialog-title"),
+                    modal: true,
+                    open: function() {
+                        // dlg.prepend('<div id="status-message-dialog" class="status-message">A status message... Before load</div>');
+                        //How to open dialog
+                        var content = $(this).load(url);
+                        $(this).load(url, function() { console.log(content) });
+                        // dlg.prepend('<div id="status-message-dialog" class="status-message">A status message... After load</div>');
+                    },
+                    //Buttons to be displayed in dialog - get text from link used to open dialog
+                    buttons: [{
+                        id: "btnSave",
+                        text: $(this).data("dialog-save"),
+                        click: function() {
+                            alert("This where something should happen, i.e. data be sent to server using AJAX!");
+                            dlg.dialog("close");
+                        }
+                    },
+                    {
+                        id: "btnCancel",
+                        text: $(this).data("dialog-cancel"),
+                        click: function() {
+                            dlg.dialog("close");
+                        }
+                    }]  //buttons
+                }); //.dialog()
+                return false;   //Stop default action, i.e. navigation to new page
+            });  //.live()
+        });
+    </script>
+</body>
+</html>

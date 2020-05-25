@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CKEditor - standard - jQuery plug-in</title>
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../css/tests-site.css">
+  <style>
+    /* .read-more { color: violet; background-color: yellow; } */
+  </style>
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>CKEditor - standard - "jQuery plug-in"</h1>
+        <p>CKEditor is not a jQuery plug-in, but uses jQuery.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Using <code>textarea</code></h2>
+        <p>To get access to styles for links - double-click link (and close dialog...).</p>
+        <textarea name="ckeditor" id="ckeditor" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Using a <code>div</code> and inline editing</h2>
+        <div id="ckeditor-div">
+          <h3>Editable heading (?)</h3>
+          <p>... and editable text (?)</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="../">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D: Persson. <b>Updated:</b> 2017-11-23.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../../js/jquery-2.1.4.js"></script>
+  <script src="../../../js/ckeditor/ckeditor.js"></script>
+  <script>
+    CKEDITOR.stylesSet.add('my_custom_style', [
+      { name: 'My Custom Block', element: 'h3', styles: { color: 'blue'} },
+      { name: 'My Custom Inline', element: 'span', attributes: {'class': 'mine'} },
+      { name: 'SE Read more (link)', element: 'a', attributes: {'class': 'read-more'} }
+    ]);
+    CKEDITOR.replace("ckeditor", { stylesSet: 'my_custom_style' });
+
+    var editorElement = CKEDITOR.document.getById( 'ckeditor-div' );
+    editorElement.setAttribute( 'contenteditable', 'true' );
+    CKEDITOR.inline("ckeditor-div");
+    // CKEDITOR.replace("ckeditor-div");
+  </script>
+</body>
+</html>

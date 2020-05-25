@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Get element</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-sm-12">
+                <h1>Get element</h1>
+                <p>Example showing how to add event listener for page load event
+                    and how to use function <code>querySelector()</code>.
+                </p>
+                <p>The page displays 3 text fields and script checks that all 3
+                    are present, displaying result of test.
+                </p>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="field1">Field 1</label>
+                <input type="text" id="field1"><br />
+
+                <label for="field2">Field 2</label>
+                <input type="text" id="field2"><br />
+
+                <label for="field3">Field 3</label>
+                <input type="text" id="field3">
+
+                <p>Result: <output></output></p>
+            </div>
+        </div>
+
+        <footer class="row">
+            <div class="col-sm-12">
+                <p><a href="./">Back</a> to JavaScript</p>
+                <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-17.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../../js/jquery.min.js"></script>
+    <script>
+        //Add event handler for window event load
+        window.addEventListener("load", function(event) {
+            //Get reference to the 3 fields (using ID's) + output element (using tag name)
+            var f1 = document.querySelector("#field1");
+            var f2 = document.querySelector("#field2");
+            var f3 = document.querySelector("#field3");
+            var output = document.querySelector("output");
+            //querySelectorAll() returns list of elements and querySelector() first found
+
+            // f2.value;
+
+            //Get reference to field 3 using jQuery
+            // var f3 = $("#field3");
+            // console.log(f3);
+
+            //Test if all 3 fields are present
+            if(f1 && f2 && f3)
+            {
+                output.innerText = "All fields present";
+            }
+            else
+            {
+                output.innerText = "One or more fields missing. There should be 3!";
+            }
+        });
+    </script>
+</body>
+</html>

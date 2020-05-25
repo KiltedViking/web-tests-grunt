@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag-and-drop - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+  <style>
+    .draggable-list {
+      width: 200px;
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Drag-and-drop - JavaScript</h1>
+        <p>Example showing how to use HTML5's drag-and-drop feature (<code>.dataTransfer</code>). 
+          (?) Works in Firefox and Edge, but not Chrome and IE.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <form action="#">
+          <div class="pull-left">
+            <select name="source-list" id="source-list" size="8" class="draggable-list"
+              ondrop="drop(event)" ondragover="allowDrop(event)">
+              <option id="1" draggable="true" value="1" ondragstart="drag(event)">Item 1</option>
+              <option id="2" draggable="true" value="2" ondragstart="drag(event)">Item 2</option>
+              <option id="3" draggable="true" value="3" ondragstart="drag(event)">Item 3</option>
+              <option id="4" draggable="true" value="4" ondragstart="drag(event)">Item 4</option>
+              <option id="5" draggable="true" value="5" ondragstart="drag(event)">Item 5</option>
+              <option id="6" draggable="true" value="6" ondragstart="drag(event)">Item 6</option>
+            </select>
+          </div>
+          <div class="pull-left">
+            <select name="destination-list" id="destination-list" size="8" class="draggable-list"
+              ondrop="drop(event)" ondragover="allowDrop(event)">
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Reference</h2>
+        <p><a href="https://jsfiddle.net/DyAXf/1/" target="_blank" rel="noopener">Original 
+          example</a> (JSFiddle)</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-07-21.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function drag(event) {
+      event.dataTransfer.setData("Text", event.target.id);
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      var targetId = event.dataTransfer.getData("Text");
+      console.log("Target ID:" + targetId);
+      event.target.appendChild(document.getElementById(targetId));
+    }
+  </script>
+</body>
+</html>

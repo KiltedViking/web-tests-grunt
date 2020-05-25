@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Landing page</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <!-- Design av tests site doesn't quite work with this example... -->
+  <!-- <link rel="stylesheet" href="../../css/tests-site.css"> -->
+  <style>
+  body { margin: 0; }
+  header {
+    background-image: url("fridays-footsteps.jpg");
+    background-position: center;
+    background-size: cover; /* Make image's width or height cover widht or height of parent element (header) */
+    /* color:  #da3713; */
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;  /* Stops block items from spaning the whole width */
+  }
+  header>h1, header>h2 {
+    color:  #da3713;
+    background-color: slategray;
+    opacity: .75;
+    padding: .5em;
+  }
+  footer {
+    border-top: 1px solid gray;
+    font-size: .9em;
+    margin: 3em 0;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Landing Page</h1>
+    <h2>A subtitle</h2>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-2">
+        <h3>Page contents</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, ipsa quidem aliquam porro sit laboriosam, unde quo explicabo, consequatur alias quae perferendis labore dolorum. In beatae, culpa doloribus maxime suscipit omnis reiciendis ab ratione sequi, corrupti rem harum aliquid odit!</p>
+        <p>Sequi accusamus, repellendus perspiciatis sit odit quod quidem facere vero beatae dolorum laboriosam dicta earum blanditiis unde. Accusantium facilis doloremque ipsa dolorem officiis odit natus, possimus nesciunt fuga praesentium quasi consequatur accusamus id aperiam voluptatem illo sit eius veritatis ab.</p>
+        <p>Voluptatum pariatur voluptatem dolores, odio officia neque minus accusamus incidunt illo laboriosam dignissimos fugiat quod commodi, adipisci, aliquam ex. Ullam, expedita voluptatem. Natus dolor labore neque aut enim quibusdam, quas similique dicta dolorum. Ea sint consectetur rem debitis reiciendis culpa.</p>
+      </div>
+
+      <div class="col-sm-2 col-sm-offset-0">
+        <h3>Page contents</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis natus dolorem minima! Quis, laboriosam laudantium?</p>
+        <p>Porro dolores, aperiam voluptas beatae, odit voluptatibus temporibus et eos praesentium, voluptatum magnam? Iure, sint!</p>
+        <p>Vel, blanditiis in ipsam architecto ea maiores magnam reprehenderit odio assumenda rem incidunt natus aliquam?</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-10-06.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

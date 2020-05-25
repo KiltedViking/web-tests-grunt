@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS3 - Transformations</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <style>
+    body { font-family: Verdana, Arial, Helvetica, sans-serif; }
+    /* ul.descriptions>li { display: inline; width: 200px; } */
+    div.images { margin: 50px 0px; }
+    #flag2 
+    { 
+      -o-transform: rotate(30deg); 
+      -moz-transform: rotate(30deg); 
+      -ms-transform: rotate(30deg); 
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg); 
+    }
+    #flag3
+    { 
+      -o-transform: skew(30deg); 
+      -moz-transform: skew(30deg); 
+      -ms-transform: skew(30deg); 
+      -webkit-transform: skew(30deg);
+      transform: skew(30deg); 
+    }
+    #flag9
+    { 
+      -o-transition: width 2s, height 2s; 
+      -moz-transition: width 2s, height 2s; 
+      -ms-transition: width 2s, height 2s; 
+      -webkit-transition: width 2s, height 2s;
+      transition: width 2s, height 2s; 
+    }
+    #flag9:hover { width: 400px; height: 250px; }
+    #footer { text-align: center; font-size: .8em; border-top: 1px solid #c0c0c0; }
+  </style>
+</head>
+<body>
+<h1>CSS3 - Transformations</h1>
+<ul class="descriptions">
+  <li>1: Original</li>
+  <li>2: transform: rotate(30deg);</li>
+  <li>3: transform: skew(30deg);</li>
+  <li>4: </li>
+  <li>5: </li>
+  <li>6: </li>
+  <li>7: </li>
+  <li>8: </li>
+  <li>9: transition: width 2s, height 2s (on hover)</li>
+</ul>
+<div class="images">
+  <img id="flag1" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag2" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag3" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag4" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag5" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag6" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag7" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag8" src="../images/flaggan.jpg" width="200" height="125" />
+  <img id="flag9" src="../images/flaggan.jpg" width="200" height="125" />
+</div>
+<p id="footer"><b>Created by:</b> Björn G.D. Persson. <b>Updated:</b> 2011-10-05.</p>
+</body>
+</html>

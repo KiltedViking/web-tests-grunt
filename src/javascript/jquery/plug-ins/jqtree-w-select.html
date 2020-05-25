@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jqTree - jQuery plug-in</title>
+  <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../css/jqtree.css">
+  <link rel="stylesheet" href="../../../css/tests-site.css">
+</head>
+<body>
+  <div class="container page">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>jqTree - jQuery plug-in</h1>
+        <p>Example showing how jQuery plug-in jqTree can show JSON data containing
+          a hierarchy. Event handler for selecting and unselecting has also been bound.</p>
+      </div>
+    </header>
+
+    <div id="tree"></div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="../">Back</a> to jQuery</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D: Persson. <b>Updated:</b> 2017-07-31.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../../js/jquery-2.1.4.js"></script>
+  <script src="../../../js/jquery/tree.jquery.js"></script>
+  <script>
+    var data = [
+        {
+            id: 1,
+            name: 'node1',
+            children: [
+                { 
+                  id: 2,
+                  name: 'child1',
+                  children: [ 
+                    { 
+                      id: 3,
+                      name: "grandchild1" 
+                    } 
+                  ]
+                },
+                {
+                  id: 4,
+                  name: 'child2' 
+                }
+            ]
+        },
+        {
+            id: 5,
+            name: 'node2',
+            children: [
+                { 
+                  id: 6,
+                  name: 'child3' 
+                }
+            ]
+        }
+    ];
+
+    $(function() {
+        $('#tree').tree({
+            data: data
+        }).bind("tree.select", function(event) {
+          if(event.node) {
+            console.log("Node selected - ID: " + event.node.id);
+          }
+          else {
+            console.log("Node unselected");
+          }
+        });
+    });
+  </script>
+</body>
+</html>

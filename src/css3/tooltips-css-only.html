@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tooltips using only CSS</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/tests-site.css">
+  <style>
+    /* Hide tooltip when NOT hovering, i.e. "restore" */
+    [tooltip]:before {            
+      position : absolute;
+      content : attr(tooltip);
+      opacity : 0;
+    }
+    /* Display tooltip on hover */
+    [tooltip]:hover:before {        
+      opacity : 1;
+      background-color: brown;
+      color: whitesmoke;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Tooltips using only CSS</h1>
+        <p>How to display tooltips using only CSS (*no* JavaScript).</p>
+        <p>Move cursor over paragraphs to display tooltip (or not).</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Paragraph with tooltip using CSS</h2>
+        <p tooltip="This is text for tooltip! ;-)">A block with displaying tooltip when hovered.</p>
+
+        <h2>Paragraph without tooltip</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ea dolore cumque illo. Minus culpa magni aspernatur, esse animi ab labore corrupti aperiam debitis enim placeat modi doloribus possimus fugit? Officiis iure, maiores ipsum saepe exercitationem, distinctio cupiditate facilis maxime aliquam architecto ab soluta id explicabo, tempore dolorem quaerat? Ullam ipsam deserunt dolor repellat ducimus, commodi ad molestiae eos corrupti quisquam aut iusto, cupiditate consequatur. Dolorem, deleniti ratione? Quod aliquid totam libero ratione impedit soluta nam mollitia quaerat officia enim tempora eius voluptates atque excepturi assumenda odit consectetur, laudantium neque nihil facere eum magnam. Eligendi, nobis veniam! Porro, dolore tenetur ipsam magni, rerum voluptatibus exercitationem, accusamus perspiciatis eum veniam sunt quis impedit consectetur doloribus numquam quo minima saepe deserunt adipisci nihil qui? Quidem porro facilis tempore maxime quaerat, culpa eligendi labore odio sequi delectus minus libero autem explicabo, exercitationem et, veniam aspernatur nulla deserunt ex nisi neque voluptatibus modi. Corrupti, dolor nulla. Deleniti cupiditate velit ipsam dolorum laboriosam, distinctio eveniet in officiis minima adipisci laudantium expedita magnam nesciunt officia soluta! Nemo quibusdam possimus cupiditate? Quo eligendi consectetur eius, minus tempora fuga? Unde aut repellendus ad illum libero, aspernatur nemo deserunt. Quidem, nostrum eum. Ducimus cumque officiis eveniet itaque ullam? Vel!</p>
+        
+        <h2>Paragraph with tooltip using title attribute</h2>
+        <p title="Some text in title attribute">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta ipsa illum similique incidunt earum nostrum animi, eius facere cupiditate eaque aperiam minus nobis, repellendus tenetur maxime mollitia, beatae commodi iste. Temporibus ea dicta perspiciatis illum dolores quos amet omnis et fuga incidunt nostrum, explicabo ullam quo deleniti perferendis tenetur est.</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2018-08-14.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

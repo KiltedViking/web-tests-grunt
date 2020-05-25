@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Transition - CSS3</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/tests-site.css">
+  <style>
+    #stack-container {
+      height: 200px;
+      width: 50px;
+      border: solid 1px gray;
+      position: static;
+    }
+    #stack {
+      width: 100%;
+      background-color: red;
+      border-color: gray;
+      position: relative;
+      bottom: 0;
+    }
+    .zero {
+      height: 0;
+    }
+    .rise {
+      height: 100px;
+      transition-duration: 5s;      
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Transition - CSS3</h1>
+        <p>Example showing how to use CSS transition to make a &quot;rising&quot;
+          stack. (Still got to invert the stack...)
+        </p>
+      </div>
+    </header>
+  
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="stack-container">
+          <div id="stack" class="zero"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-13.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script>
+    $(function() {
+      //Change CSS class to make stack "rise"
+      $("#stack").removeClass("zero").addClass("rise");
+    });
+  </script>
+</body>
+</html>

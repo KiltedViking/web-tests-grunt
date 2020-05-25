@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>HTML form controls</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HTML form controls</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Examples of HTML5 form controls (<code>&lt;input type="..."&gt;</code>).</p>
+                <p>Support is best in Google Chrome.</p>
+                <p><a href="http://caniuse.com" target="_blank">Can I Use <i class="glyphicon glyphicon-globe"></i></a></p>
+            </div>
+            <div class="col-md-6">
+                <form action="#" class="form-horizontal">
+                    <h2>Controls with <code>&lt;input type="..."&gt;</code></h2>
+                    <div class="control-group">
+                        <label for="mytext" class="col-md-3 control-label">Text:</label>
+                        <div class="col-md-9">
+                            <input type="text" id="mytext" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mysearch" class="col-md-3 control-label">Search:</label>
+                        <div class="col-md-9">
+                            <input type="search" id="mysearch" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mytel" class="col-md-3 control-label">Telephone:</label>
+                        <div class="col-md-9">
+                            <input type="tel" id="mytel" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="myurl" class="col-md-3 control-label">URL:</label>
+                        <div class="col-md-9">
+                            <input type="url" id="myurl" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="myemail" class="col-md-3 control-label">E-mail:</label>
+                        <div class="col-md-9">
+                            <input type="email" id="myemail" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mydate" class="col-md-3 control-label">Date: </label>
+                        <div class="col-md-9">
+                            <input type="date" id="mydate" class="col-md-9 form-control"><br>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mytime" class="col-md-3 control-label">Time: </label>
+                        <div class="col-md-9">
+                            <input type="time" id="mytime" class="form-control"><br>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mydate" class="col-md-3 control-label">DateTime-local: </label>
+                        <div class="col-md-9">
+                            <input type="datetime-local" id="mydatetime-local" class="form-control"><br>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mynumber" class="col-md-3 control-label">Number:</label>
+                        <div class="col-md-9">
+                            <input type="number" id="mynumber" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="myrange" class="col-md-3 control-label">Range:</label>
+                        <div class="col-md-9">
+                            <input type="range" id="myrange" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="mycolor" class="col-md-3 control-label">Color:</label>
+                        <div class="col-md-9">
+                            <input type="color" id="mycolor" class="form-control">
+                        </div>
+                    </div>
+
+                    <h2>Other controls</h2>
+                    <p>(For some reason the class <code>.clearfix</code> needed to be added to these...)</p>
+
+                    <div class="control-group clearfix">
+                        <label for="myprogress" class="col-md-3 control-label">Progress:</label>
+                        <div class="col-md-9">
+                            <progress id="myprogress" max=100></progress>
+                        </div>
+                    </div>
+
+                    <div class="control-group clearfix">
+                        <label for="myprogress50" class="col-md-3 control-label">Progress (50):</label>
+                        <div class="col-md-9">
+                            <progress id="myprogress50" max=100 value=50></progress>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group clearfix">
+                        <label for="mymeter" class="col-md-3 control-label">Meter:</label>
+                        <div class="col-md-9">
+                            <meter id="mymeter" min=0 max=100></meter>
+                        </div>
+                    </div>
+
+                    <div class="control-group clearfix">
+                        <label for="mymeter50" class="col-md-3 control-label">Meter (50):</label>
+                        <div class="col-md-9">
+                            <meter id="mymeter50" min=0 max=100 value="50"></meter>
+                        </div>
+                    </div>
+
+                    <select name="c">
+                        <optgroup label="8.01 Physics I: Classical Mechanics">
+                            <option value="8.01.1">Lecture 01: Powers of Ten
+                            <option value="8.01.2">Lecture 02: 1D Kinematics
+                            <option value="8.01.3">Lecture 03: Vectors
+                        <optgroup label="8.02 Electricity and Magnestism">
+                            <option value="8.02.1">Lecture 01: What holds our world together?
+                            <option value="8.02.2">Lecture 02: Electric Field
+                            <option value="8.02.3">Lecture 03: Electric Flux
+                        <optgroup label="8.03 Physics III: Vibrations and Waves">
+                            <option value="8.03.1">Lecture 01: Periodic Phenomenon
+                            <option value="8.03.2">Lecture 02: Beats
+                            <option value="8.03.3">Lecture 03: Forced Oscillations with Damping
+                    </select>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-07-28.</p>
+        </footer>
+    </div>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

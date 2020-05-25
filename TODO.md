@@ -2,6 +2,8 @@
 
 ## JavaScript
 
-Add-on jquery.edittreetable is not installable via npm and hasn't been updated since 2014. Need to think about how to add to repository as a "static" resource...
+* Add-on jquery.edittreetable is not installable via npm and hasn't been updated since 2014. Need to think about how to add to repository as a "static" resource...
 
-Library moment.js is distributed as ES6, i.e. will need transpiling to ES5.
+#Solution:# Created a folder `downloads` for storing and creating a task in Grunt.
+
+* Library moment.js is distributed as ES6, i.e. will need transpiling to ES5.

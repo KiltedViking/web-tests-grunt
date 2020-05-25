@@ -1,0 +1,24 @@
+/*******************************************************************************
+* Created by: Björn G. D. Persson, 2017-06-12.
+* Styles work with Semantic UI 2.2.
+*******************************************************************************/
+/* Set background colour of page */
+body {
+  color: black;
+  background-color: #800000;
+}
+
+/* Set background color for content area */
+.page.container {
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* Add divider and center text of footer */
+footer {
+  margin-top: 20px;
+  border-top: solid 1px gray;
+  text-align: center;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Examples showing how to make HTML forms more accessible by labels or aria attributes.">
+    <title>HTML form controls</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/tests-site.css">
+    <style>
+        /* Style for hiding labels in a space of 1x1 pixel box */
+        .visuallyhidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HTML form labels and accessibility (a11y)</h1>
+        </div>
+        <form action="#" method="POST"></form>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Textboxes</h2>
+                    <p>(This page passes Lighthouse's tests for Performance and SEO, 
+                        but &quot;fails&quot; Best Practices and Accessibility. The 
+                        last tests fails as this page aims to show what to do and not ;-) 
+                        and the one before as it uses Bootstrap's JavaScript. ;-S)</p>
+                </div>
+
+                <div class="col-md-12">
+                    <h3>Passing WAI tests</h3>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>&quot;Default&quot; label</h4>
+                        <label for="first-textbox">Label for first textbox</label>
+                        <input type="text" id="first-textbox" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>Label hidden using CSS (.visuallyhidden)</h4>
+                        <label for="second-textbox" class="visuallyhidden">Label for second textbox</label>
+                        <input type="text" id="second-textbox" class="form-control" />
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>No label but using attribute aria-label</h4>
+                        <p>Label can be omitted and attribute <code>aria-label</code> used in its place.</p>
+                        <input type="text" id="third-textbox" class="form-control" aria-label="Label for third textbox" />
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>No label but using attribute aria-labelledby</h4>
+                        <p>By using attribute <code>aria-labelledby</code> another control 
+                            can be used as &quot;label&quot; for a form control, i.e. by &quot;context&quot;.</p>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" id="sixth-textbox" class="form-control" aria-labelledby="find-button" />
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" id="find-button" value="Find" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>No label but using attribute title</h4>
+                        <p>Label can also be omitted and attribute <code>title</code> used in its place.</p>
+                        <input type="text" id="seventh-textbox" class="form-control" title="Label for seventh textbox" />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <h3>Failing WAI tests</h3>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>No label but with attribute placeholder</h4>
+                        <input type="text" id="fourth-textbox" class="form-control"
+                            placeholder="Fourth textbox without label" />
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>No label or placeholder</h4>
+                        <input type="text" id="fifth-textbox" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <h2>Listboxes</h2>
+                </div>
+
+                <div class="col-md-12">
+                    <h3>Failing WAI tests</h3>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="well well-default">
+                        <h4>Drop-down list without label</h4>
+                        <select id="first-select" class="form-control">
+                            <option value=""> - Select an option - </option>
+                            <option value="1">First</option>
+                            <option value="2">Second</option>
+                            <option value="3">Third</option>
+                            <option value="4">Fourth</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <!-- <input type="submit" value="Send form (which doesn't work ;-))" /> -->
+                    <h3>References</h3>
+                    <ul>
+                        <li><a href="https://www.w3.org/WAI/tutorials/forms/labels/" 
+                            target="_blank" rel="noopener">Labeling Controls</a> - Web Accessibility Tutorials, WCAG</li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+
+        <footer class="row">
+            <div class="col-md-12">
+                <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2020-01-14.</p>
+                <p><a href="./">Back</a> to HTML</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

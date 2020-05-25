@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Keycode</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/tests-site.css">
+</head>
+<body>
+	<div class="container">
+		<header class="row">
+			<div class="col-sm-12">
+				<h1>Keycode</h1>
+				<p>Example showing what key code keys press in textbox.</p>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col-sm-12">
+				<form method="get" action="#">
+					<input type="text" id="textinput" />
+				</form>
+				<div>
+					<div id="output"></div>
+				</div>
+			</div>
+		</div>
+		<footer class="row">
+			<div class="col-sm-12">
+				<p><a href="./">Back</a> to JavaScript</p>
+				<p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-02-27.</p>
+			</div>
+		</footer>
+	</div>
+	
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		//Place cursor in textbox
+		$(function() {
+			$("#textinput").focus();
+			// $(document).keydown(function(e) {
+			// 	if(e.which === 9)
+			// 		e.preventDefault();
+			// });
+		});
+
+		//Add event handler for key down in textbox
+		$("#textinput").keydown(function(e) {
+			var $output = $("#output");
+
+			if(e.which === 8)	//Backspace
+			{
+				$output.append("<div>Key: Backspace Key code: " + e.which + "</div>");
+			}
+			else if(e.which === 9)	//Tab
+			{
+				$output.append("<div>Key: Tab Key code: " + e.which + "</div>");
+				e.preventDefault();
+			}
+			else if(e.which === 18)
+			{
+				$output.append("<div>Key: " + String.fromCharCode(e.which) + " Key code: " + e.which + "</div>");
+			}
+			else
+			{
+				$output.append("<div>Key: " + String.fromCharCode(e.which) + " Key code: " + e.which + "</div>");
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS and fonts</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/tests-site.css">
+    <style>
+        /*** Fonts from www.svanen.se ****************************************/
+        @font-face {
+            font-family: 'CoreSansNr65Bold';
+            font-weight: normal, bold;
+            src: url('../fonts/CoreSansNR65Bold.eot?') format('eot'), url('../fonts/CoreSansNR65Bold.woff') format('woff'), url('../fonts/CoreSansNR65Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'CoreSansNr45';
+            font-weight: normal, bold;
+            src: url('../fonts/CoreSansNR45Regular.eot?') format('eot'), url('../fonts/CoreSansNR45Regular.woff') format('woff'), url('../fonts/CoreSansNR45Regular.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'CoreSansNr35Light';
+            src: url('../fonts/CoreSansNR35Light.eot?') format('eot'), url('../fonts/CoreSansNR35Light.woff') format('woff'), url('../fonts/CoreSansNR35Light.otf') format('opentype');
+        }
+
+        /*** Classes using fonts added above *********************************/
+        .fontCoreSansNr65Bold {
+            font-family: 'CoreSansNr65Bold';
+        }
+        .fontCoreSansNr45 {
+            font-family: 'CoreSansNr45';
+        }
+        .fontCoreSansNr35Light {
+            font-family: 'CoreSansNr35Light';
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CSS and fonts</h1>
+        </header>
+        <div class="row">
+            <div class="col-md-12">
+                <p>This site requires a subfolder <code>fonts</code> (<code>../fonts</code>)
+                  in parent folder to the one in which this file resides, in which 
+                  the font files reside (<code>.eot</code>, <code>.otf</code>, and <code>.woff</code>).</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <h2>&quot;Plain&quot; text</h2>
+            <p>
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tempore soluta laborum consequatur, illum tenetur amet asperiores sequi tempora vero maiores eum, veniam repudiandae voluptate voluptatem iure omnis ex rem.</span>
+                <span>Nulla blanditiis sequi at perferendis iste nesciunt provident laborum quis quam harum magni voluptas, quod cum assumenda odio voluptate numquam eius dolorem aperiam doloribus. Dolorum sed suscipit esse inventore. Accusamus!</span>
+                <span>Voluptates ex quos nostrum amet distinctio voluptatem, id fugit minus veritatis magni commodi odio hic, ullam possimus fugiat quod nesciunt ipsum illum laborum provident inventore totam soluta eveniet ipsa! Recusandae!</span>
+                <span>Quo cum, quam vitae, officia similique ipsum? Quam obcaecati velit, assumenda unde minus a fugit, iste mollitia delectus facere, asperiores nobis ab officiis quos officia. Ratione ipsum, ea aspernatur error?</span>
+                <span>Doloribus, id vitae rerum minima odio sunt nulla optio ea maiores earum libero beatae quos fugiat porro doloremque omnis dolorum tempora sit. Quae similique quia maxime deserunt quaerat, alias doloremque?</span>
+            </p>
+            </div>
+            <div class="col-md-6">
+            <h2>CoreSansNr65Bold</h2>
+            <p class="fontCoreSansNr65Bold">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tempore soluta laborum consequatur, illum tenetur amet asperiores sequi tempora vero maiores eum, veniam repudiandae voluptate voluptatem iure omnis ex rem.</span>
+                <span>Nulla blanditiis sequi at perferendis iste nesciunt provident laborum quis quam harum magni voluptas, quod cum assumenda odio voluptate numquam eius dolorem aperiam doloribus. Dolorum sed suscipit esse inventore. Accusamus!</span>
+                <span>Voluptates ex quos nostrum amet distinctio voluptatem, id fugit minus veritatis magni commodi odio hic, ullam possimus fugiat quod nesciunt ipsum illum laborum provident inventore totam soluta eveniet ipsa! Recusandae!</span>
+                <span>Quo cum, quam vitae, officia similique ipsum? Quam obcaecati velit, assumenda unde minus a fugit, iste mollitia delectus facere, asperiores nobis ab officiis quos officia. Ratione ipsum, ea aspernatur error?</span>
+                <span>Doloribus, id vitae rerum minima odio sunt nulla optio ea maiores earum libero beatae quos fugiat porro doloremque omnis dolorum tempora sit. Quae similique quia maxime deserunt quaerat, alias doloremque?</span>
+            </p>
+            </div>
+            <div class="col-md-6">
+            <h2>CoreSansNr45</h2>
+            <p class="fontCoreSansNr45">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tempore soluta laborum consequatur, illum tenetur amet asperiores sequi tempora vero maiores eum, veniam repudiandae voluptate voluptatem iure omnis ex rem.</span>
+                <span>Nulla blanditiis sequi at perferendis iste nesciunt provident laborum quis quam harum magni voluptas, quod cum assumenda odio voluptate numquam eius dolorem aperiam doloribus. Dolorum sed suscipit esse inventore. Accusamus!</span>
+                <span>Voluptates ex quos nostrum amet distinctio voluptatem, id fugit minus veritatis magni commodi odio hic, ullam possimus fugiat quod nesciunt ipsum illum laborum provident inventore totam soluta eveniet ipsa! Recusandae!</span>
+                <span>Quo cum, quam vitae, officia similique ipsum? Quam obcaecati velit, assumenda unde minus a fugit, iste mollitia delectus facere, asperiores nobis ab officiis quos officia. Ratione ipsum, ea aspernatur error?</span>
+                <span>Doloribus, id vitae rerum minima odio sunt nulla optio ea maiores earum libero beatae quos fugiat porro doloremque omnis dolorum tempora sit. Quae similique quia maxime deserunt quaerat, alias doloremque?</span>
+            </p>
+            </div>
+            <div class="col-md-6">
+            <h2>CoreSansNr35Light</h2>
+            <p class="fontCoreSansNr35Light">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum tempore soluta laborum consequatur, illum tenetur amet asperiores sequi tempora vero maiores eum, veniam repudiandae voluptate voluptatem iure omnis ex rem.</span>
+                <span>Nulla blanditiis sequi at perferendis iste nesciunt provident laborum quis quam harum magni voluptas, quod cum assumenda odio voluptate numquam eius dolorem aperiam doloribus. Dolorum sed suscipit esse inventore. Accusamus!</span>
+                <span>Voluptates ex quos nostrum amet distinctio voluptatem, id fugit minus veritatis magni commodi odio hic, ullam possimus fugiat quod nesciunt ipsum illum laborum provident inventore totam soluta eveniet ipsa! Recusandae!</span>
+                <span>Quo cum, quam vitae, officia similique ipsum? Quam obcaecati velit, assumenda unde minus a fugit, iste mollitia delectus facere, asperiores nobis ab officiis quos officia. Ratione ipsum, ea aspernatur error?</span>
+                <span>Doloribus, id vitae rerum minima odio sunt nulla optio ea maiores earum libero beatae quos fugiat porro doloremque omnis dolorum tempora sit. Quae similique quia maxime deserunt quaerat, alias doloremque?</span>
+            </p>
+            </div>
+        </div>
+        <footer>
+            <div class="col-sm-12">
+                <p><a href="./">Back</a> to CSS3</p>
+                <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-08-02.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

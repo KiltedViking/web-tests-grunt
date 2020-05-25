@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boostrap - zebra stripes (tables and lists)</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <style>
+        /* Zebra stripe list, i.e. list items of odd order */
+        ul.striped>li:nth-of-type(odd) {
+           background-color: #f9f9f9; /* Bootstrap's zebra striping colour */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Bootstrap - zebra stripes (tables and lists)</h1>
+            </div>
+            <div class="col-md-6">
+              <h2>Table zebra striped using Bootstrap class</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td>R1C1</td>
+                        <td>R1C2</td>
+                        <td>R1C3</td>
+                    </tr>
+                    <tr>
+                        <td>R2C1</td>
+                        <td>R2C2</td>
+                        <td>R2C3</td>
+                    </tr>
+                    <tr>
+                        <td>R3C1</td>
+                        <td>R3C2</td>
+                        <td>R3C3</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <h2>List zebra striped with custom class</h2>
+                <p>Class used to zebra stripe this list is based on Bootstrap's class
+                    for tables.</p>
+                    
+                <ul class=" striped">
+                    <li>Item 1</li>
+                    <li>item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="row">
+          <div class="col-sm-12">
+            <p><a href="./">Back</a> to Bootstrap</p>
+            <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-01.</p>
+          </div>
+        </footer>
+    </div>
+
+</body>
+</html>

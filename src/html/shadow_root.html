@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow root example</title>
+    <style>
+        .container {
+            font-family: Verdana, Helvetica, sans-serif;
+            width: 1000px;
+            margin: 0 auto;
+            border: dotted 1px gray;
+            padding: 20px;
+        }
+        output { display: block; }
+        footer {
+            border-top: 1px solid gray;
+            text-align: center;
+            font-size: .9em;
+        }
+        .error { 
+            color: red; 
+            text-align: center;
+            border: 1px dotted red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shadow root example</h1>
+        <p>Example where contents in paragraph below should be changed by setting contents in shadow DOM.</p>
+
+        <fieldset>
+            <legend>Shadow root host</legend>
+            <p id="shadow-host">This is the shadow host and this text should be replaced, if shadow DOM is supported by browser. ;-)</p>
+        </fieldset>
+        <!--<fieldset>
+            <legend>Status</legend>-->
+            <output id="output"></output>
+        <!--</fieldset>-->
+
+        <h2>Support in browsers</h2>
+        <ul>
+            <li>Chrome - YES (57)</li>
+            <li>Edge - YES (79)</li>
+            <li>Firefox - YES (63)</li>
+            <li>Internet Explorer - NO (11)</li>
+            <li>Opera - YES (40)</li>
+            <li>Safari - YES (10.1)</li>
+        </ul>
+        
+        <footer class="row">
+            <div class="col-sm-12">
+                <p><a href="./">Back</a> to HTML5</p>
+                <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2020-05-24.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        var output = document.getElementById("output");
+        //Get references to shadow host and root
+        var host = document.getElementById("shadow-host");
+        var root;
+
+        if(host.attachShadow) {
+            setTimeout(function() {
+                //2017-09-18: Method is given another name + argument in WD at W3C
+                //root = host.createShadowRoot();
+                root = host.attachShadow({ mode: "open" });
+
+            }, 5000);
+
+            setTimeout(function() {
+                //Set content of shadow root to update page
+                root.textContent = "Hello world from shadow root!";
+            }, 5000);
+        }
+        else {
+            output.classList.add("error");
+            output.innerHTML = "<p>ERROR: Your browser doesn't support shadow DOM. ;-(</p>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form accesskey</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Form accesskey</h1>
+        <p>Example showing how to add and use accesskey attribute of input controls.</p>
+        <div class="alert alert-warning">
+          <p><b>Please note</b> that Firefox users on Windows need to use Shift key as well, i.e.
+            Shift+Alt+&lt;key&gt;, and Mac users need to use Control key as well, i.e.
+            Ctrl+Alt+&lt;key&gt;!</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <form action="#">
+          <div>
+            <input type="button" id="click-me" value="Click me or press Alt+M"
+              accesskey="M" class="btn btn-primary">
+            <output id="click-me-output"></output>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <form action="#">
+          <div>
+            <label for="text-focus" accesskey="N">Enter your name (Alt+N):</label>
+            <input type="text" name="text-focus" id="text-focus">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to HTML5</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-21.</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/jquery.min.js"></script>
+  <script>
+    var clickMeCounter = 0;
+
+    $("#click-me").click(function(event) {
+      clickMeCounter++;
+      $("#click-me-output").text("Button clicked " + clickMeCounter + " times");
+    });
+  </script>
+</body>
+</html>

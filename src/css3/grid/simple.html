@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Grid - CSS</title>
+    <style>
+        body { font-family: Robot, Arial, Helvetica, sans-serif; }
+        .container {
+            display: grid;
+            gap: .5em;
+            grid-template-columns: 50px 1fr 75px 3fr 100px;
+        }
+        .item {
+            background-color: khaki;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simple Grid - CSS</h1>
+        <p>Grid with three columns of explicit widths (50, 75, and 100 pixels) and 
+            two inbetween them of width 1 and 3 fractions, respectively.</p>
+    </header>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+    </div>
+
+    <footer>
+        <p><a href="./">Back</a> to CSS Grid</p>
+        <p><strong>Created by:</strong> Bj&ouml;rn G. D. Persson. <strong>Updated:</strong> 2020-04-20.</p>
+    </footer>
+</body>
+</html>

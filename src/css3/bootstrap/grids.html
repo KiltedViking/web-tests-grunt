@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Grids - Bootstrap</title>
+  <!-- Include CSS file with Bootstrap styles -->
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <style>
+    * { box-sizing: border-box; }
+    .green { background-color: green; padding: 10px; }
+    .lightgreen { background-color: lightgreen; }
+    .anothergreen { background-color: teal; /*padding: 10px;*/ }
+
+    .blue { background-color: cornflowerblue; }
+    .lightblue { background-color: lightblue; }
+    .anotherblue { background-color: cyan; }
+
+    .red { background-color: red; padding: 10px; }
+    .lightred { background-color: lightcoral; }
+    .anotherred { background-color: pink; }
+
+    .lowerdown { margin-top: 300px; }
+    .anotherblue>.lowerdown { margin-top: 150px; }
+  </style>
+</head>
+<body>
+  <!-- Grid must be in a container -->
+  <div class="container">
+    <!-- Grids consists of rows and columns -->
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Grids - Bootstrap</h1>
+        <p>(Summan av alla laster är konstant! ;-) D.v.s. 12!)</p>
+      </div>
+    </header>
+
+    <div class="row green">
+      <div class="col-sm-4 lightgreen">
+        <h2 class="lowerdown">Left column (4)</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis rerum optio labore vitae, non, sapiente ducimus odio eveniet, magnam tempore excepturi ex beatae vel iure aspernatur ipsum. Totam, quas, aliquam.</p>
+      </div>
+
+      <div class="col-sm-8 anothergreen">
+        <h2>Right column (8)</h2>
+        <div class="row">
+          <div class="col-sm-3 blue">
+            <h3>Inner (3)</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis rerum optio labore vitae, non, sapiente ducimus odio eveniet, magnam tempore excepturi ex beatae vel iure aspernatur ipsum. Totam, quas, aliquam.</p>
+          </div>
+
+          <div class="col-sm-6 lightblue">
+            <h3 class="lowerdown">Inner (6)</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis rerum optio labore vitae, non, sapiente ducimus odio eveniet, magnam tempore excepturi ex beatae vel iure aspernatur ipsum. Totam, quas, aliquam.</p>
+
+            <div class="row red">
+              <div class="col-sm-5 lightred"><h4>Grand child (5)</h4></div>
+              <div class="col-sm-7 anotherred"><h4>Grand child (7)</h4></div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 anotherblue">
+            <h3 class="lowerdown">Inner (3)</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis rerum optio labore vitae, non, sapiente ducimus odio eveniet, magnam tempore excepturi ex beatae vel iure aspernatur ipsum. Totam, quas, aliquam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to Bootstrap</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-29.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Include JavaScript that Bootstrap animations depend on -->
+  <script src="../../js/jquery.min.js"></script>
+  <!-- Include JavaScript file with Bootstrap animations (optional) -->
+  <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

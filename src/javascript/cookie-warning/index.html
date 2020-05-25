@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Cookie warning</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css">   -->
+  <link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Cookie warning</h1>
+        <p>Example showing how to display a warning about cookies being used by site.</p>
+        <div class="alert alert-warning">
+          <p>TODO: Own examples should be done and Grunt task(s) set up to copy library files.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><h3>Libraries</h3></div>
+          <div class="panel-body">
+            <ul class="mystriped">
+              <li><a href="cookie-banner/tests/demo.html" target="_blank">cookie-banner</a> <i class="glyphicon glyphicon-new-window"></i></li>
+              <li><a href="6727776/">EU Cookie Banner</a></li>
+              <li><a href="cookieconsent/examples/example-1-themes.html" target="_blank">Cookie Consent</a> <i class="glyphicon glyphicon-new-window"></i> (Insites)</li>
+              <li><a href="permissionbar/" target="_blank">Permission Bar</a> <i class="glyphicon glyphicon-new-window"></i></li>
+              <li><a href="cookie-bar/">cookieBAR</a></li>
+              <li><a href="jquery-eu-cookie-law-popup/demo.html" target="_blank">jQuery EU Cookie Law Popup</a> <i class="glyphicon glyphicon-new-window"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><h3>More information</h3></div>
+            <div class="panel-body">
+              <ul class="mystriped">
+                <li><a href="cookie-consent-kit/">Cookie Consent Kit</a> (by EU; this is only a template, i.e. Word documents...)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="../">Back</a> to Start page</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2018-05-14.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/jquery.matchHeight-min.js"></script>
+  <script>
+      //Make all panels in same row the same height
+      $(function() {
+          $(".panel-primary").matchHeight();
+      });
+  </script>
+</body>
+</html>

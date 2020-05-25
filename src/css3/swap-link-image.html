@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Swap link image - CSS3</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/tests-site.css">
+  <style>
+    /* Default state: show first image (child) and hide second */
+    a.link-image img { display: inline-block }
+    a.link-image img:last-child { display: none }
+    /* Hover state: hide first image (child) and show second */
+    a.link-image:hover img:first-child { display: none }
+    a.link-image:hover img:last-child { display: inline-block }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Swap link image - CSS3</h1>
+        <p>Example showing how to swap an image used as link when mouse enters image.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p><a href="#" class="link-image">
+          <img src="../images/swap-link-image-1.jpg" alt="" width="640">
+          <img src="../images/swap-link-image-2.jpg" alt="" width="640">
+        </a></p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to CSS3</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-12-01.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

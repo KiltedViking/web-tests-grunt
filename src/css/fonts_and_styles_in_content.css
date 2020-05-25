@@ -1,0 +1,25 @@
+@font-face {
+            font-family: 'CoreSansNr65Bold';
+            font-weight: normal, bold;
+            src: url('../fonts/CoreSansNR65Bold.eot?') format('eot'), url('../fonts/CoreSansNR65Bold.woff') format('woff'), url('../fonts/CoreSansNR65Bold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'CoreSansNr45';
+            font-weight: normal, bold;
+            src: url('../fonts/CoreSansNR45Regular.eot?') format('eot'), url('../fonts/CoreSansNR45Regular.woff') format('woff'), url('../fonts/CoreSansNR45Regular.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'CoreSansNr35Light';
+            src: url('../fonts/CoreSansNR35Light.eot?') format('eot'), url('../fonts/CoreSansNR35Light.woff') format('woff'), url('../fonts/CoreSansNR35Light.otf') format('opentype');
+        }
+
+        /*** Classes using fonts added above *********************************/
+        .fontCoreSansNr65Bold {
+            font-family: 'CoreSansNr65Bold';
+        }
+        .fontCoreSansNr45 {
+            font-family: 'CoreSansNr45';
+        }
+        .fontCoreSansNr35Light {
+            font-family: 'CoreSansNr35Light';
+        }

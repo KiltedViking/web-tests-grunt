@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript functions</title>
+    <style>
+        body { font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+    </style>
+</head>
+<body>
+    <h1>JavaScript functions</h1>
+    <p>Use console to view content of variables and inspect source code to find out
+        which variables there are defined in script below this text. ;-) (Ignore
+        code injected by live-server in VS Code, if used.)
+    </p>
+
+
+    <script>
+        function namedFunction() {
+            return 1 + 1;
+        }
+
+        var functionVariable = function () {
+            return 1 + 2;
+        }
+
+        var anotherFunctionVariable = namedFunction;    //Assign function
+        var result = namedFunction();                   //Assign result of function
+
+    </script>
+
+    <p><a href="./">Back</a> to JavaScript</p>
+    <p><b>Created by:</b> Björn G. D. Persson. <b>Updated:</b> 2020-03-10</p>
+</body>
+</html>

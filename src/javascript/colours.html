@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Colours and radio buttons</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../css/tests-site.css">-->
+    <style>
+        /* Testing colours in editor ;-) */
+        .blue-color { color: #2a659d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-sm-12">
+                <h1>Colours and radio buttons</h1>
+                <p>Example that shows how to use event onchange for radio buttons.</p>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    Select colour:
+                    <input type="radio" name="color" value="mediumpurple" id="c-purple"> <label for="c-purple">Purple</label>
+                    <input type="radio" name="color" value="lightgreen" id="c-green"> <label for="c-green">Green</label>
+                    <input type="radio" name="color" value="lightblue" id="c-blue"> <label for="c-blue">Blue</label>
+                </p>
+            </div>
+        </div>
+        
+        <footer class="row">
+            <div class="col-sm-12" style="border-top: solid 1px gray; text-align: center;">
+                <p><b>Reference:</b> Eloquent JavaScript - A Modern Introduction to Programming, Marijn Haverbeke, 2014.</p>
+                <p><a href="./">Back</a> to JavaScript</p>
+                <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-09-28.</p>
+            </div>
+        </footer>
+    
+    </div>
+    
+    <script>
+        function setColor(event) {
+            document.body.style.background = event.target.value;
+        }
+        
+        var buttons = document.getElementsByName("color");
+        for (var i = 0; i < buttons.length; i++)
+            buttons[i].addEventListener("change", setColor) ;
+    </script>
+</body>
+</html>

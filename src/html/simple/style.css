@@ -1,0 +1,11 @@
+.container {
+  width: 800px;
+  margin: 0 auto;
+  font-family: Geneva, Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+footer {
+  border-top: solid 1px gray;
+  font-size: .8em;
+  text-align: center;
+}

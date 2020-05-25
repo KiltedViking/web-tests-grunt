@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Textbox default value</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/tests-site.css">
+</head>
+<body>
+	<div class="container">
+		<header class="row">
+			<div class="col-sm-12">
+				<h1>Textbox default value</h1>
+				<p>This was meant to be an example showing something to do with &quot;default
+					text/value&quot;... But there is no defaultValue() function in jQuery and
+					it's called &quot;placeholder&quot; in HTML5.
+				</p>
+			</div>
+		</header>
+	
+		<div class="row">
+			<div class="col-sm-12">
+				<form>
+					<p><label for="atext">Enter a text</label>
+						<input type="text" name="atext" id="atext"></p>
+				</form>
+			</div>
+		</div>
+
+		<footer class="row">
+			<div class="col-sm-12">
+				<p><a href="./">Back</a> to jQuery</p>
+				<p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2017-02-27.</p>
+			</div>
+		</footer>
+	</div>
+	
+	<script type="text/javascript" src="../../js/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//Set som default value... which doesn't work
+			// $("#atext").defaultValue("Enter text");
+			//Attribute placeholder in HTML5 can be used to show instruction, though.
+			$("#atext").attr("placeholder", "Enter text");
+		});	
+	</script>
+</body>
+</html>
