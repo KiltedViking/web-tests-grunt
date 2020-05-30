@@ -2,29 +2,29 @@
 <html>
 <head>
 	<title>Redirect with jQuery after delay</title>
-	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
 </head>
 <body>
 	<h1>Redirect with jQuery after delay</h1>
 	
 	<p><a id="go" href="http://utveckling.svanen.nu/intranet/">Go to intranet</a></p>
 	
-<script type="text/javascript">
-	function go() {
-		window.top.location.href = "http://utveckling.svanen.nu/intranet/";
-	}
-	
-	$(document).ready(function() {
-		//$().delay(80000);
-		//setTimeout(go(), 80000);
-		//for(var i = 0; i < 900000000; i++) {}
-		//go();
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript">
+		function go() {
+			window.top.location.href = "http://utveckling.svanen.nu/intranet/";
+		}
 		
-		//$("#go").css("background-color", "blue").delay(800000).css("background-color", "red");
-		//$("#go").delay(800).trigger("click");
-		
-		window.setTimeout(go(), 8000);
-	});
-</script>
+		$(document).ready(function() {
+			//$().delay(80000);
+			//setTimeout(go(), 80000);
+			//for(var i = 0; i < 900000000; i++) {}
+			//go();
+			
+			//$("#go").css("background-color", "blue").delay(800000).css("background-color", "red");
+			//$("#go").delay(800).trigger("click");
+			
+			window.setTimeout(go(), 8000);
+		});
+	</script>
 </body>
 </html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparison (== vs. ===) - JavaScript</title>
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bjorn.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-sm-12">
+        <h1>Comparison (<code>==</code> vs. <code>===</code>) - JavaScript</h1>
+        <p>Values from textboxes are returned as strings and to make comparison easier,
+          comparison of values of different types is allowed, i.e. <code>&quot;5&quot; 
+          == 5</code>. This is fine in many cases, but in other cases this becomes
+          troublesome, which is why the strict equality operators (<code>===</code>
+          and <code>!==</code>) were added to JavaScript, i.e. <code>&quot;5&quot; !== 5</code>.
+        </p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Equality (<code>==</code>)</h2>
+        <p>If data types don't match, one or both values will be converted.</p>
+        <ul id="output"></ul>
+      </div>
+     
+      <div class="col-md-6">
+        <h2>Strict Equality (<code>===</code>)</h2>
+        <p>Types must be the same, i.e. no conversion perfomed.</p>
+        <ul id="output2"></ul>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-sm-12">
+        <p><a href="./">Back</a> to JavaScript language</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2020-05-29.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    "use strict";
+
+    /*** Equality *************************************************************/
+    let output = document.getElementById("output");
+
+    let result = "5" == 5;
+    let liElem = document.createElement("li");
+    liElem.innerHTML = `<code>"5" == 5</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = "5b" == 5;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>"5b" == 5</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = "b5" == 5;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>"b5" == 5</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = "005.00" == 5;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>"005.00" == 5</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = +0 == -0;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>+0 == -0</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = 0x8 == 8;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>0x8 == 8</code>: ${result} (hexadecimal)`;
+    output.appendChild(liElem);
+
+    result = 0b1000 == 8;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>0b1000 == 8</code>: ${result} (binary)`;
+    output.appendChild(liElem);
+
+    result = 0o10 == 8;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>0o10 == 8</code>: ${result} (octal)`;
+    output.appendChild(liElem);
+
+    result = "0" == false;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>"0" == false</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = null == undefined;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>null == undefined</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = NaN == NaN;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>NaN == NaN</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = [1, "b", 3] == "1,b,3";
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>[1, "b", 3] == "1,b,3"</code>: ${result}`;
+    output.appendChild(liElem);
+
+    //({}) == "[object Object]" - is true in console of browser
+    // console.log({} == new Object());  //false...???
+
+    result = ({}) == new Object();
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>({}) == new Object()</code>: ${result}`;
+    output.appendChild(liElem);
+
+    /*** Strict equality ******************************************************/
+    output = document.getElementById("output2");
+
+    result = NaN === NaN;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>NaN === NaN</code>: ${result}`;
+    output.appendChild(liElem);
+
+    result = +0 === -0;
+    liElem = document.createElement("li");
+    liElem.innerHTML = `<code>+0 === -0</code>: ${result}`;
+    output.appendChild(liElem);
+  </script>
+</body>
+</html>

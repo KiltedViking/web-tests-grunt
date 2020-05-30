@@ -6,6 +6,7 @@ html {
 }
 body {
 	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 16px;
 	color: black;
 	background-color: #800000;
 }
@@ -36,12 +37,12 @@ ul, ol {
 }
 li {
 	list-style: circle;
-	margin-left: 15px;
+	margin-left: px;
 }
 footer {
 	clear: both;
 	border-top: solid 1px gray;
-	font-size: .8em;
+	font-size: .9em;
 	text-align: center;
 }
 /* IDs *************************************************************/

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../css/tests-site.css">
     <!--Add style for jQuery-UI-->
-    <link rel="stylesheet" href="../../css/redmond/jquery-ui-1.8.16.custom.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
 </head>
 <body>
     <div class="container">
@@ -33,8 +33,8 @@
             </div>
         </footer>
     </div>
-    <script src="../../js/jquery-1.5.1.js"></script>
-    <script src="../../js/jquery-ui-1.8.11.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
     <!--Bootstrap requires jQuery 1.9.1 or higher!!-->
     <!--<script src="../js/bootstrap.js"></script>-->
     <script>
@@ -44,7 +44,7 @@
             var btn = $("#myButton");
             
             //Attach click event to button/link
-            btn.live("click", function() {
+            btn.click(function() {
                 //Get url to file with content and reference to div for dialog
                 var url = $(this).attr("href");
                 var dlg = $("#myDialog");
